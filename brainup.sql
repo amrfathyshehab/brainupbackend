@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2024 at 12:38 PM
--- Server version: 10.11.6-MariaDB-0+deb12u1
--- PHP Version: 8.2.24
+-- Generation Time: Aug 12, 2025 at 07:07 AM
+-- Server version: 10.11.11-MariaDB-0+deb12u1
+-- PHP Version: 8.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,15 +47,19 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `username`, `password`, `remember_token`, `created_at`, `updated_at`, `api_token`, `mobile`, `profile_pic`, `deleted_at`) VALUES
-(1, 'prodigy', 'prodigy', '$2y$10$H2/tkGdgsaWwfhO4qjYULOFZZbcogxycvYB6cr2BsJu5XPgnu5r3S', NULL, NULL, '2024-10-10 11:45:38', '', '', '1705872745-209.jpg', NULL),
+(1, 'prodigy', 'prodigy', '$2y$10$ER5/ccNy13tFn7zE.ac9puQ8yTxgtbDqDo/Zr80SJ1J8NbVjz5ybi', NULL, NULL, '2025-04-21 20:11:56', '', '', '1705872745-209.jpg', NULL),
 (38, 'Nour Mustafa', 'Nour', '$2y$10$0V8120e/H9hGB9SMB9ChU.X9jUTf7pUy.zTmK0FtngDRuszo0rBuK', NULL, '2024-08-06 16:43:12', '2024-08-06 16:43:12', NULL, '01063165009', '1722951792-562.jpg', NULL),
 (39, 'Jana Halaby', 'Jana-Halaby', '$2y$10$HzUc8wzJiUM1fxoDtDw/gOvWCktSaVwl71yG4Kr8thnVUfOQOTdk.', NULL, '2024-08-06 16:48:25', '2024-08-06 16:48:25', NULL, '01277961775', '1722952105-469.jpg', NULL),
 (40, 'Mariam Osman', 'Mariam-Osman', '$2y$10$.ZbJaQ43U6vMv4kZk7CVuu3SU9pCGgWGTVWi9CQGyu4/IAuSjNs4q', NULL, '2024-08-06 16:55:16', '2024-08-06 16:55:16', NULL, '01001004308', '1722952516-387.jpg', NULL),
 (41, 'Mariz Nabil', 'Mariz-Nabil', '$2y$10$ei1EjzW2GkEY9PmBmSpDTOK8kuX22fXEFGYjs6VRvcigWi352eYoO', NULL, '2024-08-06 16:59:18', '2024-08-06 16:59:18', NULL, '01222257836', '1722952758-655.jpg', NULL),
 (42, 'Christy Ahmous', 'Christy', '$2y$10$U4SNxGAvXnl6vmBEqTadEulSRFNnxJHnlb.osCa30usuVZC1anDE.', NULL, '2024-08-06 17:03:32', '2024-08-06 17:03:32', NULL, '01228588169', '1722953012-431.jpg', NULL),
 (43, 'Menna Hossam', 'Menna', '$2y$10$LqTAMFUf5eNebKEAgCxi9um3CEotELM95nSOcS68yDNotai.vfOyS', NULL, '2024-08-06 17:06:03', '2024-08-06 17:06:03', NULL, '01011825619', '1722953163-368.jpg', NULL),
-(44, 'test', 'test', '$2y$10$nAA7vI1huJEGFUfm9Up5OueULJ4jYuymWKPzd2NxitJZ0yDJGBjLS', NULL, '2024-08-06 17:06:03', '2024-08-06 17:06:03', NULL, '01011825619', '1722953163-368.jpg', NULL),
-(47, 'Mohanad Ahmed', 'Mohanad', '$2y$10$q5LZcrR2W/ojMiQ.cZPdou60zIaDMZJ8.A1LhDXG6LAtDJdtW0FsG', NULL, '2024-09-07 01:56:58', '2024-09-07 01:56:58', NULL, '01206103056', '1725663418-736.jpg', NULL);
+(44, 'omar', 'omar', '$2y$10$nAA7vI1huJEGFUfm9Up5OueULJ4jYuymWKPzd2NxitJZ0yDJGBjLS', NULL, '2024-08-06 17:06:03', '2024-08-06 17:06:03', NULL, '01011825619', '1722953163-368.jpg', NULL),
+(47, 'Mohanad Ahmed', 'Mohanad', '$2y$10$q5LZcrR2W/ojMiQ.cZPdou60zIaDMZJ8.A1LhDXG6LAtDJdtW0FsG', NULL, '2024-09-07 01:56:58', '2024-09-07 01:56:58', NULL, '01206103056', '1725663418-736.jpg', NULL),
+(48, 'Ms. Hoda Saeed', 'hodasaeed', '$2y$10$OM3uvVaWwUitxCD4mS2Av.XBnG3RLtmJim/.JvKipF5gh2T0kaTNm', NULL, '2024-11-09 20:00:56', '2025-04-21 20:08:17', NULL, '01210017078', '1731175256-371.jpg', '2025-04-21 20:08:17'),
+(49, 'Safy Moustafa', 'safymoustafa', '$2y$10$YtdfExKTrBkVSqrMlPrAXef9nHdl93xXNvgRAd0n.AMYUvrmW61La', NULL, '2024-11-23 17:04:05', '2024-11-23 17:04:05', NULL, '01098984864', '1732374245-351.jpg', NULL),
+(50, 'Huda Elsabagh', 'HudaElsabagh', '$2y$10$2tELbg3DT/Hr6H8vAeigjOGfvJtITF2X1GH9cMSP5J3J1b1rTOmPS', NULL, '2025-04-22 11:43:26', '2025-04-22 11:43:26', NULL, '01210017078', '1745315006-548.jpg', NULL),
+(51, 'Amira fathy', 'AMIRAFATHY', '$2y$10$Pv3iexe2iFvUGYEqIqcHYeK8VWe5qwEydYVKJyrGMTfGft3Yhm5Bm', NULL, '2025-04-22 11:48:03', '2025-04-22 11:48:03', NULL, '01070283066', '1745315282-668.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -72,13 +76,6 @@ CREATE TABLE `attachments` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `attachments`
---
-
-INSERT INTO `attachments` (`id`, `address`, `is_public`, `teacher_id`, `lecture_id`, `created_at`, `updated_at`) VALUES
-(37, 'me.png', 0, 3, 34, '2024-10-11 02:22:00', '2024-10-11 02:22:00');
 
 -- --------------------------------------------------------
 
@@ -165,6 +162,15 @@ CREATE TABLE `bank_questions_sets` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `bank_questions_sets`
+--
+
+INSERT INTO `bank_questions_sets` (`id`, `category_id`, `lecture_id`, `easy`, `medium`, `hard`, `quiz_id`, `homework_id`, `exam_id`, `created_at`, `updated_at`) VALUES
+(3, 13, 50, 19, 19, 19, 8, NULL, NULL, '2024-11-08 16:41:48', '2024-11-08 16:48:08'),
+(4, 10, 50, 3, 3, 3, NULL, 12, NULL, '2024-11-08 17:28:35', '2024-11-08 17:28:35'),
+(7, 10, 148, 22, 22, 22, NULL, 14, NULL, '2025-08-02 14:15:12', '2025-08-02 14:15:12');
+
 -- --------------------------------------------------------
 
 --
@@ -187,6 +193,15 @@ CREATE TABLE `buying_history` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `buying_history`
+--
+
+INSERT INTO `buying_history` (`id`, `lecture_id`, `price`, `buy_at`, `student_id`, `code_id`, `add_to_session_assistant`, `quiz_done`, `homework_done`, `expire_at`, `views`, `method`, `created_at`, `updated_at`) VALUES
+(131, 92, 60, '2025-03-16 13:00:09', 409, NULL, 1, 0, 0, '2025-06-12 13:00:09', 5, 'code', '2025-03-16 13:00:09', '2025-03-16 13:00:09'),
+(132, 87, 60, '2025-04-21 12:46:01', 407, NULL, 1, 0, 0, '2025-07-20 12:46:01', 5, 'code', '2025-04-21 12:46:01', '2025-04-21 12:46:01'),
+(138, 151, 12, '2025-08-04 14:21:19', 416, 1501, NULL, 0, 0, '2025-08-26 14:21:19', 22, 'code', '2025-08-04 14:21:19', '2025-08-04 14:21:19');
 
 -- --------------------------------------------------------
 
@@ -212,7 +227,14 @@ CREATE TABLE `chapters` (
 --
 
 INSERT INTO `chapters` (`id`, `name`, `description`, `stage`, `visibility`, `img`, `teacher_id`, `section`, `updated_at`, `created_at`) VALUES
-(20, 'test', NULL, 3, 0, '1728725435-194.png', 3, 'arts', '2024-10-12 12:30:35', '2024-10-12 12:30:35');
+(20, 'test', NULL, 3, 0, '1728725435-194.png', 3, 'arts', '2024-10-12 12:30:35', '2024-10-12 12:30:35'),
+(23, 'academiclevel ||', 'academiclevel ||', 1, 0, '1730887117-183.jpg', 3, NULL, '2024-11-06 11:58:37', '2024-11-06 11:58:37'),
+(24, 'test new 2025', 'test for natlix development', 2, 1, '1730966585-723.jpg', 3, 'scientific', '2024-11-07 10:03:50', '2024-11-07 10:03:05'),
+(25, 'test new 99999999', 'تيست', 1, 0, '1730971474-387.jpg', 3, NULL, '2024-11-07 11:24:52', '2024-11-07 11:24:34'),
+(29, 'test company', 'dddddddddsss', 33, 0, '1731595136-785.png', 3, NULL, '2024-11-14 16:39:21', '2024-11-14 16:38:56'),
+(30, 'test0', 'sdsadssdsa', 1, 0, '1731595229-902.png', 3, NULL, '2024-11-14 16:40:29', '2024-11-14 16:40:29'),
+(32, 'tessss', 'qqqqqqq', 11, 1, '1754132894-708.png', 26, NULL, '2025-08-02 14:08:35', '2025-08-02 14:08:14'),
+(35, 'test', 'wwwww', 1, 1, '1754306240-162.png', 10, NULL, '2025-08-04 14:17:26', '2025-08-04 14:17:20');
 
 -- --------------------------------------------------------
 
@@ -645,6 +667,122 @@ CREATE TABLE `codes` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `codes`
+--
+
+INSERT INTO `codes` (`id`, `code`, `price`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1392, 'mqwt43mmG8HFAA3PcfTpdZRWkC5VJUUUJ7XPUswJMzAmNfYTrh9hEfQJBDZSH9peQtAkkWd7btSETJfH2y919xv8dD1cDAqfcEYXU9mJSWuzdQkybgQ2JBaqbkWrAwSsrrpHND7E8bpSgBBduPxhGcPQy78Kh1VQhgHE2Qya1CeyC1M4rT1yvsPaGXMb7BnvW1xEZ4fJ', 60, '2025-08-04 13:58:41', '2025-01-05 13:45:44', '2025-08-04 13:58:41'),
+(1393, 'xZCzdvYQYMDpengVQ2UcaBZRW4quEmbc1HQRp1uMKXFxkHgSZnVyctQ8qXKfxHraQWhVhukqf1VtdwDSVM2gDxrE4nypYCJfwcDW15tQk5wsnG1NfQk9KNAu2hKtHNgXJsdmUscUurTe6MXfqemGbU5apKBKuGdaAZXBpJv8FaskDfR7Zxpvvc7zhqwa1hwTEW5Dfd1T', 60, NULL, '2025-01-05 13:45:44', '2025-01-05 13:45:44'),
+(1394, 'PfPbPpvuY3nChQcFecYdCMNkkhhPf7zFh6hq2WpnMKdmwgGHh4HFffUZAVXaKMm7ewnH3KCsUyVBYzv1SzGhMmggyrwTqWUYdtehnZW89w8HZqTgYGh2zK6zpSRudxtVU9uX11nETGRBVGfP3v64wfpbAt64fbQSgqccb2GrXTkWEvVCMyKpEc9rqp3FvsnQs7rzKn8e', 60, NULL, '2025-01-05 13:45:44', '2025-01-05 13:45:44'),
+(1395, 'NCbNpNM2ByA8mUautSkq8DxwgZ3upCxm7Gc5JduXcq5pH6wv1Ph82t1Zw5MHYHtVHusMpmx9xrcxY2qCx7bJWksAtMChU52zMadFV6RkYQHr1q1aAFBB47KHQQMdcqxsy4epbwSxxw9nFeHutKxuyCgfN6pFUwcZr3T1eedAv8yN9HQwQWE8TwPGW67ysarrKbWky95d', 60, NULL, '2025-01-05 13:45:44', '2025-01-05 13:45:44'),
+(1396, 'z3PR5ttM7mTByqDXhWTXgfYVHQbxx4cpvVpzN3qQ9MddZz2JJxcW1ZNEtUeSEYUvfW3tk6fGk53aP9nSdXEz7AKQXzu1C8eM4zTK8uHdAhZpH8ycYAx44nBgUDgMQsEV4CBPMKEnwFvddX21M4dfxUJcu7JnPaFVgsdbvpBe2TwVWhnZnuP3QCvsK1BUszVtt9gQBCds', 60, NULL, '2025-01-05 13:45:44', '2025-01-05 13:45:44'),
+(1397, 'qMa6nZrAs7uUC9gbEa5ZFcbtnkbbqP4DWF4edWBnNf2gmzeNfgcZSuc5k3Y4G7zQDcVRaWxPc1QSV7v5TdPn9nWrZX8Jwg8C7DKUq4RCB3BhezsQY8dGEWreuXBa8DfXChKSDuAXB3RnpAgaUEuTsgz9ANPsRRS2qkRXanUTY3hnrTVd1hH9zP1QaGP31cYgDfpHdMX8', 60, NULL, '2025-01-05 13:45:44', '2025-01-05 13:45:44'),
+(1398, 'YksWuUVVFktg4N4f2YkE5HbQpQkCRHDfDZYWE5S4qKfcc99S6kVCcuSC3VdeaCTcvNupeyZuaNgWs5pzvUrSxH8GRysQDNScpBvfptrGYUARSkNEyFyeuB2PgR9B5ypx1dBnHQ6seuZfJzS4Fx5AQJtdqrTFsHxy7CmanFetqBbV6yt38cp7AGX3RuXYMW9aeZSm6V56', 60, NULL, '2025-01-05 13:45:44', '2025-01-05 13:45:44'),
+(1399, 'T8T1ECVpCqs6z3Y9rsD7dfcm9D2V2AAEURD3Br9V9P2hwYQhUAeAGNJ9RYvJzB2qCHGDTvehh1swSQZGzZE1yYZzGCsYdCF5UTEWM5HPzJ5ytsBrf5tCGBWAJpCNGS9A48rhZf3tvbKv6U29nMgG8Y4ctQYcpdA53qwfygB92Ts51FD1cgzdQrvKSEGFa7RqYPymeFT2', 60, NULL, '2025-01-05 13:45:44', '2025-01-05 13:45:44'),
+(1400, 'ntKVb4NJ', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1401, '8Amt7uvF', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1402, 'qJskmnQG', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1403, '7rXyXAwT', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1404, 'n6PJKkRZ', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1405, 'H7HfqwTd', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1406, 'CUNU4MKe', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1407, 'SXEznyK2', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1408, '48wCC3D4', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1409, '8Mg69kdP', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1410, 'BN8GVMy6', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1411, 'zwZCEcxq', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1412, 'rtP21xAX', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1413, 'Ngc2Zbad', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1414, 'RGP2Fgzz', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1415, 'Z4KQdakM', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1416, 'Ug3vB5VH', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1417, 'bgtscyA1', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1418, 'eZKruNhR', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1419, 'J3c8suJC', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1420, '6SpvD2Nf', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1421, 'vzEkYGUe', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1422, 'Z7KtWuUP', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1423, '4QJwCqRX', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1424, 'k1cq7tkR', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1425, 'BFX43xxd', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1426, 'QExRz1An', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1427, '4pVFaESA', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1428, 'FmumDtHA', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1429, 'tgxZaEZG', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1430, '9GCtnkvM', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1431, 'Bkf1vwsV', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1432, '9SAcwkBX', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1433, 'ak41s5sp', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1434, 'BCeptCm7', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1435, 'ppRTD3JE', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1436, 'JbSVruVh', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1437, 'GWGtanAd', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1438, 'V8mmWfk9', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1439, 'zvm5XCf5', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1440, 'pavPquEy', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1441, 'trbFhWNC', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1442, '3u8VwFNH', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1443, 'UCtYFrhv', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1444, 'dWXeHpkt', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1445, 'wYNKrpFK', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1446, 'q5rqpWuT', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1447, 'dyJSP4Az', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1448, '1ETUWKYP', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1449, 'eHHwazab', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1450, 'kTHyFxnC', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1451, 'Qm2ZFJN5', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1452, 'mKS9497U', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1453, 'FEd6dvUf', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1454, 'snm6pw7x', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1455, 'HR2Zn2FQ', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1456, 'mQM78Xwx', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1457, 'sZvDXDeH', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1458, 'pMGknwNw', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1459, '1Fbfs31t', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1460, 'SNFZVQSA', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1461, 'eg5a54tn', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1462, 'ARRnJhbp', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1463, 'G9tUzkpU', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1464, 'UahrsnWY', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1465, 'ZC1DfrTS', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1466, 'gsvwww1u', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1467, 'hZHbvU4v', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1468, 'Q3E5fmrP', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1469, 'Vh9w4714', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1470, 'PWEc9zQC', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1471, 'Q5BS66ZE', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1472, 'JbcFevwZ', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1473, 'UtXZRWN5', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1474, 'YNYwGBGT', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1475, 'DrNvz8UG', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1476, '4rUvvPcC', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1477, 'AEmhf9tJ', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1478, 'RDGAEg3S', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1479, 'WxJW6t1n', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1480, 'hKth7x27', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1481, 'BNvfQ6Zp', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1482, 'sgnHYcBd', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1483, 'UwNWaph9', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1484, 'wg1bz3D9', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1485, 'pFnFEaqW', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1486, 'fq2Avhyk', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1487, 'MEBzpgAS', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1488, 'ebq5sdBt', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1489, 'Qe9J7Eqv', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1490, 'vxZFDsek', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1491, 'JGNkce37', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1492, 'TaD1XMQA', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1493, 'hw9PRvmw', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1494, 'Cx3QWfff', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1495, 'qs9x17wZ', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1496, 'NzyFFThY', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1497, 'WgTHrKW1', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1498, 'dAGQrT7a', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1499, 'BRZm6Qfn', 60, NULL, '2025-01-05 13:47:49', '2025-01-05 13:47:49'),
+(1500, 'C', 1, NULL, '2025-08-04 10:27:22', '2025-08-04 10:27:22'),
+(1501, 'J', 12, '2025-08-04 14:21:19', '2025-08-04 14:19:34', '2025-08-04 14:21:19');
+
 -- --------------------------------------------------------
 
 --
@@ -799,7 +937,12 @@ INSERT INTO `homeworks` (`id`, `title`, `lecture_id`, `visibility`, `success_rat
 (8, 'Algebra Lecture 1', 18, 0, 55, '2024-09-09 06:27:29', '2024-09-09 06:27:29'),
 (9, 'Homework 1', 19, 1, 60, '2024-09-11 23:23:27', '2024-09-23 01:19:44'),
 (10, 'test', 12, 1, 10, '2024-09-18 01:34:45', '2024-09-18 01:38:24'),
-(11, 'omar', 34, 0, 10, '2024-10-11 02:23:44', '2024-10-11 02:23:44');
+(11, 'omar', 34, 0, 10, '2024-10-11 02:23:44', '2024-10-11 02:23:44'),
+(12, 'Wanda Beck', 50, 1, 97, '2024-11-08 16:09:16', '2024-11-08 16:09:54'),
+(13, '22222222222', 145, 0, 100, '2025-08-02 12:12:29', '2025-08-02 12:12:29'),
+(14, 'tesss', 148, 0, 100, '2025-08-02 14:15:04', '2025-08-02 14:15:04'),
+(15, 'test', 150, 0, 22, '2025-08-03 16:35:10', '2025-08-03 16:35:10'),
+(16, 'www', 151, 1, 12, '2025-08-04 14:21:33', '2025-08-04 14:21:35');
 
 -- --------------------------------------------------------
 
@@ -831,8 +974,102 @@ CREATE TABLE `lectures` (
 --
 
 INSERT INTO `lectures` (`id`, `title`, `description`, `visibility`, `stage`, `chapter_id`, `price`, `v_hw`, `v_quiz`, `img`, `views`, `expired_at`, `section`, `teacher_id`, `created_at`, `updated_at`) VALUES
-(34, 'omar', 'omar', 0, 1, NULL, 11, 0, 0, '1728554207-834.png', 1, 111, NULL, 3, '2024-10-10 12:56:47', '2024-10-11 02:02:34'),
-(35, 'name', 'ttt', 0, 3, 20, 44, 0, 0, '1728725623-274.png', 4, 4, 'arts', 3, '2024-10-12 12:33:43', '2024-10-12 12:33:43');
+(35, 'name', 'ttt', 0, 3, 20, 44, 0, 0, '1728725623-274.png', 4, 4, 'arts', 3, '2024-10-12 12:33:43', '2024-10-12 12:33:43'),
+(48, 'المحاضرة الاولي', 'testttttttttttttttttttttttttttttttttttttttttt', 0, 3, NULL, 50, 0, 0, '1730971379-535.jpg', 3, 7, 'scientific', 3, '2024-11-07 11:22:59', '2024-11-07 11:22:59'),
+(49, 'المحاضرة الاولي', '123', 0, 1, 25, 50, 0, 0, '1730971524-413.jpg', 3, 7, NULL, 3, '2024-11-07 11:25:24', '2024-11-07 11:25:51'),
+(50, 'Daquan Gilliam', 'Dolor harum reiciend', 0, 1, 23, 749, 0, 0, '1731072858-955.jpg', 20, 722, NULL, 3, '2024-11-08 15:34:18', '2024-11-08 15:34:18'),
+(51, 'الدرس الأول', '1d6fe00f975c491a9531912fbaf960f8', 0, 1, NULL, 100, 0, 0, '1731176324-530.jpg', 10, 29, NULL, 3, '2024-11-09 20:18:44', '2024-11-09 20:18:44'),
+(52, 'testttttttttttttt0', 'sdwawewe', 0, 33, NULL, 60, 0, 0, '1731595193-803.png', 3, 8, NULL, 3, '2024-11-14 16:39:53', '2024-11-14 16:39:53'),
+(53, 'Unit 1', 'Unit 1', 0, 33, NULL, 200, 0, 0, '1732531947-325.png', 10, 19, NULL, 7, '2024-11-25 12:52:27', '2024-11-25 12:52:27'),
+(54, '2nd Secondary-Physics-November Revision', '2nd Secondary-Physics-November Revision-Mr.Mahmoud Elsaeed.', 1, 2, NULL, 10, 0, 0, '1732537158-745.jpg', 100, 20, 'scientific', 11, '2024-11-25 13:11:32', '2024-11-25 14:19:18'),
+(55, 'الأول الثانوي-لغة عربية-مراجعة نوفمبر', 'الصف الأول الثانوي-اللغة العربية-مراجعة شهر نوفمبر- أ/محمد بكري', 1, 1, NULL, 10, 0, 0, '1732554262-705.jpg', 100, 30, NULL, 7, '2024-11-25 19:04:22', '2024-11-25 19:04:42'),
+(56, 'الثاني الثانوي-لغة عربية-مراجعة نوفمبر', 'الصف الثاني الثانوي-اللغة العربية-مراجعة شهر نوفمبر', 1, 2, NULL, 10, 0, 0, '1732558259-905.jpg', 100, 30, 'scientific', 13, '2024-11-25 20:09:06', '2024-11-25 20:10:59'),
+(57, '1st Secondary-(Algebra)-Nov. revision', '1st Secondary-Math(Algebra)-November revision', 1, 2, NULL, 10, 0, 0, '1732558802-281.jpg', 100, 30, 'scientific', 10, '2024-11-25 20:20:02', '2025-07-30 13:27:31'),
+(58, '3rd Prep-Math-November Revision-Geometry', '3rd Prep-Math-November Revision-Geometry-Mrs.Noha Mohamed', 1, 33, NULL, 10, 0, 0, '1732559707-340.jpg', 100, 30, NULL, 15, '2024-11-25 20:35:07', '2024-11-25 20:35:17'),
+(59, '3rd Prep. Arabic-Nov. Revision', 'مراجعة شهر نوفمبر اللغة العربية الصف الثالث الاعدادي', 1, 33, NULL, 10, 0, 0, '1732611384-231.jpg', 100, 30, NULL, 3, '2024-11-26 10:56:24', '2024-11-26 10:56:52'),
+(60, '3rd prep Math(Algebra) Nov. Revision', '3rd prep Math(Algebra) November Revision Mrs.Noha Mohamed', 1, 33, NULL, 10, 0, 0, '1732692634-466.jpg', 100, 30, NULL, 10, '2024-11-27 09:30:34', '2024-11-27 09:30:44'),
+(61, '1st Sec Math(Geometry) Nov. Revision', '1st Sec Math(Geometry) November . Revision Mr. Ahmed Abdelwahed', 1, 1, NULL, 10, 0, 0, '1732692926-831.jpg', 100, 30, NULL, 10, '2024-11-27 09:35:26', '2024-11-27 09:35:41'),
+(62, '2nd Sec Biology November Revision', '2nd Sec Biology November Revision Mrs. Gehan Asem', 1, 2, NULL, 10, 0, 0, '1732694059-213.jpg', 100, 30, 'scientific', 18, '2024-11-27 09:54:19', '2024-11-27 09:54:39'),
+(63, '3rd Prep English Nov. Revision', '3rd Prep English Nov. Revision Mrs Amr Fahmy', 1, 33, NULL, 10, 0, 0, '1732697071-173.jpg', 100, 28, NULL, 14, '2024-11-27 10:44:31', '2024-11-27 10:44:50'),
+(64, '1st sec English-Nov Revision', '1st sec English-November Revision Mr. Gamal Abou Zied', 1, 1, NULL, 10, 0, 0, '1732697335-950.jpg', 99, 30, NULL, 8, '2024-11-27 10:48:55', '2024-11-27 10:49:07'),
+(65, '1st Sec History Nov. Revision', '1st Sec History November. Revision Mr.Omar Raslan', 1, 1, NULL, 10, 0, 0, '1732702656-555.jpg', 100, 28, NULL, 9, '2024-11-27 12:17:36', '2024-11-27 12:18:18'),
+(66, '1st Sec-Integrated Sci-Nov. Revision', '1st Secondary-Integrated Science-November Revision Mr. Ahmed Elmahdy', 0, 1, NULL, 10, 0, 0, '1732703100-112.jpg', 100, 30, NULL, 17, '2024-11-27 12:25:00', '2025-01-09 14:11:39'),
+(67, '3rd prep Science Nov Revision', '3rd prep Science Nov Revision Mr. Ahmed Abd El-Fattah', 1, 33, NULL, 10, 0, 0, '1732705307-768.jpg', 100, 29, NULL, 16, '2024-11-27 13:01:47', '2024-11-27 13:03:14'),
+(68, '1st Sec Philosophy Nov Revision', 'الفلسفة والمنطق الصف الاول الثانوي مراجعة شهر نوفمبر', 1, 1, NULL, 10, 0, 0, '1732711018-893.jpg', 100, 30, NULL, 12, '2024-11-27 14:36:58', '2024-11-27 14:37:18'),
+(69, '3rd Prep Algebra Final Revision 1st Term', '3rd Prep Math (Algebra) Final Revision 1st Term Mrs.Noha Mohamed', 1, 33, NULL, 60, 0, 0, '1735638722-553.jpg', 3, 60, NULL, 15, '2024-12-31 11:50:04', '2024-12-31 11:52:02'),
+(70, '3rd Prep Math Revision 1st term Geometry', '3rd Prep Math Final Revision 1st term Geometry Mrs.Noha Mohamed', 1, 33, NULL, 60, 0, 0, '1735983394-574.jpg', 3, 60, NULL, 15, '2025-01-04 11:31:09', '2025-01-04 11:36:34'),
+(71, '1st Sec (Algebra)  1st Term Revision', '1st Sec Math (Algebra) Final Revision 1st Term Mr.Ahmed Abd El-Wahed', 1, 1, NULL, 60, 0, 0, '1735983915-461.jpg', 3, 60, NULL, 10, '2025-01-04 11:45:15', '2025-01-04 11:45:30'),
+(72, '1st Sec Math(Geometry) 1st Term Revision', '1st Sec Math(Geometry) 1st Term Final Revision Mr. Ahmed Abd El-Wahed', 1, 1, NULL, 60, 0, 0, '1735984248-201.jpg', 3, 60, NULL, 10, '2025-01-04 11:50:48', '2025-01-04 11:50:56'),
+(73, '3rd Prep English Final Revision Part (1)', '3rd Prep English Final Revision First Term Part (1) Mr. Amr Fhmy', 1, 33, NULL, 60, 0, 0, '1735985089-816.jpg', 3, 60, NULL, 14, '2025-01-04 12:04:49', '2025-01-04 12:06:56'),
+(74, '2nd Sec Biology Final Revision Part 1', '2nd Sec Biology Final Revision First  Term Part (1) Mrs. Gehan Asem', 1, 2, NULL, 60, 0, 0, '1735985664-867.jpg', 3, 60, 'scientific', 18, '2025-01-04 12:13:51', '2025-01-04 12:14:24'),
+(75, '1st Sec Integrated Science Final Revisio', '1st Sec Integrated Science Final Revision 1st Term Mr. Ahmed El-Mahdy', 1, 1, NULL, 60, 0, 0, '1736058552-370.jpg', 3, 60, NULL, 17, '2025-01-05 08:29:12', '2025-01-05 08:29:23'),
+(76, '3rd Prep Arabic Final revision Part 1', '3rd Prep Arabic Final revision First Term Part 1 Mr. Araby Hamed', 1, 33, NULL, 60, 0, 0, '1736059117-974.jpg', 1, 60, NULL, 3, '2025-01-05 08:38:37', '2025-01-05 08:38:49'),
+(77, '3rd Prep Science Final Revision Part (1)', '3rd Prep Science Final Revision First Term Part (1) Mr. Ahmed Abd El-Fattah', 1, 33, NULL, 60, 0, 0, '1736059496-216.jpg', 1, 60, NULL, 16, '2025-01-05 08:44:56', '2025-01-05 08:45:07'),
+(78, '1st Sec Math Trigonometry Final Revision', '1st Sec Trigonometry Final Revision First Term Mr. Ahmed Abd El-Wahed', 1, 1, NULL, 60, 0, 0, '1736075070-648.jpg', 3, 60, NULL, 10, '2025-01-05 13:04:30', '2025-01-05 13:04:49'),
+(79, '2nd Sec Physics Final Revision Part (1)', '2nd Sec Physics Final Revision First Term Part (1) Mr. Mahmoud El-Saeed', 1, 2, NULL, 60, 0, 0, '1736075563-854.jpg', 3, 60, 'scientific', 11, '2025-01-05 13:12:43', '2025-01-05 13:13:11'),
+(80, '2nd Sec Physics Final Revision Part (2)', '2nd Sec Physics Final Revision First Term Part (2) Mr. Mahmoud El-Saeed', 1, 2, NULL, 60, 0, 0, '1736075885-346.jpg', 3, 60, 'scientific', 11, '2025-01-05 13:18:05', '2025-01-05 13:18:31'),
+(81, '2nd Sec Physics Final Revision Part (3)', '2nd Sec Physics Final Revision First Term Part (3) Mr. Mahmoud Al-Saeed', 1, 2, NULL, 60, 0, 0, '1736193590-492.jpg', 3, 60, 'scientific', 11, '2025-01-06 21:59:50', '2025-01-06 22:00:15'),
+(82, '1st Sec Science Final Revision Part 2', '1st Sec Integrated Science Final Revision 1st Term part 2 Mr. Ahmed El-Mahdy', 1, 1, NULL, 60, 0, 0, '1736316893-660.jpg', 3, 60, NULL, 17, '2025-01-08 08:14:53', '2025-01-08 08:16:30'),
+(83, '1st Sec Science Final Revision Part3', '1st Sec Integrated Science Final Revision 1st Term Part 3 Mr. Ahmed El-Mahdy', 1, 1, NULL, 60, 0, 0, '1736323035-126.jpg', 3, 60, NULL, 17, '2025-01-08 09:57:15', '2025-01-08 09:57:32'),
+(84, '1st sec Arabic Final Revision 1st Term', '1st sec Arabic Final Revision 1st Term Mr.Mohamed Bakry', 1, 1, NULL, 60, 0, 0, '1736581853-638.jpg', 3, 60, NULL, 7, '2025-01-11 09:50:53', '2025-01-11 09:51:08'),
+(85, '1st Sec English Final Revision 1st Term', '1st Sec English Final Revision 1st Term Mr.Gamal Abou Zied', 1, 1, NULL, 60, 0, 0, '1736582289-886.jpg', 3, 60, NULL, 8, '2025-01-11 09:58:09', '2025-01-11 09:58:33'),
+(86, 'Arabic 3rd primry mrs habiba', 'Arabic 3rd primry mrs habiba', 0, 3, NULL, 60, 0, 0, '1741209222-974.jpg', 50, 90, NULL, 23, '2025-03-05 23:13:42', '2025-03-05 23:13:42'),
+(87, 'Arabic 3rd Primary Ms.Habiba', 'نموذج كتابة قصة', 1, 333, NULL, 60, 0, 0, '1745241391-142.jpg', 5, 90, NULL, 23, '2025-03-05 23:52:34', '2025-04-21 15:16:31'),
+(88, '3rd primary Arabic Ms.Habiba', 'ثقافات الشعوب', 1, 333, NULL, 60, 0, 0, '1745242396-610.jpg', 5, 90, NULL, 23, '2025-03-06 20:39:34', '2025-04-21 15:33:56'),
+(89, '3rd Prim Arabic Ms.Habiba', 'مسرح المدرسة', 1, 333, NULL, 60, 0, 0, '1745241689-485.jpg', 5, 90, NULL, 23, '2025-03-06 20:44:19', '2025-04-21 15:21:29'),
+(90, 'Arabic 3rd Prim Ms. Asmaa', 'الغابة المتحجرة', 1, 333, NULL, 60, 0, 0, '1745238805-863.jpg', 5, 90, NULL, 24, '2025-03-06 21:11:39', '2025-04-21 14:33:44'),
+(91, 'Arabic 3rd Prim Ms. Naglaa', 'لعبة الكنز', 1, 333, NULL, 60, 0, 0, '1745243098-934.jpg', 5, 90, NULL, 22, '2025-03-06 21:23:20', '2025-04-21 15:44:58'),
+(92, 'Math 3rd Prim Ms. Yara', 'Associative Property', 1, 333, NULL, 60, 0, 0, '1741290565-550.jpg', 5, 88, NULL, 21, '2025-03-06 21:49:25', '2025-04-21 16:36:40'),
+(93, 'English 3rd Prim Ms.Hadeer', 'unit 7- Lesson1-where are the family?', 1, 333, NULL, 60, 0, 0, '1745253703-474.jpg', 5, 90, NULL, 19, '2025-03-06 22:09:54', '2025-04-21 18:42:27'),
+(94, 'English 3rd Prim Ms. Nada', 'Unit 8-Lesson1- At the museum', 1, 333, NULL, 65, 0, 0, '1745258554-674.jpg', 5, 90, NULL, 20, '2025-03-06 22:25:46', '2025-04-21 20:02:34'),
+(95, 'Math 3rd Prim (Evaluation)', 'Math 3rd Prim (Evaluation) Ms. Yara', 1, 333, NULL, 65, 0, 0, '1741293289-431.jpg', 5, 89, NULL, 21, '2025-03-06 22:34:49', '2025-03-06 22:35:04'),
+(96, 'Math 3rd Prim Ms. Yara', 'Complex Story Problems 4 + 3 = ?', 1, 333, NULL, 60, 0, 0, '1744884860-191.jpg', 5, 88, NULL, 21, '2025-04-17 12:14:20', '2025-04-21 16:36:54'),
+(97, 'Math 3rd Prim Ms. Yara', 'Relations between X and ÷', 1, 333, NULL, 60, 0, 0, '1744891936-281.jpg', 5, 88, NULL, 21, '2025-04-17 14:12:16', '2025-04-21 16:40:02'),
+(98, 'Math 3rd Prim Ms. Yara', 'Perimeter & Area', 1, 333, NULL, 60, 0, 0, '1744892094-111.jpg', 5, 88, NULL, 21, '2025-04-17 14:14:54', '2025-04-21 16:39:53'),
+(99, 'Ms. Nada Osama', 'Unit 8-Lesson 6&7', 1, 333, NULL, 65, 0, 0, '1744893160-929.jpg', 5, 90, NULL, 20, '2025-04-17 14:32:40', '2025-04-21 20:01:17'),
+(100, 'Ms. Nada Osama', 'Unit8-Lesson 5', 1, 333, NULL, 65, 0, 0, '1744893298-703.jpg', 5, 90, NULL, 20, '2025-04-17 14:34:58', '2025-04-21 19:59:43'),
+(101, 'Ms. Nada Osama', 'Unit8-Lesson 4-Phonics', 1, 333, NULL, 65, 0, 0, '1744893494-934.jpg', 5, 90, NULL, 20, '2025-04-17 14:38:14', '2025-04-21 19:58:24'),
+(102, 'Ms. Yara Mahmoud', 'Multiples of 11&12', 1, 333, NULL, 60, 0, 0, '1745245923-598.jpg', 5, 88, NULL, 21, '2025-04-17 15:07:41', '2025-04-21 16:32:03'),
+(103, 'Ms. Asmaa Ahmed', 'نشيد الأرض', 1, 333, NULL, 60, 0, 0, '1745233097-164.jpg', 5, 90, NULL, 24, '2025-04-21 12:58:17', '2025-04-21 13:03:35'),
+(106, 'Arabic 3rd Primary Ms.Habiba', 'المقايضة', 1, 333, NULL, 60, 0, 0, '1745234719-767.jpg', 5, 90, NULL, 23, '2025-04-21 13:25:19', '2025-04-21 13:25:38'),
+(107, 'Arabic 3rd Primary Ms.Habiba', 'تعاون الحي', 1, 333, NULL, 60, 0, 0, '1745236122-165.jpg', 5, 90, NULL, 23, '2025-04-21 13:48:42', '2025-04-21 13:49:59'),
+(108, 'Arabic 3rd Primary Ms.Habiba', 'رحلة الموز', 1, 333, NULL, 60, 0, 0, '1745236436-835.jpg', 5, 90, NULL, 23, '2025-04-21 13:53:56', '2025-04-21 15:08:50'),
+(109, 'Ms. Asmaa Ahmed', 'كتابة فقرة معلوماتية', 1, 333, NULL, 60, 0, 0, '1745238252-686.jpg', 5, 90, NULL, 24, '2025-04-21 14:24:12', '2025-04-21 14:45:13'),
+(110, 'Arabic 3rd Prim Ms. Asmaa', 'اختراع عجيب & نموذج كتابة اعلان', 1, 333, NULL, 60, 0, 0, '1745239501-198.jpg', 5, 88, NULL, 24, '2025-04-21 14:45:01', '2025-04-21 14:46:26'),
+(111, 'Arabic 3rd Prim Ms. Asmaa', 'اختي وقصة كفاح', 1, 333, NULL, 60, 0, 0, '1745239913-359.jpg', 5, 89, NULL, 24, '2025-04-21 14:51:53', '2025-04-21 14:53:28'),
+(112, 'Arabic 3rd Prim Ms. Asmaa', 'العصور الذهبية', 1, 333, NULL, 60, 0, 0, '1745240219-914.jpg', 5, 90, NULL, 24, '2025-04-21 14:56:59', '2025-04-21 14:58:00'),
+(113, 'Arabic 3rd Prim Ms. Asmaa', 'طالب مميز', 1, 333, NULL, 60, 0, 0, '1745240478-750.jpg', 3, 90, NULL, 24, '2025-04-21 15:01:18', '2025-04-21 15:27:52'),
+(114, '3rd primary Arabic Ms.Habiba', 'قصة الصديقتان', 1, 333, NULL, 60, 0, 0, '1745242562-541.jpg', 5, 87, NULL, 23, '2025-04-21 15:36:02', '2025-04-21 15:36:52'),
+(115, 'Ms. Yara Mahmoud', 'fractions 2', 1, 333, NULL, 60, 0, 0, '1745247282-443.jpg', 5, 87, NULL, 21, '2025-04-21 16:54:42', '2025-04-21 17:05:57'),
+(116, 'Ms. Yara Mahmoud', 'fractions 3', 1, 333, NULL, 60, 0, 0, '1745247549-759.jpg', 5, 88, NULL, 21, '2025-04-21 16:59:09', '2025-04-21 17:05:49'),
+(117, 'Ms. Yara Mahmoud', 'fractions', 1, 333, NULL, 60, 0, 0, '1745248061-812.jpg', 5, 90, NULL, 21, '2025-04-21 17:07:41', '2025-04-21 19:34:42'),
+(118, 'Ms. Yara Mahmoud', 'Telling the time', 1, 333, NULL, 60, 0, 0, '1745248276-420.jpg', 5, 90, NULL, 21, '2025-04-21 17:11:16', '2025-04-21 19:36:04'),
+(119, 'Arabic 3rd Prim Ms. Naglaa', 'قصة أستماع أناوأنت', 1, 333, NULL, 60, 0, 0, '1745248630-536.jpg', 5, 87, NULL, 22, '2025-04-21 17:17:10', '2025-04-21 17:22:30'),
+(120, 'Arabic 3rd Prim Ms. Naglaa', 'اللغة وسيلة تواصل', 1, 333, NULL, 60, 0, 0, '1745248632-464.jpg', 4, 90, NULL, 22, '2025-04-21 17:17:12', '2025-04-21 17:22:51'),
+(121, 'Ms. Naglaa Abd El-Hakeem', 'قصة صندوق الذكريات و انواع الاسم', 1, 333, NULL, 60, 0, 0, '1745249192-163.jpg', 5, 80, NULL, 22, '2025-04-21 17:26:32', '2025-04-21 17:27:17'),
+(122, 'Ms. Naglaa Abd El-Hakeem', 'كتابة فقرة اقناعية', 1, 333, NULL, 60, 0, 0, '1745249447-986.jpg', 5, 80, NULL, 22, '2025-04-21 17:30:47', '2025-04-21 17:30:59'),
+(123, 'Ms. Naglaa Abd El-Hakeem', 'نريد ان نلعب', 1, 333, NULL, 60, 0, 0, '1745250087-684.jpg', 3, 90, NULL, 22, '2025-04-21 17:41:27', '2025-04-21 17:50:50'),
+(124, 'Ms. Naglaa Abd El-Hakeem', 'نشيد اصحاب المهن', 1, 333, NULL, 60, 0, 0, '1745250460-775.jpg', 5, 87, NULL, 22, '2025-04-21 17:47:40', '2025-04-21 18:33:39'),
+(125, 'Ms. Naglaa Abd El-Hakeem', 'نموذج كتابة الرأي', 1, 333, NULL, 60, 0, 0, '1745250563-296.jpg', 5, 90, NULL, 22, '2025-04-21 17:49:23', '2025-04-21 18:32:53'),
+(126, 'English 3rd Prim Ms.Hadeer', 'unite 7-', 1, 333, NULL, 60, 0, 0, '1745254524-214.jpg', 5, 88, NULL, 19, '2025-04-21 18:55:24', '2025-04-23 13:45:45'),
+(127, 'English 3rd Prim Ms.Hadeer', 'unit 7-', 1, 333, NULL, 60, 0, 0, '1745256235-424.jpg', 5, 90, NULL, 19, '2025-04-21 19:23:55', '2025-04-23 13:45:51'),
+(129, 'English 3rd Prim Ms.Hadeer', 'unit 9 lesson 1', 1, 333, NULL, 60, 0, 0, '1745407867-485.jpg', 5, 90, NULL, 19, '2025-04-23 13:23:38', '2025-04-23 13:31:07'),
+(130, 'English 3rd Prim Ms.Hadeer', 'unit 9 - lesson2 & 3', 1, 333, NULL, 60, 0, 0, '1745409082-828.jpg', 5, 90, NULL, 19, '2025-04-23 13:51:22', '2025-04-23 13:52:44'),
+(131, 'English 3rd Prim Ms.Hadeer', 'unit 9- lesson 4 ,5 ,6', 1, 333, NULL, 60, 0, 0, '1745409328-216.jpg', 5, 90, NULL, 19, '2025-04-23 13:55:28', '2025-04-23 13:56:32'),
+(132, 'English 3rd Prim Ms.Hadeer', 'unit 9 - lesson 7', 1, 333, NULL, 60, 0, 0, '1745409485-853.jpg', 5, 90, NULL, 19, '2025-04-23 13:58:05', '2025-04-23 13:58:56'),
+(133, 'Ms. Nada Osama', 'unit 10 lesson 1-2', 1, 333, NULL, 60, 0, 0, '1745409743-576.jpg', 5, 80, NULL, 20, '2025-04-23 14:02:23', '2025-04-23 14:03:08'),
+(134, 'Ms. Nada Osama', 'English unit 10 lesson 3', 1, 333, NULL, 60, 0, 0, '1745829107-922.jpg', 5, 80, NULL, 20, '2025-04-28 11:31:47', '2025-04-28 11:36:20'),
+(135, 'Ms. Nada Osama', 'English unit 10', 1, 333, NULL, 60, 0, 0, '1745829259-591.jpg', 5, 80, NULL, 20, '2025-04-28 11:34:19', '2025-04-28 11:36:26'),
+(136, 'Ms. Nada Osama', 'english unit 10 lesson 7', 1, 333, NULL, 60, 0, 0, '1745829491-700.jpg', 5, 80, NULL, 20, '2025-04-28 11:38:11', '2025-04-28 11:38:17'),
+(137, 'English 3rd Prim Ms.Hadeer', 'unit 11 -lesson 1', 1, 333, NULL, 60, 0, 0, '1747218798-226.jpg', 5, 90, NULL, 19, '2025-05-14 13:33:18', '2025-05-14 13:39:34'),
+(138, 'English 3rd Prim Ms.Hadeer', 'unit 11 lesson  2 ,3', 1, 333, NULL, 60, 0, 0, '1747218983-245.jpg', 5, 90, NULL, 19, '2025-05-14 13:36:23', '2025-05-14 13:36:33'),
+(139, 'English 3rd Prim Ms.Hadeer', 'unit 11 leson 4......', 1, 333, NULL, 60, 0, 0, '1747219373-335.jpg', 5, 90, NULL, 19, '2025-05-14 13:42:54', '2025-05-14 13:43:00'),
+(140, 'English 3rd Prim Ms.Hadeer', 'unit 11 lesson 6', 1, 333, NULL, 60, 0, 0, '1747219535-920.jpg', 5, 90, NULL, 19, '2025-05-14 13:45:35', '2025-05-14 13:46:05'),
+(141, 'Ms. Nada Osama', 'Unit 12 Lesson 1-2-3-4', 1, 333, NULL, 60, 0, 0, '1747219954-807.jpg', 5, 90, NULL, 20, '2025-05-14 13:52:34', '2025-05-15 13:20:22'),
+(142, 'Ms. Nada Osama', 'unit 12 lesson 5-6', 1, 333, NULL, 60, 0, 0, '1747219992-427.jpg', 5, 90, NULL, 20, '2025-05-14 13:53:12', '2025-05-15 13:20:28'),
+(146, 'tesss', 'wwwww', 0, 333, NULL, 222, 0, 0, '1754128418-115.png', 222, 219, NULL, 26, '2025-08-02 12:53:38', '2025-08-02 12:53:38'),
+(148, 'test', 'qqqqq', 0, 22, 32, 222, 0, 0, '1754133119-835.png', 222, 222, NULL, 26, '2025-08-02 14:11:59', '2025-08-02 14:11:59'),
+(151, 'test', 'wwwww', 1, 1, 35, 12, 0, 0, '1754306313-303.png', 22, 22, NULL, 10, '2025-08-04 14:18:33', '2025-08-04 14:18:44');
 
 -- --------------------------------------------------------
 
@@ -886,6 +1123,7 @@ INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) 
 (8, 'App\\Models\\Admin', 41),
 (8, 'App\\Models\\Admin', 42),
 (8, 'App\\Models\\Admin', 43),
+(8, 'App\\Models\\Admin', 50),
 (9, 'App\\Models\\Admin', 38),
 (9, 'App\\Models\\Admin', 39),
 (9, 'App\\Models\\Admin', 40),
@@ -893,66 +1131,79 @@ INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) 
 (9, 'App\\Models\\Admin', 42),
 (9, 'App\\Models\\Admin', 43),
 (9, 'App\\Models\\Admin', 47),
+(9, 'App\\Models\\Admin', 50),
 (10, 'App\\Models\\Admin', 38),
 (10, 'App\\Models\\Admin', 39),
 (10, 'App\\Models\\Admin', 40),
 (10, 'App\\Models\\Admin', 41),
 (10, 'App\\Models\\Admin', 42),
 (10, 'App\\Models\\Admin', 43),
+(10, 'App\\Models\\Admin', 50),
 (11, 'App\\Models\\Admin', 38),
 (11, 'App\\Models\\Admin', 39),
 (11, 'App\\Models\\Admin', 40),
 (11, 'App\\Models\\Admin', 41),
 (11, 'App\\Models\\Admin', 42),
 (11, 'App\\Models\\Admin', 43),
+(11, 'App\\Models\\Admin', 50),
 (12, 'App\\Models\\Admin', 38),
 (12, 'App\\Models\\Admin', 39),
 (12, 'App\\Models\\Admin', 40),
 (12, 'App\\Models\\Admin', 41),
 (12, 'App\\Models\\Admin', 42),
 (12, 'App\\Models\\Admin', 43),
+(12, 'App\\Models\\Admin', 50),
 (13, 'App\\Models\\Admin', 38),
 (13, 'App\\Models\\Admin', 39),
 (13, 'App\\Models\\Admin', 40),
 (13, 'App\\Models\\Admin', 41),
 (13, 'App\\Models\\Admin', 42),
 (13, 'App\\Models\\Admin', 43),
+(13, 'App\\Models\\Admin', 50),
 (14, 'App\\Models\\Admin', 38),
 (14, 'App\\Models\\Admin', 39),
 (14, 'App\\Models\\Admin', 40),
 (14, 'App\\Models\\Admin', 41),
 (14, 'App\\Models\\Admin', 42),
 (14, 'App\\Models\\Admin', 43),
+(14, 'App\\Models\\Admin', 48),
+(14, 'App\\Models\\Admin', 50),
 (15, 'App\\Models\\Admin', 38),
 (15, 'App\\Models\\Admin', 39),
 (15, 'App\\Models\\Admin', 40),
 (15, 'App\\Models\\Admin', 41),
 (15, 'App\\Models\\Admin', 42),
 (15, 'App\\Models\\Admin', 43),
+(15, 'App\\Models\\Admin', 50),
 (16, 'App\\Models\\Admin', 38),
 (16, 'App\\Models\\Admin', 39),
 (16, 'App\\Models\\Admin', 40),
 (16, 'App\\Models\\Admin', 41),
 (16, 'App\\Models\\Admin', 42),
 (16, 'App\\Models\\Admin', 43),
+(16, 'App\\Models\\Admin', 50),
 (17, 'App\\Models\\Admin', 38),
 (17, 'App\\Models\\Admin', 39),
 (17, 'App\\Models\\Admin', 40),
 (17, 'App\\Models\\Admin', 41),
 (17, 'App\\Models\\Admin', 42),
 (17, 'App\\Models\\Admin', 43),
+(17, 'App\\Models\\Admin', 50),
 (18, 'App\\Models\\Admin', 38),
 (18, 'App\\Models\\Admin', 39),
 (18, 'App\\Models\\Admin', 40),
 (18, 'App\\Models\\Admin', 41),
 (18, 'App\\Models\\Admin', 42),
 (18, 'App\\Models\\Admin', 43),
+(18, 'App\\Models\\Admin', 49),
+(18, 'App\\Models\\Admin', 50),
 (20, 'App\\Models\\Admin', 38),
 (20, 'App\\Models\\Admin', 39),
 (20, 'App\\Models\\Admin', 40),
 (20, 'App\\Models\\Admin', 41),
 (20, 'App\\Models\\Admin', 42),
 (20, 'App\\Models\\Admin', 43),
+(20, 'App\\Models\\Admin', 50),
 (21, 'App\\Models\\Admin', 38),
 (21, 'App\\Models\\Admin', 39),
 (21, 'App\\Models\\Admin', 40),
@@ -960,120 +1211,149 @@ INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) 
 (21, 'App\\Models\\Admin', 42),
 (21, 'App\\Models\\Admin', 43),
 (21, 'App\\Models\\Admin', 47),
+(21, 'App\\Models\\Admin', 50),
 (23, 'App\\Models\\Admin', 38),
 (23, 'App\\Models\\Admin', 39),
 (23, 'App\\Models\\Admin', 40),
 (23, 'App\\Models\\Admin', 41),
 (23, 'App\\Models\\Admin', 42),
 (23, 'App\\Models\\Admin', 43),
+(23, 'App\\Models\\Admin', 50),
+(23, 'App\\Models\\Admin', 51),
 (24, 'App\\Models\\Admin', 38),
 (24, 'App\\Models\\Admin', 39),
 (24, 'App\\Models\\Admin', 40),
 (24, 'App\\Models\\Admin', 41),
 (24, 'App\\Models\\Admin', 42),
 (24, 'App\\Models\\Admin', 43),
+(24, 'App\\Models\\Admin', 50),
 (25, 'App\\Models\\Admin', 38),
 (25, 'App\\Models\\Admin', 39),
 (25, 'App\\Models\\Admin', 40),
 (25, 'App\\Models\\Admin', 41),
 (25, 'App\\Models\\Admin', 42),
 (25, 'App\\Models\\Admin', 43),
+(25, 'App\\Models\\Admin', 50),
 (26, 'App\\Models\\Admin', 38),
 (26, 'App\\Models\\Admin', 39),
 (26, 'App\\Models\\Admin', 40),
 (26, 'App\\Models\\Admin', 41),
 (26, 'App\\Models\\Admin', 42),
 (26, 'App\\Models\\Admin', 43),
+(26, 'App\\Models\\Admin', 50),
 (28, 'App\\Models\\Admin', 38),
 (28, 'App\\Models\\Admin', 39),
 (28, 'App\\Models\\Admin', 40),
 (28, 'App\\Models\\Admin', 41),
 (28, 'App\\Models\\Admin', 42),
 (28, 'App\\Models\\Admin', 43),
+(28, 'App\\Models\\Admin', 50),
 (31, 'App\\Models\\Admin', 38),
 (31, 'App\\Models\\Admin', 39),
 (31, 'App\\Models\\Admin', 40),
 (31, 'App\\Models\\Admin', 41),
 (31, 'App\\Models\\Admin', 42),
 (31, 'App\\Models\\Admin', 43),
+(31, 'App\\Models\\Admin', 49),
+(31, 'App\\Models\\Admin', 50),
 (32, 'App\\Models\\Admin', 38),
 (32, 'App\\Models\\Admin', 39),
 (32, 'App\\Models\\Admin', 40),
 (32, 'App\\Models\\Admin', 41),
 (32, 'App\\Models\\Admin', 42),
 (32, 'App\\Models\\Admin', 43),
+(32, 'App\\Models\\Admin', 50),
 (33, 'App\\Models\\Admin', 38),
 (33, 'App\\Models\\Admin', 39),
 (33, 'App\\Models\\Admin', 40),
 (33, 'App\\Models\\Admin', 41),
 (33, 'App\\Models\\Admin', 42),
 (33, 'App\\Models\\Admin', 43),
+(33, 'App\\Models\\Admin', 50),
 (34, 'App\\Models\\Admin', 38),
 (34, 'App\\Models\\Admin', 39),
 (34, 'App\\Models\\Admin', 40),
 (34, 'App\\Models\\Admin', 41),
 (34, 'App\\Models\\Admin', 42),
 (34, 'App\\Models\\Admin', 43),
+(34, 'App\\Models\\Admin', 50),
 (35, 'App\\Models\\Admin', 38),
 (35, 'App\\Models\\Admin', 39),
 (35, 'App\\Models\\Admin', 40),
 (35, 'App\\Models\\Admin', 41),
 (35, 'App\\Models\\Admin', 42),
 (35, 'App\\Models\\Admin', 43),
+(35, 'App\\Models\\Admin', 50),
 (36, 'App\\Models\\Admin', 38),
 (36, 'App\\Models\\Admin', 39),
 (36, 'App\\Models\\Admin', 40),
 (36, 'App\\Models\\Admin', 41),
 (36, 'App\\Models\\Admin', 42),
 (36, 'App\\Models\\Admin', 43),
+(36, 'App\\Models\\Admin', 48),
+(36, 'App\\Models\\Admin', 50),
 (37, 'App\\Models\\Admin', 38),
 (37, 'App\\Models\\Admin', 39),
 (37, 'App\\Models\\Admin', 40),
 (37, 'App\\Models\\Admin', 41),
 (37, 'App\\Models\\Admin', 42),
 (37, 'App\\Models\\Admin', 43),
+(37, 'App\\Models\\Admin', 48),
+(37, 'App\\Models\\Admin', 50),
 (38, 'App\\Models\\Admin', 38),
 (38, 'App\\Models\\Admin', 39),
 (38, 'App\\Models\\Admin', 40),
 (38, 'App\\Models\\Admin', 41),
 (38, 'App\\Models\\Admin', 42),
 (38, 'App\\Models\\Admin', 43),
+(38, 'App\\Models\\Admin', 48),
+(38, 'App\\Models\\Admin', 50),
 (39, 'App\\Models\\Admin', 38),
 (39, 'App\\Models\\Admin', 39),
 (39, 'App\\Models\\Admin', 40),
 (39, 'App\\Models\\Admin', 41),
 (39, 'App\\Models\\Admin', 42),
 (39, 'App\\Models\\Admin', 43),
+(39, 'App\\Models\\Admin', 50),
 (40, 'App\\Models\\Admin', 38),
 (40, 'App\\Models\\Admin', 39),
 (40, 'App\\Models\\Admin', 40),
 (40, 'App\\Models\\Admin', 41),
 (40, 'App\\Models\\Admin', 42),
 (40, 'App\\Models\\Admin', 43),
+(40, 'App\\Models\\Admin', 48),
+(40, 'App\\Models\\Admin', 50),
 (41, 'App\\Models\\Admin', 38),
 (41, 'App\\Models\\Admin', 39),
 (41, 'App\\Models\\Admin', 40),
 (41, 'App\\Models\\Admin', 41),
 (41, 'App\\Models\\Admin', 42),
 (41, 'App\\Models\\Admin', 43),
+(41, 'App\\Models\\Admin', 48),
+(41, 'App\\Models\\Admin', 50),
 (42, 'App\\Models\\Admin', 38),
 (42, 'App\\Models\\Admin', 39),
 (42, 'App\\Models\\Admin', 40),
 (42, 'App\\Models\\Admin', 41),
 (42, 'App\\Models\\Admin', 42),
 (42, 'App\\Models\\Admin', 43),
+(42, 'App\\Models\\Admin', 50),
 (43, 'App\\Models\\Admin', 38),
 (43, 'App\\Models\\Admin', 39),
 (43, 'App\\Models\\Admin', 40),
 (43, 'App\\Models\\Admin', 41),
 (43, 'App\\Models\\Admin', 42),
 (43, 'App\\Models\\Admin', 43),
+(43, 'App\\Models\\Admin', 48),
+(43, 'App\\Models\\Admin', 50),
 (44, 'App\\Models\\Admin', 38),
 (44, 'App\\Models\\Admin', 39),
 (44, 'App\\Models\\Admin', 40),
 (44, 'App\\Models\\Admin', 41),
 (44, 'App\\Models\\Admin', 42),
 (44, 'App\\Models\\Admin', 43),
+(44, 'App\\Models\\Admin', 48),
+(44, 'App\\Models\\Admin', 50),
 (45, 'App\\Models\\Admin', 38),
 (45, 'App\\Models\\Admin', 39),
 (45, 'App\\Models\\Admin', 40),
@@ -1081,6 +1361,8 @@ INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) 
 (45, 'App\\Models\\Admin', 42),
 (45, 'App\\Models\\Admin', 43),
 (45, 'App\\Models\\Admin', 44),
+(45, 'App\\Models\\Admin', 48),
+(45, 'App\\Models\\Admin', 50),
 (46, 'App\\Models\\Admin', 38),
 (46, 'App\\Models\\Admin', 39),
 (46, 'App\\Models\\Admin', 40),
@@ -1088,84 +1370,100 @@ INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) 
 (46, 'App\\Models\\Admin', 42),
 (46, 'App\\Models\\Admin', 43),
 (46, 'App\\Models\\Admin', 44),
+(46, 'App\\Models\\Admin', 48),
+(46, 'App\\Models\\Admin', 50),
 (47, 'App\\Models\\Admin', 38),
 (47, 'App\\Models\\Admin', 39),
 (47, 'App\\Models\\Admin', 40),
 (47, 'App\\Models\\Admin', 41),
 (47, 'App\\Models\\Admin', 42),
 (47, 'App\\Models\\Admin', 43),
+(47, 'App\\Models\\Admin', 50),
 (48, 'App\\Models\\Admin', 38),
 (48, 'App\\Models\\Admin', 39),
 (48, 'App\\Models\\Admin', 40),
 (48, 'App\\Models\\Admin', 41),
 (48, 'App\\Models\\Admin', 42),
 (48, 'App\\Models\\Admin', 43),
+(48, 'App\\Models\\Admin', 50),
 (49, 'App\\Models\\Admin', 38),
 (49, 'App\\Models\\Admin', 39),
 (49, 'App\\Models\\Admin', 40),
 (49, 'App\\Models\\Admin', 41),
 (49, 'App\\Models\\Admin', 42),
 (49, 'App\\Models\\Admin', 43),
+(49, 'App\\Models\\Admin', 50),
 (50, 'App\\Models\\Admin', 38),
 (50, 'App\\Models\\Admin', 39),
 (50, 'App\\Models\\Admin', 40),
 (50, 'App\\Models\\Admin', 41),
 (50, 'App\\Models\\Admin', 42),
 (50, 'App\\Models\\Admin', 43),
+(50, 'App\\Models\\Admin', 50),
 (51, 'App\\Models\\Admin', 38),
 (51, 'App\\Models\\Admin', 39),
 (51, 'App\\Models\\Admin', 40),
 (51, 'App\\Models\\Admin', 41),
 (51, 'App\\Models\\Admin', 42),
 (51, 'App\\Models\\Admin', 43),
+(51, 'App\\Models\\Admin', 50),
 (52, 'App\\Models\\Admin', 38),
 (52, 'App\\Models\\Admin', 39),
 (52, 'App\\Models\\Admin', 40),
 (52, 'App\\Models\\Admin', 41),
 (52, 'App\\Models\\Admin', 42),
 (52, 'App\\Models\\Admin', 43),
+(52, 'App\\Models\\Admin', 50),
 (54, 'App\\Models\\Admin', 38),
 (54, 'App\\Models\\Admin', 39),
 (54, 'App\\Models\\Admin', 40),
 (54, 'App\\Models\\Admin', 41),
 (54, 'App\\Models\\Admin', 42),
 (54, 'App\\Models\\Admin', 43),
+(54, 'App\\Models\\Admin', 50),
 (55, 'App\\Models\\Admin', 38),
 (55, 'App\\Models\\Admin', 39),
 (55, 'App\\Models\\Admin', 40),
 (55, 'App\\Models\\Admin', 41),
 (55, 'App\\Models\\Admin', 42),
 (55, 'App\\Models\\Admin', 43),
+(55, 'App\\Models\\Admin', 50),
 (56, 'App\\Models\\Admin', 38),
 (56, 'App\\Models\\Admin', 39),
 (56, 'App\\Models\\Admin', 40),
 (56, 'App\\Models\\Admin', 41),
 (56, 'App\\Models\\Admin', 42),
 (56, 'App\\Models\\Admin', 43),
+(56, 'App\\Models\\Admin', 50),
 (57, 'App\\Models\\Admin', 38),
 (57, 'App\\Models\\Admin', 39),
 (57, 'App\\Models\\Admin', 40),
 (57, 'App\\Models\\Admin', 41),
 (57, 'App\\Models\\Admin', 42),
 (57, 'App\\Models\\Admin', 43),
+(57, 'App\\Models\\Admin', 50),
 (58, 'App\\Models\\Admin', 38),
 (58, 'App\\Models\\Admin', 39),
 (58, 'App\\Models\\Admin', 40),
 (58, 'App\\Models\\Admin', 41),
 (58, 'App\\Models\\Admin', 42),
 (58, 'App\\Models\\Admin', 43),
+(58, 'App\\Models\\Admin', 50),
 (59, 'App\\Models\\Admin', 38),
 (59, 'App\\Models\\Admin', 39),
 (59, 'App\\Models\\Admin', 40),
 (59, 'App\\Models\\Admin', 41),
 (59, 'App\\Models\\Admin', 42),
 (59, 'App\\Models\\Admin', 43),
+(59, 'App\\Models\\Admin', 50),
 (60, 'App\\Models\\Admin', 38),
 (60, 'App\\Models\\Admin', 39),
 (60, 'App\\Models\\Admin', 40),
 (60, 'App\\Models\\Admin', 41),
 (60, 'App\\Models\\Admin', 42),
-(60, 'App\\Models\\Admin', 43);
+(60, 'App\\Models\\Admin', 43),
+(60, 'App\\Models\\Admin', 49),
+(60, 'App\\Models\\Admin', 50);
 
 -- --------------------------------------------------------
 
@@ -1185,7 +1483,7 @@ CREATE TABLE `model_has_roles` (
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (9, 'App\\Models\\Admin', 1),
-(9, 'App\\Models\\Admin', 37);
+(9, 'App\\Models\\Admin', 44);
 
 -- --------------------------------------------------------
 
@@ -2086,7 +2384,499 @@ INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `n
 (773, 'App\\Models\\Admin', 1, 'prodigy', 'bc65f110d41755f72ff84336edf101d0b7d44ba2bb887f35e228cb19b948998c', '[\"admin\"]', '2024-10-12 12:05:28', NULL, '2024-10-12 12:03:08', '2024-10-12 12:05:28'),
 (774, 'App\\Models\\Teacher', 3, 'omarahmed', '3e58b7b5dbb01caaeeacca090d4ec4927d31ef718e1b382d00075547c7d5521b', '[\"admin\"]', '2024-10-12 12:33:56', NULL, '2024-10-12 12:05:40', '2024-10-12 12:33:56'),
 (775, 'App\\Models\\Teacher', 3, 'omarahmed', '30ba33af760aa41ba88e909f2cfa2b90763e0e5730ba61867d38cc3f2ccb39d6', '[\"admin\"]', '2024-10-12 12:51:33', NULL, '2024-10-12 12:28:36', '2024-10-12 12:51:33'),
-(776, 'App\\Models\\Admin', 1, 'prodigy', '9c0f22b127f9e85ac93a5b06fb82dcab571c5674fe2ba9740e9a9f3678dda379', '[\"admin\"]', '2024-10-14 21:19:17', NULL, '2024-10-14 21:09:50', '2024-10-14 21:19:17');
+(776, 'App\\Models\\Admin', 1, 'prodigy', '9c0f22b127f9e85ac93a5b06fb82dcab571c5674fe2ba9740e9a9f3678dda379', '[\"admin\"]', '2024-10-14 21:19:17', NULL, '2024-10-14 21:09:50', '2024-10-14 21:19:17'),
+(777, 'App\\Models\\Admin', 1, 'prodigy', 'dad0e3cf79d801bfa5335c255a6b2aa831643102debdda5083ba6867bc414f98', '[\"admin\"]', '2024-10-22 11:14:35', NULL, '2024-10-22 11:06:59', '2024-10-22 11:14:35'),
+(778, 'App\\Models\\Admin', 1, 'prodigy', '123313f0b0a9bc94ec69e0e7bb642648dd4e6064e78510b73bfe35f580dee4c5', '[\"admin\"]', '2024-10-22 13:29:28', NULL, '2024-10-22 12:18:28', '2024-10-22 13:29:28'),
+(779, 'App\\Models\\Admin', 1, 'prodigy', 'b286f2047609be257951f240711c78392b7c8f7b3b3e96505d6f46c4a97b14fb', '[\"admin\"]', '2024-10-22 15:27:34', NULL, '2024-10-22 14:06:41', '2024-10-22 15:27:34'),
+(780, 'App\\Models\\Admin', 1, 'Prodigy', 'f2fbb5fd7592ffc0bc9fe4c928f024a9b136c824a91efdd545fa49b4b3bd6a34', '[\"admin\"]', '2024-10-22 14:37:17', NULL, '2024-10-22 14:34:54', '2024-10-22 14:37:17'),
+(781, 'App\\Models\\Admin', 1, 'Prodigy', '0471ac5aaf8f99ac7de6ddd0dcf8b99c426dc6e182880397cac112496ea259f0', '[\"admin\"]', '2024-10-22 14:38:17', NULL, '2024-10-22 14:38:16', '2024-10-22 14:38:17'),
+(782, 'App\\Models\\Admin', 44, 'test', '18825cb94ce5a9fb0073c67606d05b2e451333bdad5a8ed5bce4b6bcc781386a', '[\"admin\"]', '2024-10-27 09:30:23', NULL, '2024-10-27 09:30:23', '2024-10-27 09:30:23'),
+(783, 'App\\Models\\Admin', 44, 'omar', '187231970c137af4c17877318dd89a0584100f989de05e3947f0ee39bd57665d', '[\"admin\"]', '2024-10-27 09:32:37', NULL, '2024-10-27 09:31:18', '2024-10-27 09:32:37'),
+(784, 'App\\Models\\Student', 266, 'API TOKEN', 'f1b7d26273bb0eddf8c5b876c07b56a77d9c9bf401da5dafea2c064a07fa8859', '[\"*\"]', NULL, NULL, '2024-10-27 13:15:19', '2024-10-27 13:15:19'),
+(785, 'App\\Models\\Admin', 44, 'omar', 'a6bed6a831f055f5d44565c26b22aa2354dd7a2b5a6dce2ada05804c6f8730c6', '[\"admin\"]', '2024-10-27 13:16:17', NULL, '2024-10-27 13:15:59', '2024-10-27 13:16:17'),
+(786, 'App\\Models\\Student', 266, '01148375189', 'd1598e77fc87557fe00bbdd5c52058d9ee6e8001e36a785f6b030a7c63caa6a1', '[\"student\"]', '2024-10-27 13:52:45', NULL, '2024-10-27 13:46:43', '2024-10-27 13:52:45'),
+(787, 'App\\Models\\Student', 266, '01148375189', '60414633b86425855a2b713028438f8659e55ef6dc435aeba08dc04058765c90', '[\"student\"]', '2024-10-27 13:57:13', NULL, '2024-10-27 13:53:42', '2024-10-27 13:57:13'),
+(788, 'App\\Models\\Student', 266, '01148375189', '448feb656dfef0a6a4c8fcd85cc8440e3bf659285c8cbae9fced8f1e0caf445d', '[\"student\"]', '2024-10-27 14:38:21', NULL, '2024-10-27 14:38:20', '2024-10-27 14:38:21'),
+(789, 'App\\Models\\Student', 266, '01148375189', '63a49e7905c4c8428dc697ced68bffa0b3f8a7dbca4e42940559ae5cf2e25aca', '[\"student\"]', '2024-10-27 14:49:26', NULL, '2024-10-27 14:49:26', '2024-10-27 14:49:26'),
+(790, 'App\\Models\\Student', 266, '01148375189', '3701d43bd9d526bf9927fa0e3cf547f2b4e1333d13c126292ab7e327e32c66fe', '[\"student\"]', '2024-10-27 15:17:31', NULL, '2024-10-27 14:55:03', '2024-10-27 15:17:31'),
+(791, 'App\\Models\\Student', 266, '01148375189', '9c5cb7d5961716a89750e4ecdc5cc31cadaf95f365696c88b07bca6685ad4e17', '[\"student\"]', '2024-10-27 15:08:20', NULL, '2024-10-27 15:05:16', '2024-10-27 15:08:20'),
+(792, 'App\\Models\\Admin', 1, 'Prodigy', 'df989048c22420f88c8555946ac1454879a6abb5a893077ed3f5c5b763bac9d9', '[\"admin\"]', '2024-11-01 21:54:16', NULL, '2024-10-28 12:22:15', '2024-11-01 21:54:16'),
+(793, 'App\\Models\\Admin', 1, 'Prodigy', 'd8fd7e22f5189935e4d0911e720202a894d4d28908589c37593a0ca2f7201223', '[\"admin\"]', '2024-10-28 22:17:28', NULL, '2024-10-28 21:58:56', '2024-10-28 22:17:28'),
+(794, 'App\\Models\\Admin', 44, 'omar', 'f30bbc44a4237b5fd54dfb81b97ec7f2808fab101d30f10c844702f4e9c20fa7', '[\"admin\"]', '2024-10-29 10:37:06', NULL, '2024-10-29 09:54:38', '2024-10-29 10:37:06'),
+(795, 'App\\Models\\Admin', 44, 'omar', '838abd04e033ebd8704353844ea1c13d60edffd3049bc4c6438736ec68bfbc9f', '[\"admin\"]', '2024-10-29 10:44:46', NULL, '2024-10-29 10:44:22', '2024-10-29 10:44:46'),
+(796, 'App\\Models\\Admin', 1, 'Prodigy', '09daea7cf0182f74d76ae00d39746fb9a1ae6ed4e86f6f1e3849b63a6a6eca0e', '[\"admin\"]', '2024-11-01 22:38:35', NULL, '2024-11-01 21:56:16', '2024-11-01 22:38:35'),
+(797, 'App\\Models\\Admin', 44, 'omar', '1e13b347beab4c992d694a93c94c23ea27a34197acb518e2dea8bfd214f5787e', '[\"admin\"]', '2024-11-06 10:43:51', NULL, '2024-11-06 10:18:08', '2024-11-06 10:43:51'),
+(798, 'App\\Models\\Admin', 44, 'omar', 'ab719baea6da1cbe498e03763b2110f9e39e4ba4e67d88820395132692f29614', '[\"admin\"]', '2024-11-06 12:17:09', NULL, '2024-11-06 10:18:15', '2024-11-06 12:17:09'),
+(799, 'App\\Models\\Teacher', 2, 'omar123', '6c46947cc34498aedcd757138ce1fae91a184cdc8c7cc2ea223f93be9733622f', '[\"admin\"]', '2024-11-06 11:04:55', NULL, '2024-11-06 10:20:28', '2024-11-06 11:04:55'),
+(800, 'App\\Models\\Teacher', 2, 'omar123', '93b95d2efaa6697f62aea59ef18a0c176d95c5c6c7059c3b6962a4fb0679a89f', '[\"admin\"]', '2024-11-06 11:53:47', NULL, '2024-11-06 11:53:46', '2024-11-06 11:53:47'),
+(801, 'App\\Models\\Admin', 44, 'omar', '51b2ac4091713aeab3baf1ad58f3c7d57074fa946c57adc4d70392ec26e298a1', '[\"admin\"]', '2024-11-07 14:14:31', NULL, '2024-11-06 13:24:31', '2024-11-07 14:14:31'),
+(802, 'App\\Models\\Admin', 44, 'omar', 'd838b55e6a40af0529f98e8f162d823dc3a8ca731fa0a75df19d4d5cf2177490', '[\"admin\"]', '2024-11-06 14:04:43', NULL, '2024-11-06 14:03:56', '2024-11-06 14:04:43'),
+(803, 'App\\Models\\Admin', 44, 'omar', '131a5624e1e58ae7f954155ce8e01b5e051d4821ca74efee4ee648439633118e', '[\"admin\"]', '2024-11-08 17:31:05', NULL, '2024-11-08 15:29:03', '2024-11-08 17:31:05'),
+(804, 'App\\Models\\Admin', 44, 'omar', 'b8ae7c61653c9b65f2871a819a07d8d9035d9a9e1fece2234e7e60a9444ee4d4', '[\"admin\"]', '2024-11-08 17:31:53', NULL, '2024-11-08 17:31:29', '2024-11-08 17:31:53'),
+(805, 'App\\Models\\Student', 265, '01016046298', '30d0e8c999f8efb0505156963d68d62644689337a377c411b7d5dc3e621604a1', '[\"student\"]', '2024-11-08 17:41:57', NULL, '2024-11-08 17:32:01', '2024-11-08 17:41:57'),
+(806, 'App\\Models\\Admin', 1, 'Prodigy', '97d044aec8188d91fed4fea20117d5267a436a903c20246d0f5073cc3e242955', '[\"admin\"]', '2024-11-14 14:02:23', NULL, '2024-11-09 18:21:39', '2024-11-14 14:02:23'),
+(807, 'App\\Models\\Admin', 1, 'Prodigy', 'cc0509645d515c43a3356f38843c43ce8c9d2222e88b4c3d5a9b9962fc33667b', '[\"admin\"]', '2024-11-15 22:10:49', NULL, '2024-11-09 21:29:28', '2024-11-15 22:10:49'),
+(808, 'App\\Models\\Admin', 1, 'Prodigy', '01bcae9c2bf393997ef9947578b34df1eebfb35acd91a25171f69bd78e81f19a', '[\"admin\"]', '2024-11-09 21:35:14', NULL, '2024-11-09 21:33:58', '2024-11-09 21:35:14'),
+(809, 'App\\Models\\Student', 266, '01148375189', '84e3946101630378f042dab254761c487038f36cda0f85a6bd3c7f83a528cf19', '[\"student\"]', '2024-11-10 13:49:09', NULL, '2024-11-10 13:09:59', '2024-11-10 13:49:09'),
+(810, 'App\\Models\\Admin', 44, 'omar', '97fdd2cebd0fbaeaed63832bc0f7077919cc5ea948cc50b1bd1c851902d2ad8c', '[\"admin\"]', '2024-11-10 14:02:29', NULL, '2024-11-10 13:51:41', '2024-11-10 14:02:29'),
+(811, 'App\\Models\\Admin', 44, 'omar', '2eb1cef2e1233dec98554fd597b371c1ac3129868dc7323bf4b13056f5622053', '[\"admin\"]', '2024-11-10 15:21:40', NULL, '2024-11-10 15:21:33', '2024-11-10 15:21:40'),
+(812, 'App\\Models\\Student', 267, 'API TOKEN', 'bf8255641074c6f7cde99af1dfb5fd81162988a9e9e352237919ac6864bf2ece', '[\"*\"]', NULL, NULL, '2024-11-13 09:09:27', '2024-11-13 09:09:27'),
+(813, 'App\\Models\\Admin', 44, 'omar', '46da2c18dd52c479101d6a6d6a27762ccf9ca210177a2c725e4353840cb5d729', '[\"admin\"]', '2024-11-13 15:00:31', NULL, '2024-11-13 14:45:37', '2024-11-13 15:00:31'),
+(814, 'App\\Models\\Admin', 44, 'omar', '67145ff49d34700ad488068eed111a745d58315fc49caf59506115ad1c991c7b', '[\"admin\"]', '2024-11-13 15:08:59', NULL, '2024-11-13 15:03:16', '2024-11-13 15:08:59'),
+(815, 'App\\Models\\Admin', 44, 'omar', 'bb3ebcd98e941cdbe27b3c6859ee20894154c31618fecbf987fd1798e1efd66b', '[\"admin\"]', '2024-11-13 15:19:35', NULL, '2024-11-13 15:10:44', '2024-11-13 15:19:35'),
+(816, 'App\\Models\\Student', 268, 'API TOKEN', 'dea4619d0f58ce1105e3cca85f977254d36cc80d6fe8bc8621a9c9480ebf1481', '[\"*\"]', NULL, NULL, '2024-11-14 11:44:17', '2024-11-14 11:44:17'),
+(817, 'App\\Models\\Student', 268, '01000379176', '4c6074b4c8270499b283d4ed28a25d3c4e0ff13d4b0876f30f73d53ee7201868', '[\"student\"]', '2024-11-14 12:36:58', NULL, '2024-11-14 12:34:23', '2024-11-14 12:36:58'),
+(818, 'App\\Models\\Admin', 44, 'omar', 'cf6035cb1cc4eb5068cee914d7b6c848135815a957431393483535a27c40e774', '[\"admin\"]', '2024-11-14 12:56:24', NULL, '2024-11-14 12:44:57', '2024-11-14 12:56:24'),
+(819, 'App\\Models\\Admin', 48, 'hodasaeed', '12e8e5d8ad6e47c910b18d202e54ce95ad5260ac6b70bdeb83fba48e363622a2', '[\"admin\"]', '2024-11-14 14:05:19', NULL, '2024-11-14 13:57:52', '2024-11-14 14:05:19'),
+(820, 'App\\Models\\Admin', 44, 'omar', '259c4016be1c2ab19b5bd4fcb5d41f92a86d52162900df4c54d0011c0205f4cf', '[\"admin\"]', '2024-11-14 16:06:19', NULL, '2024-11-14 15:43:12', '2024-11-14 16:06:19'),
+(821, 'App\\Models\\Admin', 44, 'omar', '9b1b7f42e781f0ca1e4026c2dd851705a627a7bb7fbefaf086227d3d94993335', '[\"admin\"]', '2024-11-14 16:42:29', NULL, '2024-11-14 16:38:06', '2024-11-14 16:42:29'),
+(822, 'App\\Models\\Student', 268, '01000379176', '9cdf1a8be483edd1f38a7523368054d1a16567ee832b79ad593aba29d8f5434e', '[\"student\"]', '2024-11-23 15:06:17', NULL, '2024-11-23 15:05:07', '2024-11-23 15:06:17'),
+(823, 'App\\Models\\Admin', 1, 'Prodigy', 'b420269b2ab45c04af06693d94264f0f0314e239af6e96a0c0ce62cc876b3337', '[\"admin\"]', '2024-11-30 13:48:28', NULL, '2024-11-23 16:32:05', '2024-11-30 13:48:28'),
+(824, 'App\\Models\\Student', 269, 'API TOKEN', '24b3c89e03e76ffceab8ee4eeda34a2ea594aa75f0d7f188ea8b125609dfb5b2', '[\"*\"]', NULL, NULL, '2024-11-24 14:08:31', '2024-11-24 14:08:31'),
+(825, 'App\\Models\\Student', 269, '01145217525', '18803a4c30c3f5142c20374c8d8dd8b5a33aa67d4128317a4395ec604d65fea1', '[\"student\"]', '2024-11-24 14:33:19', NULL, '2024-11-24 14:09:35', '2024-11-24 14:33:19'),
+(826, 'App\\Models\\Student', 269, '01145217525', 'e7d1a6362c541496ec53af7a2c8de621649e495a70cf3b6393129118250236d1', '[\"student\"]', '2024-11-24 14:22:09', NULL, '2024-11-24 14:20:49', '2024-11-24 14:22:09'),
+(827, 'App\\Models\\Student', 269, '01145217525', 'c89cb5b787cf5a5b08dbef51e534b7f88dd4501c421fc963df89e8572904c180', '[\"student\"]', '2024-11-24 14:29:01', NULL, '2024-11-24 14:23:29', '2024-11-24 14:29:01'),
+(828, 'App\\Models\\Student', 269, '01145217525', '5d34a06c1b2a5b4ca078a59303dd448bf79934de2e22990a5c64e33c34dbb4bf', '[\"student\"]', '2024-11-25 14:05:21', NULL, '2024-11-24 14:30:12', '2024-11-25 14:05:21'),
+(829, 'App\\Models\\Admin', 44, 'omar', '6bbcc0d09508f10a3040b455c70d8fc66672b779bc7c2d5040778ed7e1ee2dba', '[\"admin\"]', '2024-11-27 10:01:09', NULL, '2024-11-24 14:34:08', '2024-11-27 10:01:09'),
+(830, 'App\\Models\\Admin', 1, 'Prodigy', 'e24154af09aba5438a7e60fb2f915d118ac157e9eac3d2b873e3330ea6f5863d', '[\"admin\"]', '2024-11-25 12:58:06', NULL, '2024-11-25 12:49:06', '2024-11-25 12:58:06'),
+(831, 'App\\Models\\Student', 269, '01145217525', 'ecaf9f6b3df108c0aec274b07b567d9fdda426b2c01d1f69ba678e69eb5cbbdf', '[\"student\"]', '2024-11-25 13:22:56', NULL, '2024-11-25 13:22:35', '2024-11-25 13:22:56'),
+(832, 'App\\Models\\Student', 270, 'API TOKEN', '0e81b3a84fd5e36b5b0af919c4f4c29170ab805e3dc09fe537e0df6e28cd56a0', '[\"*\"]', NULL, NULL, '2024-11-25 13:28:10', '2024-11-25 13:28:10'),
+(833, 'App\\Models\\Student', 270, '01000379179', 'c53a4f8862881863699f7275134d90d301b1a86aba7f724aa5560817e3208aa0', '[\"student\"]', '2024-11-25 14:25:17', NULL, '2024-11-25 13:29:50', '2024-11-25 14:25:17'),
+(834, 'App\\Models\\Student', 270, '01000379179', '9c1fc1a78f1ead29bfdde74102e3b3502546acc3a9dac0caaf8107fb019a1b9c', '[\"student\"]', '2024-11-25 16:37:45', NULL, '2024-11-25 13:42:26', '2024-11-25 16:37:45'),
+(835, 'App\\Models\\Admin', 44, 'omar', '08f091a389a2cb1294199f1334d3c904a9a11843b7bd035f1b0db34fe711ddd6', '[\"admin\"]', '2024-11-27 10:52:07', NULL, '2024-11-25 14:20:15', '2024-11-27 10:52:07'),
+(836, 'App\\Models\\Student', 270, '01000379179', 'e35f9d7c80de40b1cd7d7ca3c4ef0a2b9ff4d7c76642c5c983b01af004a14e9e', '[\"student\"]', '2024-11-25 16:46:55', NULL, '2024-11-25 16:27:53', '2024-11-25 16:46:55'),
+(837, 'App\\Models\\Student', 270, '01000379179', '75a7dbe9f31855376f4b2e2af6bd74f08e631077d9e3a67aa3aba98db5f585b1', '[\"student\"]', '2024-11-25 22:28:18', NULL, '2024-11-25 22:25:32', '2024-11-25 22:28:18'),
+(838, 'App\\Models\\Admin', 1, 'Prodigy', '64cd566a0f629eb38ceb50164bb97b8c2709b1cd5917f61b050c724ed0fb812e', '[\"admin\"]', '2024-11-25 23:24:16', NULL, '2024-11-25 23:18:57', '2024-11-25 23:24:16'),
+(839, 'App\\Models\\Admin', 44, 'omar', 'b8ef314f8b8a1686eca0dc05c805b6088e0b67898dc5350d6c4f82dd9b870963', '[\"admin\"]', '2024-11-26 15:14:33', NULL, '2024-11-26 14:58:22', '2024-11-26 15:14:33'),
+(840, 'App\\Models\\Admin', 1, 'prodigy', 'de5db4fc4d8c416395df390b08427a52b7c4f7b9f909c59c0258aca700275092', '[\"admin\"]', '2024-11-26 20:45:03', NULL, '2024-11-26 20:44:46', '2024-11-26 20:45:03'),
+(841, 'App\\Models\\Admin', 44, 'omar', '4ca0de249b2d929253a3cc9986085a61556f05739e8482b2d2b7aa5b038bcb9b', '[\"admin\"]', '2024-12-02 13:25:46', NULL, '2024-11-27 10:28:30', '2024-12-02 13:25:46'),
+(842, 'App\\Models\\Student', 270, '01000379179', 'c8c0db48d4c1a1b721cd692faae8b7c3fa4bc6c751de7977f54243c8f0d77ec4', '[\"student\"]', '2024-11-27 11:30:36', NULL, '2024-11-27 10:31:06', '2024-11-27 11:30:36'),
+(843, 'App\\Models\\Student', 270, '01000379179', '8b748e93c812f4805f04abd57e46d3446b3a9f082aff9215716d670dbecd879c', '[\"student\"]', '2024-11-27 11:16:56', NULL, '2024-11-27 10:53:06', '2024-11-27 11:16:56'),
+(844, 'App\\Models\\Admin', 44, 'omar', '9e7a9f82826a28f485f7527ae9b80170dcde9966b4f4d5a18c4638f648d04513', '[\"admin\"]', '2024-11-28 13:14:31', NULL, '2024-11-27 11:18:10', '2024-11-28 13:14:31'),
+(845, 'App\\Models\\Student', 271, 'API TOKEN', 'c7eb7a5888d2bc71f4b485728e3a1ecbe7ad0eb8fd559ec2a48fd785d4606a9c', '[\"*\"]', NULL, NULL, '2024-11-28 10:27:46', '2024-11-28 10:27:46'),
+(846, 'App\\Models\\Student', 271, '01124113266', 'defe1c72a47671e34816c137ab1c3f296a3f57fcd3c9c4938a5784b61a5152c6', '[\"student\"]', '2024-12-02 21:44:23', NULL, '2024-11-28 10:32:54', '2024-12-02 21:44:23'),
+(847, 'App\\Models\\Student', 272, 'API TOKEN', 'b2a444ed1a1cffe10aed7f0cda6fab68f5d2a56bd4a46053e78773fbd0e76976', '[\"*\"]', NULL, NULL, '2024-11-28 12:59:12', '2024-11-28 12:59:12'),
+(848, 'App\\Models\\Admin', 49, 'Safymoustafa', 'a0ccfb4eefcd951e328ba77e540bb4067c5eec71ae59ea1ae0428d3603069173', '[\"admin\"]', '2024-11-28 16:15:09', NULL, '2024-11-28 13:22:50', '2024-11-28 16:15:09'),
+(849, 'App\\Models\\Student', 273, 'API TOKEN', 'f706c0df81788bddddf0ccab13dd3d75cf20e9feb01977cbbe0746257574ac83', '[\"*\"]', NULL, NULL, '2024-11-28 13:48:22', '2024-11-28 13:48:22'),
+(850, 'App\\Models\\Student', 274, 'API TOKEN', '68b657c97700facd0f8ffc97406bf0acb5785ce119d36dd39e0f00555bc9bd05', '[\"*\"]', NULL, NULL, '2024-11-28 14:16:11', '2024-11-28 14:16:11'),
+(851, 'App\\Models\\Student', 275, 'API TOKEN', 'd52579b5d83acaf140bdba52d6e21be8298a472da26eac3655759972fc06f8af', '[\"*\"]', NULL, NULL, '2024-11-28 14:19:46', '2024-11-28 14:19:46'),
+(852, 'App\\Models\\Student', 276, 'API TOKEN', 'f81ad36621c59cc038a91ee7406caa578ac0ddfb8fef5389f0bb647c66f99afd', '[\"*\"]', NULL, NULL, '2024-11-28 14:36:54', '2024-11-28 14:36:54'),
+(853, 'App\\Models\\Student', 277, 'API TOKEN', 'e3d91b062f447197ee01b642d38a669c772c5a82f55836b1728e6cf3f8b137ec', '[\"*\"]', NULL, NULL, '2024-11-28 15:03:30', '2024-11-28 15:03:30'),
+(854, 'App\\Models\\Student', 278, 'API TOKEN', 'aa310b34f65b4c11b4eb530ae2aff7a124ebdf7e16dbd8c30398d32b6a6b2062', '[\"*\"]', NULL, NULL, '2024-11-28 15:41:16', '2024-11-28 15:41:16'),
+(855, 'App\\Models\\Student', 279, 'API TOKEN', '85365238c84303715dcd24fb798eecca9bde5852df3bf6e9eebb65a2fb310e31', '[\"*\"]', NULL, NULL, '2024-11-28 15:43:24', '2024-11-28 15:43:24'),
+(856, 'App\\Models\\Student', 280, 'API TOKEN', '9455f1e6dd16de604184739f626d6f2cfc9e3d98d1958e4ed81152eb78d552ef', '[\"*\"]', NULL, NULL, '2024-11-28 15:44:56', '2024-11-28 15:44:56'),
+(857, 'App\\Models\\Student', 281, 'API TOKEN', '42ca72f7d5162bf976fc449183ad4745131e00314d2ba966a12538214d7d2a7c', '[\"*\"]', NULL, NULL, '2024-11-28 15:47:24', '2024-11-28 15:47:24'),
+(858, 'App\\Models\\Student', 282, 'API TOKEN', 'caed3ea2e2933727a8bb6172e8b9deede6a4cb031dc1485950b2f0cfa8a5188c', '[\"*\"]', NULL, NULL, '2024-11-28 15:57:33', '2024-11-28 15:57:33'),
+(859, 'App\\Models\\Student', 283, 'API TOKEN', 'b8b453a8f57b9faf8ffa5e3c2ac62f19f32e7c46b8589780a7aaa1a4f852ab31', '[\"*\"]', NULL, NULL, '2024-11-28 16:23:53', '2024-11-28 16:23:53'),
+(860, 'App\\Models\\Student', 284, 'API TOKEN', '20f7b40057e6a55c76255c2ddb203d52fd974a4a37d6ffdf76507406d5830372', '[\"*\"]', NULL, NULL, '2024-11-28 16:28:07', '2024-11-28 16:28:07'),
+(861, 'App\\Models\\Student', 285, 'API TOKEN', '93e517ce5234a70fbaee861798832a8b6d3a5f8b6d34d32ea8474fa98891da86', '[\"*\"]', NULL, NULL, '2024-11-28 17:03:33', '2024-11-28 17:03:33'),
+(862, 'App\\Models\\Student', 286, 'API TOKEN', '6a1f0995ca81ea30bf591cdca6f80f0b2473a156dc7d4da8b061f1980890449c', '[\"*\"]', NULL, NULL, '2024-11-28 17:11:44', '2024-11-28 17:11:44'),
+(863, 'App\\Models\\Student', 287, 'API TOKEN', '0bec6234b5d427459fe132b9de8e5e3b4ce729ec6f6ae579a0e77ba1e77b0596', '[\"*\"]', NULL, NULL, '2024-11-28 17:41:02', '2024-11-28 17:41:02'),
+(864, 'App\\Models\\Student', 288, 'API TOKEN', '8def9220bd973aeff857e59f78dda9df432ed9c7b7f914ea44edfbb16046b160', '[\"*\"]', NULL, NULL, '2024-11-28 18:03:23', '2024-11-28 18:03:23'),
+(865, 'App\\Models\\Student', 289, 'API TOKEN', 'c8372d3199645879489e1c202c25b515a017d8b4565875c03724b3810ea2f796', '[\"*\"]', NULL, NULL, '2024-11-28 18:50:03', '2024-11-28 18:50:03'),
+(866, 'App\\Models\\Student', 290, 'API TOKEN', '82884d0724de64e782e21984a6d5413fd5f804eae11c1fe35c54566db873ccc6', '[\"*\"]', NULL, NULL, '2024-11-28 20:40:12', '2024-11-28 20:40:12'),
+(867, 'App\\Models\\Student', 291, 'API TOKEN', '0eefa8fb0a72d7909060c63ebc79d88b0780a4a3d6844993f1f905c74c52ce3c', '[\"*\"]', NULL, NULL, '2024-11-28 20:44:09', '2024-11-28 20:44:09'),
+(868, 'App\\Models\\Student', 292, 'API TOKEN', 'e429440ff5a444a32fb0f9b5f05708863821c8417799c6c2e385ce742e1a5d05', '[\"*\"]', NULL, NULL, '2024-11-28 21:25:03', '2024-11-28 21:25:03'),
+(869, 'App\\Models\\Student', 293, 'API TOKEN', '292aca8229fda678f4924c9c223e0feeb481ceaea49c755425805319ecda5d09', '[\"*\"]', NULL, NULL, '2024-11-28 21:37:07', '2024-11-28 21:37:07'),
+(870, 'App\\Models\\Student', 294, 'API TOKEN', '7be0d16508835c5853f913d05f79ff9e73c80ad0b35f3853a46fde1bf7d56186', '[\"*\"]', NULL, NULL, '2024-11-28 22:51:16', '2024-11-28 22:51:16'),
+(871, 'App\\Models\\Student', 295, 'API TOKEN', '506ccb8bb15f5e343b8824c910e4f6eeff4b20990c027eb2e5b85dbcb5440997', '[\"*\"]', NULL, NULL, '2024-11-29 01:07:23', '2024-11-29 01:07:23'),
+(872, 'App\\Models\\Student', 296, 'API TOKEN', 'c832a7d96ce70374ac93486db64899fc2e55fd1b457a15603bf77bc8723a5542', '[\"*\"]', NULL, NULL, '2024-11-29 11:50:45', '2024-11-29 11:50:45'),
+(873, 'App\\Models\\Student', 285, '01016014670', '86734985c7485047657ce006c272737860d747652c5360186786f338a0bd5f34', '[\"student\"]', '2024-12-04 22:18:59', NULL, '2024-11-29 13:05:21', '2024-12-04 22:18:59'),
+(874, 'App\\Models\\Student', 297, 'API TOKEN', 'a1a5995478a9d797d150207a2da3d7ac780163cd8f3801201b937dfd68583cf7', '[\"*\"]', NULL, NULL, '2024-11-29 13:11:46', '2024-11-29 13:11:46'),
+(875, 'App\\Models\\Student', 273, '01018828058', 'e7efe912afff144084ccbc161bcf6b34c8bd72952bae34f213340ed27d71e10f', '[\"student\"]', '2024-11-30 16:56:23', NULL, '2024-11-29 13:42:32', '2024-11-30 16:56:23'),
+(876, 'App\\Models\\Student', 298, 'API TOKEN', '5b300bade83abc44b9822cf0c8b845945353794660ea0a7b004728e1aff9449c', '[\"*\"]', NULL, NULL, '2024-11-29 13:48:20', '2024-11-29 13:48:20'),
+(877, 'App\\Models\\Student', 277, '01068293097', '7f91512dab46c25f9d98609a0ac0a35fa5bcc6d9a761dda805b31d9c41cfe54f', '[\"student\"]', '2024-12-04 19:29:55', NULL, '2024-11-29 13:48:57', '2024-12-04 19:29:55'),
+(878, 'App\\Models\\Student', 299, 'API TOKEN', '586327abe30e82c6559a1410e0f4b64ab94e94062713d9f51c3d68c50728fb7f', '[\"*\"]', NULL, NULL, '2024-11-29 13:50:30', '2024-11-29 13:50:30'),
+(879, 'App\\Models\\Student', 289, '01090839039', 'c048b216e56a5327f0b570c5dc6586eea63aa8e6278492ce2509c68087e7b749', '[\"student\"]', '2024-12-04 19:27:36', NULL, '2024-11-29 14:49:47', '2024-12-04 19:27:36'),
+(880, 'App\\Models\\Student', 300, 'API TOKEN', 'c0ae492e0190a4bd197c21134f6175cd8e6667a3377f641f98be32406061da8b', '[\"*\"]', NULL, NULL, '2024-11-29 15:01:49', '2024-11-29 15:01:49'),
+(881, 'App\\Models\\Student', 301, 'API TOKEN', '3b34aa2aa344060233def1e65cd243b9cf8dca25206b8ec60e63650c39d916ef', '[\"*\"]', NULL, NULL, '2024-11-29 15:13:23', '2024-11-29 15:13:23'),
+(882, 'App\\Models\\Student', 288, '01061722499', '23cf93337db50eb5ef9a7fa3c6f339c90c3e3f2353185ea7329c3bbe9ad3e3bd', '[\"student\"]', '2024-12-05 00:11:54', NULL, '2024-11-29 15:14:05', '2024-12-05 00:11:54'),
+(883, 'App\\Models\\Student', 273, '01018828058', '2511ee7cff3b70086613212ec186d097b3da33f8e927f62876dabeb5b541db01', '[\"student\"]', '2024-11-29 16:44:30', NULL, '2024-11-29 15:46:34', '2024-11-29 16:44:30'),
+(884, 'App\\Models\\Student', 302, 'API TOKEN', '85018f2d9c37e08bbda72fa9748c92d6d45fabec11a5a9f2908adcc188c0ffeb', '[\"*\"]', NULL, NULL, '2024-11-29 16:15:39', '2024-11-29 16:15:39'),
+(885, 'App\\Models\\Student', 292, '01158629083', '00e503ec291b231a714f51f457b9ac9ebb8000fdf38775db273f3cd437785bfb', '[\"student\"]', '2024-11-29 21:59:55', NULL, '2024-11-29 16:30:16', '2024-11-29 21:59:55'),
+(886, 'App\\Models\\Student', 303, 'API TOKEN', 'c461a198f21c7a4b20f4b10d40947025476cc299ccd7a3c7e85fb74e20dd7d51', '[\"*\"]', NULL, NULL, '2024-11-29 16:49:57', '2024-11-29 16:49:57'),
+(887, 'App\\Models\\Student', 304, 'API TOKEN', 'e2a6af951658643cc61095984945843d483bb7dc5ec58fae4e00d2131ecaf71f', '[\"*\"]', NULL, NULL, '2024-11-29 17:09:31', '2024-11-29 17:09:31'),
+(888, 'App\\Models\\Student', 305, 'API TOKEN', '99530241eb050254ddf00bfcc291964586a45ddbace33f9afc571f8d58b01a4c', '[\"*\"]', NULL, NULL, '2024-11-29 17:13:20', '2024-11-29 17:13:20'),
+(889, 'App\\Models\\Student', 306, 'API TOKEN', '7cef96cc026388c8f57e5601db1d128c55c682abfe1ff2bebf7f4150bb932aac', '[\"*\"]', NULL, NULL, '2024-11-29 17:14:26', '2024-11-29 17:14:26'),
+(890, 'App\\Models\\Student', 307, 'API TOKEN', '255f3d938423eb6a42654ba2bed80257022f12cea64f3efa85f8c8be8c3bb8dc', '[\"*\"]', NULL, NULL, '2024-11-29 17:22:35', '2024-11-29 17:22:35'),
+(891, 'App\\Models\\Student', 308, 'API TOKEN', 'cc39a798092b3807fb48f90712f7f93340525f026c800befe4329d4480bbbbb8', '[\"*\"]', NULL, NULL, '2024-11-29 17:22:40', '2024-11-29 17:22:40'),
+(892, 'App\\Models\\Student', 309, 'API TOKEN', 'a4dc9a63e749c061142df19a0183d4021568ca9346806dc8e7748e14b30b69f5', '[\"*\"]', NULL, NULL, '2024-11-29 17:31:40', '2024-11-29 17:31:40'),
+(893, 'App\\Models\\Student', 310, 'API TOKEN', '69a43c9d2c158274d5c2cba95d18ab0e1f1027d66a41a85a6690cf06e83a085f', '[\"*\"]', NULL, NULL, '2024-11-29 17:42:26', '2024-11-29 17:42:26'),
+(894, 'App\\Models\\Student', 292, '01158629083', 'cf6b8eb9144741c28de4cf105f680ce3d6d49738a409ee23892e0f9b41afa44d', '[\"student\"]', '2024-11-29 18:46:52', NULL, '2024-11-29 18:25:22', '2024-11-29 18:46:52'),
+(895, 'App\\Models\\Student', 311, 'API TOKEN', '92b826dab61035a4e79be958d1b3860817724f77283f6b41b75970bd8f9c7737', '[\"*\"]', NULL, NULL, '2024-11-29 18:26:47', '2024-11-29 18:26:47'),
+(896, 'App\\Models\\Student', 312, 'API TOKEN', '09600e22eade317f5b05511ae50083fdbb77be3f630709dc5521976f0260613b', '[\"*\"]', NULL, NULL, '2024-11-29 18:33:59', '2024-11-29 18:33:59'),
+(897, 'App\\Models\\Student', 313, 'API TOKEN', 'a0cd23e05837ee7958381822817f3b798f46044c7867a1bc66ebe7b13bd02646', '[\"*\"]', NULL, NULL, '2024-11-29 18:42:41', '2024-11-29 18:42:41'),
+(898, 'App\\Models\\Student', 314, 'API TOKEN', '9c78b6e2b73f85765317fe3294c1da1f36f2a0ce74c0ec15781dbe20198b1501', '[\"*\"]', NULL, NULL, '2024-11-29 18:58:36', '2024-11-29 18:58:36'),
+(899, 'App\\Models\\Student', 315, 'API TOKEN', '160f12b3f3c7c455dee1d2c95fe3430827f346901ddbd13b3db7c17195141e4b', '[\"*\"]', NULL, NULL, '2024-11-29 19:17:04', '2024-11-29 19:17:04'),
+(900, 'App\\Models\\Student', 316, 'API TOKEN', '0eb94c57ff535dc15d2b7fda91f89025e216f573e50046048a8faf353c88b941', '[\"*\"]', NULL, NULL, '2024-11-29 21:24:45', '2024-11-29 21:24:45'),
+(901, 'App\\Models\\Student', 292, '01158629083', 'f06d431537f34292af7c5ce9d964b39ac80827d535d84f38a90e67e609987ae3', '[\"student\"]', '2024-12-02 20:51:46', NULL, '2024-11-29 22:00:24', '2024-12-02 20:51:46'),
+(902, 'App\\Models\\Student', 281, '01143881128', 'd5db6287d12f54b685a69929d7ab0ecdda20a6a5bb624db9d56376ea1597b5ae', '[\"student\"]', '2024-12-01 19:43:20', NULL, '2024-11-29 22:09:56', '2024-12-01 19:43:20'),
+(903, 'App\\Models\\Student', 276, '01118898879', 'ea03bd605e77a4f7e1e18acaee08204e4740d8bf22b244d766a0cb71b01d806e', '[\"student\"]', '2024-12-03 22:52:22', NULL, '2024-11-29 22:17:56', '2024-12-03 22:52:22'),
+(904, 'App\\Models\\Student', 317, 'API TOKEN', 'a2a4707a351bf7955ac4a5fd8465cbb95f19c60f7677cdd4859e9331224e680a', '[\"*\"]', NULL, NULL, '2024-11-29 22:18:10', '2024-11-29 22:18:10'),
+(905, 'App\\Models\\Student', 294, '01065020969', '1cf08c2189cd1ba5d27fd7079f25bb8fa0747784243719ef3904461e9e49ea64', '[\"student\"]', '2024-11-29 22:27:15', NULL, '2024-11-29 22:25:36', '2024-11-29 22:27:15'),
+(906, 'App\\Models\\Student', 276, '01118898879', 'b3a23529e3ff0feefa2e09f2debd2eb1808cc8a5d91d989e24f5ba449ed6efb8', '[\"student\"]', '2024-12-03 02:28:50', NULL, '2024-11-29 23:51:03', '2024-12-03 02:28:50'),
+(907, 'App\\Models\\Student', 318, 'API TOKEN', '4fccb618a421452091b4b49daf0e63fc8ea7412982fe2a35c506bffec65f5161', '[\"*\"]', NULL, NULL, '2024-11-30 09:43:37', '2024-11-30 09:43:37'),
+(908, 'App\\Models\\Student', 319, 'API TOKEN', '55c33af42ecc0db24b129f91170ea85db52050c11cdf56f0f7304385658deaad', '[\"*\"]', NULL, NULL, '2024-11-30 10:17:18', '2024-11-30 10:17:18'),
+(909, 'App\\Models\\Student', 320, 'API TOKEN', '0cb65daaed65f00411585654b7bce92b855b051527f7c5465eefed3bf30358bf', '[\"*\"]', NULL, NULL, '2024-11-30 10:27:01', '2024-11-30 10:27:01'),
+(910, 'App\\Models\\Student', 321, 'API TOKEN', '575ce1eaaf1fa0aa5dd606d387619e6229cb3cafd0d6b8b0015f88e8a28da67e', '[\"*\"]', NULL, NULL, '2024-11-30 10:48:28', '2024-11-30 10:48:28'),
+(911, 'App\\Models\\Student', 322, 'API TOKEN', 'c47d4374f204b36ac0493b896de2c670baab177899fd492f767d85bed47343a1', '[\"*\"]', NULL, NULL, '2024-11-30 12:44:32', '2024-11-30 12:44:32'),
+(912, 'App\\Models\\Student', 317, '01555180361', '8a4bfe52918b3224bf241d297f1e40f0497040431013b31dfb00881fa97a0eac', '[\"student\"]', '2024-11-30 13:48:20', NULL, '2024-11-30 13:20:36', '2024-11-30 13:48:20'),
+(913, 'App\\Models\\Student', 323, 'API TOKEN', 'f675d2395b3c7a0aa5221b43bb92b85b21fb8643c6a177d2d70bf29329143e7b', '[\"*\"]', NULL, NULL, '2024-11-30 13:34:41', '2024-11-30 13:34:41'),
+(914, 'App\\Models\\Student', 298, '01066624500', '68d9582f7dfbe1ea784d904dadbeb1592d66536ef94731e61f04717db7d6c550', '[\"student\"]', '2024-12-06 20:43:48', NULL, '2024-11-30 13:53:01', '2024-12-06 20:43:48'),
+(915, 'App\\Models\\Student', 322, '01012430090', '4e161b51bcd91acf1720f71ca06d125aa24396cf2bd52d02e8fa5865f9cf358a', '[\"student\"]', '2024-11-30 22:29:35', NULL, '2024-11-30 13:54:26', '2024-11-30 22:29:35'),
+(916, 'App\\Models\\Student', 324, 'API TOKEN', 'd306e65b9d0125fed3e957130d7cf55a183a39622cb46f08adeb8a3ad30e4077', '[\"*\"]', NULL, NULL, '2024-11-30 13:55:44', '2024-11-30 13:55:44'),
+(917, 'App\\Models\\Student', 300, '01013311446', 'db240d498ab0212b23be083c83e19975684124329bb0beaa4ac34d332612093f', '[\"student\"]', '2024-11-30 15:21:35', NULL, '2024-11-30 13:59:50', '2024-11-30 15:21:35'),
+(918, 'App\\Models\\Student', 325, 'API TOKEN', '765a4c090f22141eef945aaa94f7cae8fd0a4ec12aac37acd0e7104f568e23e4', '[\"*\"]', NULL, NULL, '2024-11-30 14:17:39', '2024-11-30 14:17:39'),
+(919, 'App\\Models\\Student', 318, '01220356958', '5e46f5b78bbbadb159152e1d5f417f4bf6c37ea1ea329f281007f655bc82152f', '[\"student\"]', '2024-12-05 06:11:57', NULL, '2024-11-30 14:36:16', '2024-12-05 06:11:57'),
+(920, 'App\\Models\\Student', 326, 'API TOKEN', '7836de16d44c59e266108048ea1c4176bd8385e19f32620f02dc6667c17bbee9', '[\"*\"]', NULL, NULL, '2024-11-30 15:34:31', '2024-11-30 15:34:31'),
+(921, 'App\\Models\\Student', 327, 'API TOKEN', '6b6d7dcdfea59f7829acffe5445abae714f62fbb863a958f429f58cc67fbf709', '[\"*\"]', NULL, NULL, '2024-11-30 15:49:00', '2024-11-30 15:49:00'),
+(922, 'App\\Models\\Student', 304, '01019551233', '7368e659f08134c8a84c2a1a5da1661165b0a99d38a965ac4d19a54ca12f6846', '[\"student\"]', '2024-11-30 16:13:05', NULL, '2024-11-30 16:11:44', '2024-11-30 16:13:05'),
+(923, 'App\\Models\\Student', 309, '01019811348', 'bfdbdc58fa4bf29cbc1dd8a7a15a631bc0f3b40063d64088c7342cf10c04425d', '[\"student\"]', '2024-11-30 18:16:19', NULL, '2024-11-30 16:21:16', '2024-11-30 18:16:19'),
+(924, 'App\\Models\\Student', 310, '01019590264', '3e68856178e2c68b88b1e27fce110375bd521274c6df6b0ead166ad676975bd4', '[\"student\"]', '2024-12-03 06:15:36', NULL, '2024-11-30 16:47:18', '2024-12-03 06:15:36'),
+(925, 'App\\Models\\Student', 328, 'API TOKEN', '5d7a7bdc494323ea9fdcd9404e1ef20de638c1084cc3e499928dedfadbb1d5e8', '[\"*\"]', NULL, NULL, '2024-11-30 16:52:13', '2024-11-30 16:52:13'),
+(926, 'App\\Models\\Student', 293, '01001161542', '226f67bd4e48e25421870ec41af1e745e9e01b67a63a0794cebd9eea7ca55f4c', '[\"student\"]', '2024-12-05 00:07:55', NULL, '2024-11-30 17:21:33', '2024-12-05 00:07:55'),
+(927, 'App\\Models\\Student', 329, 'API TOKEN', '497ba2ae0f9a56a8fa8e4216bad21b64b50406327c0b5ca8d75295efaa22971f', '[\"*\"]', NULL, NULL, '2024-11-30 19:45:15', '2024-11-30 19:45:15'),
+(928, 'App\\Models\\Student', 296, '01024505188', '0eedbca24fbe935ec2d585b0f9041a617bc56875a983489e25c5204ef4347941', '[\"student\"]', '2024-12-01 18:02:20', NULL, '2024-11-30 19:54:36', '2024-12-01 18:02:20'),
+(929, 'App\\Models\\Student', 273, '01018828058', 'c5a6bb2e37e843dd13cb2a44da5ba34544fb1690faf9df86fccc776f98914958', '[\"student\"]', '2024-11-30 20:05:13', NULL, '2024-11-30 20:04:50', '2024-11-30 20:05:13'),
+(930, 'App\\Models\\Student', 318, '01220356958', '09fd4ba9d57be802d497bac5a5127d61298e86b8bf978fc607400624088900f7', '[\"student\"]', '2024-12-05 06:10:50', NULL, '2024-11-30 20:13:34', '2024-12-05 06:10:50'),
+(931, 'App\\Models\\Student', 318, '01220356958', '22ad3fddd821e87bf75535722cc9bafb2471d97e804a8ad72c37342f9df80845', '[\"student\"]', '2024-11-30 20:37:26', NULL, '2024-11-30 20:19:33', '2024-11-30 20:37:26'),
+(932, 'App\\Models\\Student', 330, 'API TOKEN', '70fde38d34b7adbc2a2956c3f7781bbb59680918d2bacb4e3a5f454fbb1968a2', '[\"*\"]', NULL, NULL, '2024-11-30 20:24:25', '2024-11-30 20:24:25'),
+(933, 'App\\Models\\Student', 331, 'API TOKEN', '2930cfbbbaf430b95934a699a440cd8d1048ff1e77ab5547c21261741da87e3c', '[\"*\"]', NULL, NULL, '2024-11-30 21:44:32', '2024-11-30 21:44:32'),
+(934, 'App\\Models\\Student', 274, '01228739109', '2cc18319015301b66e5dc4410fb28064eee30d12c64fba75ae8cbd24c6a93cb5', '[\"student\"]', '2024-11-30 21:56:03', NULL, '2024-11-30 21:51:04', '2024-11-30 21:56:03'),
+(935, 'App\\Models\\Student', 274, '01228739109', '736ae5b0faf7d7f6861ab2240ac6458864a9d147601b67d15383bc3434d2008a', '[\"student\"]', '2024-12-04 13:42:38', NULL, '2024-11-30 22:00:48', '2024-12-04 13:42:38'),
+(936, 'App\\Models\\Student', 332, 'API TOKEN', '92f487afe5334640425e07a1d95bac609c1dc9e01b3ead4b8e54d922fe4744f5', '[\"*\"]', NULL, NULL, '2024-11-30 22:52:40', '2024-11-30 22:52:40'),
+(937, 'App\\Models\\Student', 277, '01068293097', 'ed525d84e201cda742edf4657a22045c9674bad4aed52bd6dfae6260b32ceee1', '[\"student\"]', '2024-12-04 22:03:06', NULL, '2024-11-30 23:15:01', '2024-12-04 22:03:06'),
+(938, 'App\\Models\\Student', 315, '01017726025', 'a8f9761c512d8ddccc62b27a64b37eb23cf40f36937b04e4f8ec304b5e44fc24', '[\"student\"]', '2024-12-04 15:50:43', NULL, '2024-12-01 08:08:35', '2024-12-04 15:50:43'),
+(939, 'App\\Models\\Admin', 1, 'Prodigy', 'bd2ef687e60d2bf427ecdc7d79698a0caef0ad275202b7fb8a7d01ebcb407091', '[\"admin\"]', '2024-12-01 18:25:27', NULL, '2024-12-01 08:41:45', '2024-12-01 18:25:27'),
+(940, 'App\\Models\\Student', 333, 'API TOKEN', '5409b53acf6d6c1418cdf0a9ac3aa6d4a051efe8f1527c59f3c9f94279e0889d', '[\"*\"]', NULL, NULL, '2024-12-01 08:48:22', '2024-12-01 08:48:22'),
+(941, 'App\\Models\\Student', 333, '01024273333', '6edfc2ae4c1042eb94b92c2e56ad56a496ca1904df394e813784dc2de0ccc46c', '[\"student\"]', '2024-12-01 08:52:55', NULL, '2024-12-01 08:48:44', '2024-12-01 08:52:55'),
+(942, 'App\\Models\\Student', 329, '01030733380', 'ad83f4ea36857821b3a6c2473f27c06b0e98ab1c814c2fb35e8d6973be7f0491', '[\"student\"]', '2024-12-02 18:59:46', NULL, '2024-12-01 12:32:48', '2024-12-02 18:59:46'),
+(943, 'App\\Models\\Student', 285, '01016014670', '59141f4569a81dc366f08d1871392d47e5a10606f08e7f209e0987d617544b16', '[\"student\"]', '2024-12-02 18:56:52', NULL, '2024-12-01 14:44:49', '2024-12-02 18:56:52'),
+(944, 'App\\Models\\Student', 271, '01124113266', 'af643d63c4d78f642adf49a9062d65b9cff73b1352710ef252c63a60ecace616', '[\"student\"]', '2024-12-01 21:24:47', NULL, '2024-12-01 15:46:09', '2024-12-01 21:24:47'),
+(945, 'App\\Models\\Student', 301, '01033199523', '20105f622247fe5495f37f81d55240f58ac77b1e5cad201428438ea493009b5b', '[\"student\"]', '2024-12-03 22:34:02', NULL, '2024-12-01 16:35:48', '2024-12-03 22:34:02'),
+(946, 'App\\Models\\Student', 334, 'API TOKEN', '246eb4e6315b5c344e5709560affb4665e5476a04e00fdcf840f60174118944a', '[\"*\"]', NULL, NULL, '2024-12-01 17:45:24', '2024-12-01 17:45:24'),
+(947, 'App\\Models\\Student', 335, 'API TOKEN', 'd9ee2b13c07f28bbfd4290fa1ab88108ea91808f0d50c011f38c47eada6d83fb', '[\"*\"]', NULL, NULL, '2024-12-01 17:49:52', '2024-12-01 17:49:52'),
+(948, 'App\\Models\\Student', 336, 'API TOKEN', 'e205b39479e941d29a4d16499a5b6c3633dfb704f6420e55c3d0f8de2597dbb5', '[\"*\"]', NULL, NULL, '2024-12-01 18:07:24', '2024-12-01 18:07:24'),
+(949, 'App\\Models\\Student', 337, 'API TOKEN', '6f7dc60c2908a985f551c8afddcc95daa543544053358bd9ad848d88651e97d7', '[\"*\"]', NULL, NULL, '2024-12-01 18:13:51', '2024-12-01 18:13:51'),
+(950, 'App\\Models\\Student', 332, '01014531415', 'cdbd9522aa14952feee29bf927bb7392f4b3e7c81cc4eb091a569402f80265e8', '[\"student\"]', '2024-12-02 00:51:02', NULL, '2024-12-01 18:40:07', '2024-12-02 00:51:02'),
+(951, 'App\\Models\\Student', 338, 'API TOKEN', 'e9e68abdfb96d4e11e73b5f25ec02efe4cdcb02d15fc73b9408b4fb108b7768c', '[\"*\"]', NULL, NULL, '2024-12-01 18:49:09', '2024-12-01 18:49:09'),
+(952, 'App\\Models\\Admin', 1, 'prodigy', '6fd2ecc07d97b9684b8ac073c9d3be7a15ad54a4aa3184fe6399d11173adaa15', '[\"admin\"]', '2024-12-01 19:34:07', NULL, '2024-12-01 18:57:42', '2024-12-01 19:34:07'),
+(953, 'App\\Models\\Student', 338, '01001234567', '47c6e8d8e95721df205d010ad6a264201e00ed956376acb43d73e8c245de0c01', '[\"student\"]', '2024-12-01 19:00:18', NULL, '2024-12-01 18:59:49', '2024-12-01 19:00:18'),
+(954, 'App\\Models\\Student', 339, 'API TOKEN', 'e3185bde73dae69c726bc1c19bd9d4328296c5a79ee425e453aaa18c67fbe7c7', '[\"*\"]', NULL, NULL, '2024-12-01 19:05:45', '2024-12-01 19:05:45'),
+(955, 'App\\Models\\Student', 273, '01018828058', 'c35058c877c11ad718ffc97b262d801f181964cde0de4f01254ec74f571e2c53', '[\"student\"]', '2024-12-05 20:32:52', NULL, '2024-12-01 19:21:03', '2024-12-05 20:32:52'),
+(956, 'App\\Models\\Student', 340, 'API TOKEN', '025ee964ecf6f773e36f3f8f4c72a0d373cc74272471d6f7142c212bc92fa67b', '[\"*\"]', NULL, NULL, '2024-12-01 19:36:10', '2024-12-01 19:36:10'),
+(957, 'App\\Models\\Admin', 1, 'Prodigy', '98c593aee6b6c11596d9012aa6274eea821423f1d607a9ae809ebf620fa162aa', '[\"admin\"]', '2024-12-07 17:18:34', NULL, '2024-12-01 19:37:24', '2024-12-07 17:18:34'),
+(958, 'App\\Models\\Student', 340, '01001234567', '40c4be2fd428bac701e8018be10a0008328e0749ce93eefcc5812de222c26d93', '[\"student\"]', '2024-12-01 20:10:25', NULL, '2024-12-01 19:38:02', '2024-12-01 20:10:25'),
+(959, 'App\\Models\\Student', 331, '01554231344', '9f252d26f2c347a3651f7aba9a7671ca15c1d580672c35c6e467b4ab5cb77b16', '[\"student\"]', '2024-12-01 20:07:26', NULL, '2024-12-01 20:03:41', '2024-12-01 20:07:26'),
+(960, 'App\\Models\\Student', 341, 'API TOKEN', '88bd82a46f6af977ad5194c53dd007f4e617233d5d941d05f89565aafaa83a84', '[\"*\"]', NULL, NULL, '2024-12-01 20:48:54', '2024-12-01 20:48:54'),
+(961, 'App\\Models\\Student', 342, 'API TOKEN', '3c8f182b32ee12777d0f7485fb96dd525edf01bb05c835fab786ca359e33ef8d', '[\"*\"]', NULL, NULL, '2024-12-01 20:49:24', '2024-12-01 20:49:24'),
+(962, 'App\\Models\\Student', 326, '01200413567', '32c65ad92d0e2ebed4dfb596842036b841d1c236e6ce7ade9fc9d29d37abe183', '[\"student\"]', '2024-12-07 07:59:16', NULL, '2024-12-01 20:52:54', '2024-12-07 07:59:16'),
+(963, 'App\\Models\\Student', 343, 'API TOKEN', '28f1e2841a5c7d36e6e204d0a14310897ebab19f161f237c6441f02c30a23b09', '[\"*\"]', NULL, NULL, '2024-12-01 22:15:20', '2024-12-01 22:15:20'),
+(964, 'App\\Models\\Student', 344, 'API TOKEN', 'ab87867f97a4717313acf1f5c5c59584362e5ccabe2127ee52171c89e11893ec', '[\"*\"]', NULL, NULL, '2024-12-01 22:16:51', '2024-12-01 22:16:51'),
+(965, 'App\\Models\\Student', 306, '01080895502', '743e894eb664a6c0b90d1d4ae7363ff3916cf7c5eab2b813ec1a9131971423c8', '[\"student\"]', '2024-12-01 22:48:23', NULL, '2024-12-01 22:46:58', '2024-12-01 22:48:23'),
+(966, 'App\\Models\\Student', 306, '01080895502', 'dbf927c72cea3a98f60111ca28730ccd50719c3f0c78b5262c902787739a4281', '[\"student\"]', '2024-12-04 18:00:44', NULL, '2024-12-01 22:48:44', '2024-12-04 18:00:44'),
+(967, 'App\\Models\\Student', 328, '01024324738', 'eb53e85d885077378e27835ac1b717804a58130ea7617ee3b0a29bf909412f72', '[\"student\"]', '2024-12-02 08:23:31', NULL, '2024-12-02 08:22:57', '2024-12-02 08:23:31'),
+(968, 'App\\Models\\Student', 337, '01033720053', '5242e8cdd0a101960e21f7490d922a884ee3be7aeca12fc924539f545dcc172e', '[\"student\"]', '2024-12-02 17:43:49', NULL, '2024-12-02 17:42:08', '2024-12-02 17:43:49'),
+(969, 'App\\Models\\Student', 337, '01033720053', 'e779465ccc545d9c056ee2548a03f71d1202435aa930cfe40e570698f8e8a633', '[\"student\"]', '2024-12-04 17:25:19', NULL, '2024-12-02 17:44:53', '2024-12-04 17:25:19'),
+(970, 'App\\Models\\Student', 345, 'API TOKEN', '7aae79d89642f452b44b610ef2f2cdcb3d79a9d8259f2fe3dd52859d00a225e0', '[\"*\"]', NULL, NULL, '2024-12-02 17:51:23', '2024-12-02 17:51:23'),
+(971, 'App\\Models\\Student', 335, '01122026266', 'd5fa4880b2eb80e09c66eeb29c4a11307848102cd69c1548014af9c21abf8769', '[\"student\"]', '2024-12-02 18:57:18', NULL, '2024-12-02 18:18:16', '2024-12-02 18:57:18'),
+(972, 'App\\Models\\Student', 335, '01122026266', '4a0bc4885976a038548e585ec31fa29d49e8264cd0054e8dea19d8f97bb9db10', '[\"student\"]', '2024-12-02 20:21:47', NULL, '2024-12-02 18:58:58', '2024-12-02 20:21:47'),
+(973, 'App\\Models\\Student', 328, '01024324738', '841a48d1cacce19b776adce18d67401f0fef5b82b29b12219113fb345d5f06bc', '[\"student\"]', '2024-12-02 20:35:40', NULL, '2024-12-02 19:49:20', '2024-12-02 20:35:40'),
+(974, 'App\\Models\\Student', 335, '01122026266', 'e908fbcebb0915fbd6cf059d5ad950ef04855cc40772790246acda70ebb823ce', '[\"student\"]', '2024-12-02 20:31:59', NULL, '2024-12-02 20:26:53', '2024-12-02 20:31:59'),
+(975, 'App\\Models\\Student', 335, '01122026266', '2e0afcc0431b7f0b69f2f930cdd83bb2f40b37ee450718c7c67be7964de5bab8', '[\"student\"]', '2024-12-04 19:40:13', NULL, '2024-12-02 20:32:44', '2024-12-04 19:40:13'),
+(976, 'App\\Models\\Student', 306, '01080895502', '3049d435b4c7f604ede029238c1819cdf4dda3a8fdcf56ab50b903a84b10dcce', '[\"student\"]', '2024-12-04 21:22:56', NULL, '2024-12-02 21:56:14', '2024-12-04 21:22:56'),
+(977, 'App\\Models\\Student', 280, '01017757002', '053e262b4705f4a4121664d4e4a57815700f2177bbe68bdc986ad5fab19144e5', '[\"student\"]', '2024-12-04 00:37:25', NULL, '2024-12-02 23:34:10', '2024-12-04 00:37:25'),
+(978, 'App\\Models\\Student', 309, '01019811348', 'c4d98ad9fff6fcd0c6683cd292e61ef0557a60c9da4da0b9e2e857ad150ebf54', '[\"student\"]', '2024-12-03 16:00:46', NULL, '2024-12-03 06:15:54', '2024-12-03 16:00:46'),
+(979, 'App\\Models\\Student', 271, '01124113266', '65cd1f91218dc3138392380c4ef5fe8e0d07ef8327cff4f5df5a60b949f03bbc', '[\"student\"]', '2024-12-03 19:16:57', NULL, '2024-12-03 18:54:17', '2024-12-03 19:16:57'),
+(980, 'App\\Models\\Student', 346, 'API TOKEN', '24442c95e4faaccb3fb11579222903a258f02d13d54c35f10b329e1889da6803', '[\"*\"]', NULL, NULL, '2024-12-03 19:19:22', '2024-12-03 19:19:22'),
+(981, 'App\\Models\\Student', 326, '01200413567', '60884e95933ba18f3a491224ad8b2dcddb383232e222ccfc5d41573434b13540', '[\"student\"]', '2024-12-03 19:31:36', NULL, '2024-12-03 19:31:02', '2024-12-03 19:31:36'),
+(982, 'App\\Models\\Student', 326, '01200413567', '4b5dbb8c6e3746c7e92cbcbecb42a9f0f8e1c5652a180c6900f5690ff42371f0', '[\"student\"]', '2024-12-06 16:45:40', NULL, '2024-12-03 19:34:04', '2024-12-06 16:45:40'),
+(983, 'App\\Models\\Student', 328, '01024324738', 'f9c877a95f80d469273821b6ea2bd72e2dece37e2fbdee25664a164dd8922089', '[\"student\"]', '2024-12-03 19:40:24', NULL, '2024-12-03 19:39:54', '2024-12-03 19:40:24'),
+(984, 'App\\Models\\Student', 347, 'API TOKEN', '0de18d845f6a6556dec32fe0fcd16f835b51631205432b9a40d91d659b5da089', '[\"*\"]', NULL, NULL, '2024-12-04 13:58:04', '2024-12-04 13:58:04'),
+(985, 'App\\Models\\Student', 348, 'API TOKEN', '2d1df9ab15532fd0a4de20bfa403670d29f8de4ea2cb8535e3e28218d20dcd83', '[\"*\"]', NULL, NULL, '2024-12-04 14:37:50', '2024-12-04 14:37:50'),
+(986, 'App\\Models\\Student', 349, 'API TOKEN', '41c2117b8474e40ce7c27bd1e4e3e9848adb7f6aa4d505c41e1a76da9e11f49c', '[\"*\"]', NULL, NULL, '2024-12-04 14:47:45', '2024-12-04 14:47:45'),
+(987, 'App\\Models\\Student', 315, '01017726025', '80555bb5f08c01060664f377654f46453b65de86d0c51304c8f21aeba9a3bcae', '[\"student\"]', '2024-12-04 16:08:27', NULL, '2024-12-04 15:51:21', '2024-12-04 16:08:27'),
+(988, 'App\\Models\\Student', 350, 'API TOKEN', '264e086d016444948c5c6ad07d9aecf51e7bb08c445bc298bce348075f545658', '[\"*\"]', NULL, NULL, '2024-12-04 16:00:22', '2024-12-04 16:00:22'),
+(989, 'App\\Models\\Student', 315, '01017726025', '3635dc9da76d8592b67fb86f65a4247ca5b6f13106c7a4a8ea39c0f7486cf6d1', '[\"student\"]', '2024-12-04 22:36:15', NULL, '2024-12-04 16:00:25', '2024-12-04 22:36:15'),
+(990, 'App\\Models\\Student', 315, '01017726025', 'e06f8cb75984e319b6923b8f9b58a911fc415d86ac2a3260e73253d649675f7c', '[\"student\"]', '2024-12-04 21:12:23', NULL, '2024-12-04 16:08:48', '2024-12-04 21:12:23'),
+(991, 'App\\Models\\Student', 348, '01006282378', '03cd53a7bf1f5cb72aeb675b703fafe93801f1ba30c4d2cf139b6cc81d74ce4b', '[\"student\"]', '2024-12-04 18:54:07', NULL, '2024-12-04 16:20:21', '2024-12-04 18:54:07'),
+(992, 'App\\Models\\Student', 315, '01017726025', 'a89614afade44763e518f1f9686382fa5a2dd032d2ba6f014d4ead92e98e18e7', '[\"student\"]', '2024-12-04 17:06:57', NULL, '2024-12-04 17:06:48', '2024-12-04 17:06:57'),
+(993, 'App\\Models\\Student', 351, 'API TOKEN', 'e9dd092390edcd79074c86732fb932023b2502e8701b74d407cefbfb1762464c', '[\"*\"]', NULL, NULL, '2024-12-04 17:38:22', '2024-12-04 17:38:22'),
+(994, 'App\\Models\\Student', 346, '01553661592', 'dd35ae92d610ca58b237486eef9df79ea500ac715c6e96763c73431d2fc12fd8', '[\"student\"]', '2024-12-04 17:46:16', NULL, '2024-12-04 17:40:02', '2024-12-04 17:46:16'),
+(995, 'App\\Models\\Student', 352, 'API TOKEN', 'c4085cd80f54ecb66fa1a1e6b9d6c0d36c57d22f8472e1971a32176138076c3a', '[\"*\"]', NULL, NULL, '2024-12-04 17:49:31', '2024-12-04 17:49:31'),
+(996, 'App\\Models\\Student', 353, 'API TOKEN', '389a8b34f374966460d3f5408008037933d9feffc5f4b375da88ef784bed1976', '[\"*\"]', NULL, NULL, '2024-12-04 17:52:11', '2024-12-04 17:52:11'),
+(997, 'App\\Models\\Student', 354, 'API TOKEN', '61fd9cec3c4531883dbbafbc9b1a41ea65c7e49243ecded2cfb983589b7e8270', '[\"*\"]', NULL, NULL, '2024-12-04 18:00:54', '2024-12-04 18:00:54'),
+(998, 'App\\Models\\Student', 355, 'API TOKEN', '2753f9601106a5a6aab71673d00261beca6f04a0657e5ededf3d33fadb410973', '[\"*\"]', NULL, NULL, '2024-12-04 18:09:03', '2024-12-04 18:09:03'),
+(999, 'App\\Models\\Student', 356, 'API TOKEN', '40ccc5476259c738ff86d74d14ec4aac7fbf0302e7e5abcde32a6d69279566b0', '[\"*\"]', NULL, NULL, '2024-12-04 18:15:07', '2024-12-04 18:15:07'),
+(1000, 'App\\Models\\Student', 292, '01158629083', 'ab2c69d8e79a0ed0c15b56595b35f519df8ffaea2aaa1a427c17cc84a4e6a4f5', '[\"student\"]', '2024-12-04 20:22:51', NULL, '2024-12-04 18:25:59', '2024-12-04 20:22:51'),
+(1001, 'App\\Models\\Student', 352, '01146694710', 'aa7136cd491dd9f0d527e1f424ca53cae2bfda0e611c88b18bdcbc6546a42f5a', '[\"student\"]', '2024-12-04 18:53:17', NULL, '2024-12-04 18:50:51', '2024-12-04 18:53:17'),
+(1002, 'App\\Models\\Student', 356, '01061150541', '986a662e9032247b0e9edb9394cb9bc8f5001f7b695791b29bc0e0c75b552b50', '[\"student\"]', '2024-12-08 21:49:11', NULL, '2024-12-04 18:58:35', '2024-12-08 21:49:11'),
+(1003, 'App\\Models\\Student', 305, '01000540106', 'adbdee053490c6d595262791a629ddbf6d4f424a4f50c415ae3f944d99b9cc28', '[\"student\"]', '2024-12-08 22:27:31', NULL, '2024-12-04 19:15:40', '2024-12-08 22:27:31'),
+(1004, 'App\\Models\\Student', 353, '01095252021', '37dd99a41715b2a27f39dbc20567d4a847338eeb8d1b840a81e0125db8592bef', '[\"student\"]', '2024-12-04 19:33:45', NULL, '2024-12-04 19:32:32', '2024-12-04 19:33:45'),
+(1005, 'App\\Models\\Student', 357, 'API TOKEN', 'f1facca4ce614650aaf49e1636d480c042e421e77ee530ffc8f860a2ca7375ae', '[\"*\"]', NULL, NULL, '2024-12-04 19:45:07', '2024-12-04 19:45:07');
+INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
+(1006, 'App\\Models\\Student', 358, 'API TOKEN', 'd92f221ab6d2037ad829667f7fa0fa8d82e6733d15ac1e24dc1cf6adc9907710', '[\"*\"]', NULL, NULL, '2024-12-04 20:17:07', '2024-12-04 20:17:07'),
+(1007, 'App\\Models\\Student', 359, 'API TOKEN', 'b52d3355270b8717b4239f5e3876a1051508ca02f7183bc324f2cbfbf9ad43fd', '[\"*\"]', NULL, NULL, '2024-12-04 20:22:16', '2024-12-04 20:22:16'),
+(1008, 'App\\Models\\Student', 288, '01061722499', 'fe5411b90b4a76eb81589d8800d9ab6437b28bdbaa6fc766382f7b5eb74a9fbe', '[\"student\"]', '2024-12-04 23:57:52', NULL, '2024-12-04 20:29:51', '2024-12-04 23:57:52'),
+(1009, 'App\\Models\\Student', 354, '01150322386', '0613419534115c3534d5974aec962ec364b0192896b25993f4eea20976368e00', '[\"student\"]', '2024-12-04 21:02:35', NULL, '2024-12-04 21:01:29', '2024-12-04 21:02:35'),
+(1010, 'App\\Models\\Student', 354, '01150322386', '6998a99976a37f5540b28890a2f1992a3644a465644ee6101965600350a83c8f', '[\"student\"]', '2024-12-05 09:32:39', NULL, '2024-12-04 21:06:13', '2024-12-05 09:32:39'),
+(1011, 'App\\Models\\Student', 349, '01027591985', 'e803a1c340cd1ddfe971c0fe80fc83960d2c6adaf5f9afe12ffd814558071962', '[\"student\"]', '2024-12-04 22:25:47', NULL, '2024-12-04 21:12:33', '2024-12-04 22:25:47'),
+(1012, 'App\\Models\\Student', 360, 'API TOKEN', '70f4acac65d83ebf0356e97077be89f6c50b89fb5c704dbac380c671cdc93f64', '[\"*\"]', NULL, NULL, '2024-12-04 21:17:36', '2024-12-04 21:17:36'),
+(1013, 'App\\Models\\Student', 315, '01017726025', '70cbdb63f5c9e3da948740f46eeb8b38d451192c4a96ec4ce63b7f8cae5c3644', '[\"student\"]', '2024-12-04 22:12:39', NULL, '2024-12-04 22:12:30', '2024-12-04 22:12:39'),
+(1014, 'App\\Models\\Student', 354, '01150322386', 'f0e2f9fd4dd5f6491285b31baee0a2aa357ae66f58f247b07ad286ba88be6ce7', '[\"student\"]', '2024-12-04 22:36:42', NULL, '2024-12-04 22:31:03', '2024-12-04 22:36:42'),
+(1015, 'App\\Models\\Student', 361, 'API TOKEN', '6a17f630f77cf0685887d0390c112a143b58a821272d74f84bf9b6a8c13ae6a3', '[\"*\"]', NULL, NULL, '2024-12-04 22:47:02', '2024-12-04 22:47:02'),
+(1016, 'App\\Models\\Student', 345, '01022004243', '38a532493fdd5e404965df74b953e84fe54779d2883af80ed08aaf9998203baa', '[\"student\"]', '2024-12-04 23:31:38', NULL, '2024-12-04 23:25:30', '2024-12-04 23:31:38'),
+(1017, 'App\\Models\\Student', 337, '01033720053', '597461c59fd492fda02ea710bb95051d3c497b15a3c821888a49a77ed9e56a46', '[\"student\"]', '2024-12-05 03:28:09', NULL, '2024-12-04 23:34:55', '2024-12-05 03:28:09'),
+(1018, 'App\\Models\\Student', 362, 'API TOKEN', '5f24a004164e96957aa9dae32c76efc5dd9b30ec6cde123d91667148eb39cad3', '[\"*\"]', NULL, NULL, '2024-12-04 23:39:55', '2024-12-04 23:39:55'),
+(1019, 'App\\Models\\Student', 361, '01030390101', 'e1d832761e4a9b66505baa0a5e33630c5538e3dc82cdcdff551ffe1d2e008d92', '[\"student\"]', '2024-12-08 19:34:55', NULL, '2024-12-05 17:29:10', '2024-12-08 19:34:55'),
+(1020, 'App\\Models\\Student', 363, 'API TOKEN', 'c04073a9797dc91878ccaaa8741ab99bf663761d5ac63bec731ab4a528abdaff', '[\"*\"]', NULL, NULL, '2024-12-06 01:49:30', '2024-12-06 01:49:30'),
+(1021, 'App\\Models\\Student', 364, 'API TOKEN', '26886d07c7898bd35b24e14d966f030b69e00fa9fb6c8fde8d0dda19ed777324', '[\"*\"]', NULL, NULL, '2024-12-06 12:04:30', '2024-12-06 12:04:30'),
+(1022, 'App\\Models\\Student', 365, 'API TOKEN', 'eef9d7c2f2a6fb88cc06234d54d5c75f42d541aa68941a04f8eaaadc1bcaa5e8', '[\"*\"]', NULL, NULL, '2024-12-06 18:38:31', '2024-12-06 18:38:31'),
+(1023, 'App\\Models\\Student', 366, 'API TOKEN', '59974976c550387fd4397f61dc8aa1e0eb12e267e08f13d5ee8365103800d469', '[\"*\"]', NULL, NULL, '2024-12-07 17:18:17', '2024-12-07 17:18:17'),
+(1024, 'App\\Models\\Student', 366, '01091009720', '98b1a241e8f6e716722b26f94f02d3cb2075801ae4921c810b8e71af0c59cdf9', '[\"student\"]', '2024-12-07 19:36:14', NULL, '2024-12-07 17:22:33', '2024-12-07 19:36:14'),
+(1025, 'App\\Models\\Student', 292, '01158629083', '8c2512a82f93c0fdcf3da5e33eff236c09d78d19117e1dfe39afb5d4c79c2221', '[\"student\"]', '2024-12-13 13:39:47', NULL, '2024-12-07 19:35:47', '2024-12-13 13:39:47'),
+(1026, 'App\\Models\\Student', 293, '01001161542', 'fbf22c64337f07e15f0108f869f22c20b480f27d74bcfd3b6554f869ceb33604', '[\"student\"]', '2024-12-08 10:45:09', NULL, '2024-12-08 10:45:08', '2024-12-08 10:45:09'),
+(1027, 'App\\Models\\Admin', 1, 'Prodigy', '4d21d745d4572e4bc193b6146b4a6cb2ddf11cc3597d72376269dc5613b15f9d', '[\"admin\"]', '2024-12-15 21:44:16', NULL, '2024-12-09 09:41:48', '2024-12-15 21:44:16'),
+(1028, 'App\\Models\\Student', 276, '01118898879', '4ae4c9cf11c001b63c7bd8adf13b520f86124f469c6d5b257221d2b74acf97fd', '[\"student\"]', '2024-12-09 23:48:20', NULL, '2024-12-09 21:34:19', '2024-12-09 23:48:20'),
+(1029, 'App\\Models\\Student', 367, 'API TOKEN', '9298fa03bcf9762714153084661bb3fb7f84cfbf468e20566bdcf53f43026751', '[\"*\"]', NULL, NULL, '2024-12-10 12:54:06', '2024-12-10 12:54:06'),
+(1030, 'App\\Models\\Student', 367, '01066940721', '5088d22853d833201561f4cfdf78b5adc1d73a9fce1dda443b7c3cfb8ae8537a', '[\"student\"]', '2024-12-16 21:41:30', NULL, '2024-12-10 12:56:08', '2024-12-16 21:41:30'),
+(1031, 'App\\Models\\Student', 367, '01066940721', 'f2e90b4d3b25482d5a7ed3d9cef26eb4d1fdb8a7565ce82a7a6c90bb0827640b', '[\"student\"]', '2024-12-10 19:26:46', NULL, '2024-12-10 12:58:29', '2024-12-10 19:26:46'),
+(1032, 'App\\Models\\Student', 368, 'API TOKEN', '1f0d43df61493a113202302f4ceea5ad2301a213b16b84c1bee5eec537e50af4', '[\"*\"]', NULL, NULL, '2024-12-10 17:22:14', '2024-12-10 17:22:14'),
+(1033, 'App\\Models\\Student', 349, '01027591985', '0ae7f6e4e78c3120ec0d0838d124f73303873feffd8891821e37603e01b5050d', '[\"student\"]', '2024-12-10 17:49:50', NULL, '2024-12-10 17:45:51', '2024-12-10 17:49:50'),
+(1034, 'App\\Models\\Student', 285, '01016014670', '3824b314f1f468aed32f30d8f9ab9fb933c87b6e933fbd7b74acfc1036b8166a', '[\"student\"]', '2024-12-10 18:25:23', NULL, '2024-12-10 18:24:25', '2024-12-10 18:25:23'),
+(1035, 'App\\Models\\Student', 301, '01033199523', '248ece343e01e7d94ad12888c08620701740f4ee530ca813accfbc19983fadf1', '[\"student\"]', '2024-12-14 17:17:22', NULL, '2024-12-10 19:46:46', '2024-12-14 17:17:22'),
+(1036, 'App\\Models\\Student', 289, '01090839039', '7362bd108f31a777b4d3ca7e525b53c76e2dc969cf0a830a265a12872f833ed2', '[\"student\"]', '2024-12-10 19:55:14', NULL, '2024-12-10 19:49:33', '2024-12-10 19:55:14'),
+(1037, 'App\\Models\\Student', 364, '01124646085', 'a3d3efd0323cab688f3826bc038005a79ea65c9c1def426a7566b37538e0123b', '[\"student\"]', '2024-12-11 19:12:28', NULL, '2024-12-11 18:58:50', '2024-12-11 19:12:28'),
+(1038, 'App\\Models\\Student', 274, '01228739109', 'b775bc2b04f206423737845587006a7f9c3c8cf4266b558c71857eb6319ad1c4', '[\"student\"]', '2024-12-12 00:06:23', NULL, '2024-12-12 00:04:50', '2024-12-12 00:06:23'),
+(1039, 'App\\Models\\Student', 369, 'API TOKEN', '798343a37d92ca506548e56fe4d1479c2594aa7b3310ff857cb540dbf8474246', '[\"*\"]', NULL, NULL, '2024-12-12 21:06:16', '2024-12-12 21:06:16'),
+(1040, 'App\\Models\\Student', 306, '01080895502', '85d2fd44e34f36a8792fd9e9e32fe1d1d675cc5542ab3b738e4734eb83bd5673', '[\"student\"]', '2024-12-13 15:36:00', NULL, '2024-12-13 15:35:30', '2024-12-13 15:36:00'),
+(1041, 'App\\Models\\Student', 279, '01092875531', '2a91d4b2589613254f0ac1696560e01126609550ea397158012ef0484523701d', '[\"student\"]', '2024-12-13 16:45:02', NULL, '2024-12-13 16:44:45', '2024-12-13 16:45:02'),
+(1042, 'App\\Models\\Student', 279, '01092875531', 'c6aa1c30faec46108c7426606def9f757036113381b22fa3202bd8f60e1254f3', '[\"student\"]', '2024-12-13 20:07:52', NULL, '2024-12-13 20:07:48', '2024-12-13 20:07:52'),
+(1043, 'App\\Models\\Student', 322, '01012430090', '4af3c175a72a8e0b587972aaadd2788989d20ebf993a2ce6452de5aa978ddaee', '[\"student\"]', '2024-12-14 12:51:33', NULL, '2024-12-14 12:49:13', '2024-12-14 12:51:33'),
+(1044, 'App\\Models\\Student', 345, '01022004243', 'bd432fd806627326fa2768209e62673613af0fd48857ecaad626cf889290c7c9', '[\"student\"]', '2024-12-14 14:32:13', NULL, '2024-12-14 14:31:52', '2024-12-14 14:32:13'),
+(1045, 'App\\Models\\Student', 292, '01158629083', 'd8437b0cd17fd3be8e498a853aa8c992fba6ab9cb7bcafd46d14e2e75d94bbe5', '[\"student\"]', '2024-12-21 20:17:05', NULL, '2024-12-14 20:34:06', '2024-12-21 20:17:05'),
+(1046, 'App\\Models\\Student', 309, '01019811348', '0ae48a82767848fccb41e411e5587f984630c214c36fd19b40a401e63efcb3f8', '[\"student\"]', '2024-12-16 12:40:15', NULL, '2024-12-16 12:39:14', '2024-12-16 12:40:15'),
+(1047, 'App\\Models\\Student', 285, '01016014670', '963ef13cd4f1dfcd8ae09b3ce7b18650013fae1f0ca81a18e1748ee8fdaf4dec', '[\"student\"]', '2024-12-17 19:12:09', NULL, '2024-12-17 19:11:27', '2024-12-17 19:12:09'),
+(1048, 'App\\Models\\Student', 367, '01066940721', '1a0b3e878d49afe7fd70df97d3b1d6fa46e3806833d1623c6b5ebb05da4c5cdc', '[\"student\"]', '2024-12-23 08:21:03', NULL, '2024-12-17 23:44:09', '2024-12-23 08:21:03'),
+(1049, 'App\\Models\\Student', 370, 'API TOKEN', '51c8524fecfb259dbe1f1c3aa817ad909172d111d1a2c41cc7bf433f0c57dcab', '[\"*\"]', NULL, NULL, '2024-12-19 16:26:52', '2024-12-19 16:26:52'),
+(1050, 'App\\Models\\Student', 334, '01127923539', '5fa6d8ac20146a4da005a79e9119553cc327c0937b2673b6579eaabe8e4f758b', '[\"student\"]', '2024-12-23 12:21:23', NULL, '2024-12-19 18:41:40', '2024-12-23 12:21:23'),
+(1051, 'App\\Models\\Student', 371, 'API TOKEN', '2dcad9330a8b940becb0f52e9e2f86e9432ce11d5d7ed40182e7e12c71467155', '[\"*\"]', NULL, NULL, '2024-12-20 22:34:10', '2024-12-20 22:34:10'),
+(1052, 'App\\Models\\Student', 274, '01228739109', '70f4a7babdb21c218b5d69708203f92c5e9ac8678e5b1e2e1ec1bc8cba6b41b9', '[\"student\"]', '2024-12-27 21:53:41', NULL, '2024-12-21 00:34:10', '2024-12-27 21:53:41'),
+(1053, 'App\\Models\\Student', 346, '01553661592', 'e5f454c289c0113b86ded548a4511ee7e6ca24b1117021451e564f0326371918', '[\"student\"]', '2024-12-24 13:53:25', NULL, '2024-12-22 19:35:13', '2024-12-24 13:53:25'),
+(1054, 'App\\Models\\Student', 372, 'API TOKEN', 'a69ba5070fc54447d88c97468549d5e2842118283f9cc11cac839440f1740d2b', '[\"*\"]', NULL, NULL, '2024-12-23 11:38:43', '2024-12-23 11:38:43'),
+(1055, 'App\\Models\\Admin', 44, 'omar', 'a64c0f17eca32e4babacc58f1368952c9b1b768c7d524b72a05fca1cef5012bb', '[\"admin\"]', '2024-12-23 11:55:33', NULL, '2024-12-23 11:55:09', '2024-12-23 11:55:33'),
+(1056, 'App\\Models\\Admin', 44, 'omar', 'bcc1090d4cd4b2f7b9b7c5579865816e042dff608ca091bba211aeaa974c8da2', '[\"admin\"]', '2024-12-23 11:57:41', NULL, '2024-12-23 11:57:41', '2024-12-23 11:57:41'),
+(1057, 'App\\Models\\Admin', 44, 'omar', 'ff6d4e76e6fadc11ad00244b7639ef285587c1f6041b9bcd2b419be39dd6e0d0', '[\"admin\"]', NULL, NULL, '2024-12-23 11:57:53', '2024-12-23 11:57:53'),
+(1058, 'App\\Models\\Student', 284, '01224591930', 'e2f38908128d4651199c5c56dff0d00d8b815a936f25692e534f4ecf0744f73c', '[\"student\"]', '2024-12-23 13:32:25', NULL, '2024-12-23 13:05:27', '2024-12-23 13:32:25'),
+(1059, 'App\\Models\\Admin', 44, 'omar', '5cea942a4e5bc4a10777bdf93e4a716b6b70b6aa9d78d71b86179aa0c9e2f995', '[\"admin\"]', '2024-12-23 13:07:27', NULL, '2024-12-23 13:06:33', '2024-12-23 13:07:27'),
+(1060, 'App\\Models\\Admin', 1, 'prodigy', '3bbfa95566b26698a0bbf0668a6ea23cca8c80036ad5658484dfb678c929a23a', '[\"admin\"]', '2024-12-23 13:54:37', NULL, '2024-12-23 13:08:32', '2024-12-23 13:54:37'),
+(1061, 'App\\Models\\Student', 373, 'API TOKEN', 'b64aeb305f124f38c71c774385c79d83dca7a8d48107b40a73293f02a992b1f7', '[\"*\"]', NULL, NULL, '2024-12-23 13:17:04', '2024-12-23 13:17:04'),
+(1062, 'App\\Models\\Student', 374, 'API TOKEN', 'c3229d4acd8bc0e47d54369f30ecbac177fdeb27f1f54a32a74828de91edb306', '[\"*\"]', NULL, NULL, '2024-12-23 13:21:01', '2024-12-23 13:21:01'),
+(1063, 'App\\Models\\Student', 375, 'API TOKEN', '1c851d54a48302f9fa3867c5dca367788181d9e722af1e1caae447240581a0f0', '[\"*\"]', NULL, NULL, '2024-12-23 13:58:46', '2024-12-23 13:58:46'),
+(1064, 'App\\Models\\Student', 376, 'API TOKEN', '031c1afebd14d6f0d13e22b3d7a926260e74db08abd32c6169d5a200ba24185c', '[\"*\"]', NULL, NULL, '2024-12-23 14:01:35', '2024-12-23 14:01:35'),
+(1065, 'App\\Models\\Student', 377, 'API TOKEN', '4a62f962761c444c59fcf9c9f2b5f1aa1e792a7a8457ae8973735918f6eed012', '[\"*\"]', NULL, NULL, '2024-12-23 14:07:07', '2024-12-23 14:07:07'),
+(1066, 'App\\Models\\Student', 378, 'API TOKEN', 'e52c1d748446193e832ed9f9305bb2bfa7a5bc776596972e767a4cf817c2b55a', '[\"*\"]', NULL, NULL, '2024-12-23 14:22:14', '2024-12-23 14:22:14'),
+(1067, 'App\\Models\\Student', 379, 'API TOKEN', 'f596e6210ff4fb5a2331b8bdf36735bbcdbbf7cc0c6de5fed8cce0910e8f2175', '[\"*\"]', NULL, NULL, '2024-12-23 17:09:01', '2024-12-23 17:09:01'),
+(1068, 'App\\Models\\Student', 277, '01068293097', '11c7ff28956ece4272c7b28b0f58de536ca81941e3718993b376296285cf8620', '[\"student\"]', '2024-12-30 13:10:31', NULL, '2024-12-23 22:17:39', '2024-12-30 13:10:31'),
+(1069, 'App\\Models\\Student', 298, '01066624500', 'da2eace498e3a6da36312eb77dfb4aadabeed7bef6f49bffa0bc013921eacf59', '[\"student\"]', '2024-12-24 10:28:11', NULL, '2024-12-24 09:48:32', '2024-12-24 10:28:11'),
+(1070, 'App\\Models\\Student', 380, 'API TOKEN', 'b60b7264e88e70caa3f2de554103889c79870082caeb4e5cf24562cad12498aa', '[\"*\"]', NULL, NULL, '2024-12-25 01:23:46', '2024-12-25 01:23:46'),
+(1071, 'App\\Models\\Student', 381, 'API TOKEN', 'ea7e99889ec696a30ecb847ba6cc00c5a0af9ecdc65c4146ea38997573711a24', '[\"*\"]', NULL, NULL, '2024-12-25 13:05:41', '2024-12-25 13:05:41'),
+(1072, 'App\\Models\\Student', 382, 'API TOKEN', '95293383f1619fe76a1c6003673deaecce3eb76547fc1a955039b168238b893a', '[\"*\"]', NULL, NULL, '2024-12-26 14:01:27', '2024-12-26 14:01:27'),
+(1073, 'App\\Models\\Student', 292, '01158629083', '1622f0a0da51129006c8a1ba1dacbabdfc641cfc9a55a1862430c36c8977fca7', '[\"student\"]', '2024-12-27 17:29:48', NULL, '2024-12-27 17:29:47', '2024-12-27 17:29:48'),
+(1074, 'App\\Models\\Student', 349, '01027591985', '9df11e04587cbd738d2e2d663f35d805c552ae73f2ada98b751f567c227cd86c', '[\"student\"]', '2024-12-27 20:23:15', NULL, '2024-12-27 20:22:22', '2024-12-27 20:23:15'),
+(1075, 'App\\Models\\Student', 316, '01097497098', '7017f3776e0c364de5f5bc125c831748ec8940e2006d7136c297f4f612522af9', '[\"student\"]', '2024-12-27 20:33:21', NULL, '2024-12-27 20:30:55', '2024-12-27 20:33:21'),
+(1076, 'App\\Models\\Student', 383, 'API TOKEN', '4138329756955c39577c1bdf05e74e02147eaf81f7fef44bcbe52b24b90c7419', '[\"*\"]', NULL, NULL, '2024-12-27 20:37:52', '2024-12-27 20:37:52'),
+(1077, 'App\\Models\\Student', 292, '01158629083', 'eb65155cff45c64a9163fe3083b5438d44b5241d12f606fc7e8cfb61ac7c1429', '[\"student\"]', '2024-12-27 20:45:20', NULL, '2024-12-27 20:44:56', '2024-12-27 20:45:20'),
+(1078, 'App\\Models\\Student', 276, '01118898879', 'bacd7c3fe9929d3794048dc9aadaa8932eb51b56bb7d42b608561232c9810429', '[\"student\"]', '2024-12-27 20:50:45', NULL, '2024-12-27 20:49:00', '2024-12-27 20:50:45'),
+(1079, 'App\\Models\\Student', 279, '01092875531', 'd1021abd2e71825fbd698c4988655a62c1bbc5e6fbc0db47df828342941256a8', '[\"student\"]', '2024-12-27 20:52:14', NULL, '2024-12-27 20:51:54', '2024-12-27 20:52:14'),
+(1080, 'App\\Models\\Student', 384, 'API TOKEN', '5b62b1d482e9484938660069539151bbb9b8743f0d6a1ebef4b3d47319ee3037', '[\"*\"]', NULL, NULL, '2024-12-27 20:52:20', '2024-12-27 20:52:20'),
+(1081, 'App\\Models\\Student', 385, 'API TOKEN', 'f013a2c89bf55a2db3bd497af1079c7482bc0b4be006a39f88a770bfa7e962fb', '[\"*\"]', NULL, NULL, '2024-12-27 20:54:18', '2024-12-27 20:54:18'),
+(1082, 'App\\Models\\Student', 386, 'API TOKEN', 'a4677d65cbdea8e8fe3ed65287ba532652c033ae5b2cfe04b7d337f81e947439', '[\"*\"]', NULL, NULL, '2024-12-27 20:55:05', '2024-12-27 20:55:05'),
+(1083, 'App\\Models\\Student', 387, 'API TOKEN', '83b6f09e00171489fb447b3bce1062660e8668f316f2bbe4535eb0940dc6aeab', '[\"*\"]', NULL, NULL, '2024-12-27 21:08:31', '2024-12-27 21:08:31'),
+(1084, 'App\\Models\\Student', 342, '01026093759', '71d1c1eaca8ec0dc49a6e2fbd9233c4780ab7bcf65ba6ecc04881ac4ee43cebd', '[\"student\"]', '2024-12-28 17:57:09', NULL, '2024-12-27 21:22:50', '2024-12-28 17:57:09'),
+(1085, 'App\\Models\\Student', 277, '01068293097', 'c30df72ecd8da62851fc94383e3e92eaec5bfb79efaa99db56ad6d62f0a242e0', '[\"student\"]', '2024-12-27 21:43:11', NULL, '2024-12-27 21:41:58', '2024-12-27 21:43:11'),
+(1086, 'App\\Models\\Student', 315, '01017726025', 'bd74f2d3381272f84903a0594ac0644a063b95c58fd9fbfb0526cc171c82edcf', '[\"student\"]', '2024-12-27 21:50:17', NULL, '2024-12-27 21:46:05', '2024-12-27 21:50:17'),
+(1087, 'App\\Models\\Student', 388, 'API TOKEN', '87a1020feaf711ab34c69421b260381c75a02ed28c187a2d59e40dff1ce213ca', '[\"*\"]', NULL, NULL, '2024-12-27 21:53:18', '2024-12-27 21:53:18'),
+(1088, 'App\\Models\\Student', 295, '01142288101', '56612001b4f8082925aefcfe75fc297f28d7bee9db747bda1d5576a0e78fbc53', '[\"student\"]', '2024-12-28 15:20:52', NULL, '2024-12-27 22:04:16', '2024-12-28 15:20:52'),
+(1089, 'App\\Models\\Student', 389, 'API TOKEN', 'b0e4186048545f71c4697e8536d767a8539b04ec651fedb8d1fbce6b6c8c0705', '[\"*\"]', NULL, NULL, '2024-12-27 22:04:28', '2024-12-27 22:04:28'),
+(1090, 'App\\Models\\Student', 390, 'API TOKEN', 'd421fc9e217c92f60c2333ecba4b755523df4ada096be3bcf8f2a820bcac50c6', '[\"*\"]', NULL, NULL, '2024-12-27 22:05:45', '2024-12-27 22:05:45'),
+(1091, 'App\\Models\\Student', 311, '01146599669', '8c6cccc4b19eb0bf28647c166aa0597ddec06d7243d8b41ad21aabbdde6f1d3c', '[\"student\"]', '2024-12-27 22:41:28', NULL, '2024-12-27 22:22:13', '2024-12-27 22:41:28'),
+(1092, 'App\\Models\\Student', 391, 'API TOKEN', '439fa4221d232479ff2463b121444d7a17287228705186059ac0c814420a3215', '[\"*\"]', NULL, NULL, '2024-12-27 22:33:53', '2024-12-27 22:33:53'),
+(1093, 'App\\Models\\Student', 392, 'API TOKEN', 'd70df06ce702256077cb47146fa4bbf67b3b0975a9f427735e00e8f8bf7070b3', '[\"*\"]', NULL, NULL, '2024-12-27 23:48:36', '2024-12-27 23:48:36'),
+(1094, 'App\\Models\\Student', 393, 'API TOKEN', 'e9745261a018898345ff059216387059a5a5b152e077f2ac9f74dfa53b1c4048', '[\"*\"]', NULL, NULL, '2024-12-28 00:10:25', '2024-12-28 00:10:25'),
+(1095, 'App\\Models\\Student', 318, '01220356958', '18cc6038a04cd7a45ebaf900e6e08a01281e5521bc01d3c59bbd6e6adb6609b0', '[\"student\"]', '2024-12-28 10:48:16', NULL, '2024-12-28 10:47:45', '2024-12-28 10:48:16'),
+(1096, 'App\\Models\\Student', 394, 'API TOKEN', '61b9873390dd8324eb9f5b4a31c5e578ef442d5f05e0ad8c1e1295786c277a5a', '[\"*\"]', NULL, NULL, '2024-12-28 10:54:15', '2024-12-28 10:54:15'),
+(1097, 'App\\Models\\Student', 395, 'API TOKEN', 'b54e4945f6e29da5ad021c17e81746cabadfa01fd4d9d242ef0278d2ec05dd01', '[\"*\"]', NULL, NULL, '2024-12-28 14:44:17', '2024-12-28 14:44:17'),
+(1098, 'App\\Models\\Student', 335, '01122026266', '2e830cb0a6d73ac53f6c297cf67fb293cb0b23d1d33673fb88c3409efaf8ffe2', '[\"student\"]', '2024-12-30 18:02:29', NULL, '2024-12-28 19:47:26', '2024-12-30 18:02:29'),
+(1099, 'App\\Models\\Student', 285, '01016014670', '43411f07a801e8ff09fc136634f4489e7641a84f4a9a6a630871c6d52bf183bd', '[\"student\"]', '2024-12-29 19:03:46', NULL, '2024-12-29 19:03:02', '2024-12-29 19:03:46'),
+(1100, 'App\\Models\\Student', 396, 'API TOKEN', '1a61bfabb9d4f0aead7075ab031f40c2bc1dc63a97cc621fd538b0a6db16c7e2', '[\"*\"]', NULL, NULL, '2024-12-29 22:36:16', '2024-12-29 22:36:16'),
+(1101, 'App\\Models\\Student', 306, '01080895502', '543704e2134276f8f7e87b7552305b2b69e9d1dac08ee80febfa2b5311d5ad21', '[\"student\"]', '2024-12-29 23:51:37', NULL, '2024-12-29 23:51:22', '2024-12-29 23:51:37'),
+(1102, 'App\\Models\\Student', 288, '01061722499', 'a193bb0de594029c9d39f7e2b4453eae4a681a5af51212e5a1594ac052ec36fb', '[\"student\"]', '2024-12-30 17:42:24', NULL, '2024-12-30 17:42:03', '2024-12-30 17:42:24'),
+(1103, 'App\\Models\\Student', 364, '01124646085', '556efe512798a0a1cafe6f7759f7954da079965a484c58f7e5ed2472c572d123', '[\"student\"]', '2024-12-31 19:16:54', NULL, '2024-12-30 18:13:11', '2024-12-31 19:16:54'),
+(1104, 'App\\Models\\Admin', 1, 'Prodigy', '7e00e8fc5c7c582f38bf139c1c5d4afaeef0847b4ff66f67616f8d0891b97a5b', '[\"admin\"]', '2025-01-06 22:01:37', NULL, '2024-12-31 09:20:40', '2025-01-06 22:01:37'),
+(1105, 'App\\Models\\Student', 397, 'API TOKEN', '100ecfb9425d3f809d3382bc0e8ce78b353ac87d87880a38a5ad6a578d8ab307', '[\"*\"]', NULL, NULL, '2024-12-31 13:10:21', '2024-12-31 13:10:21'),
+(1106, 'App\\Models\\Student', 398, 'API TOKEN', '234b4def067a3ecbd59234c1d2e7b83013873ef7f1b5e2ac290a504402c13e80', '[\"*\"]', NULL, NULL, '2024-12-31 19:05:08', '2024-12-31 19:05:08'),
+(1107, 'App\\Models\\Student', 399, 'API TOKEN', 'f93d7aa555bf065cd1b7c30677a83efc496060e955381f36757b30a0e64afc49', '[\"*\"]', NULL, NULL, '2024-12-31 22:30:58', '2024-12-31 22:30:58'),
+(1108, 'App\\Models\\Student', 371, '01055850471', 'd8225553f52701ebbac67458507d34e5c94ac578a8d046032512900da910f38f', '[\"student\"]', '2025-01-01 15:13:23', NULL, '2025-01-01 13:40:13', '2025-01-01 15:13:23'),
+(1109, 'App\\Models\\Student', 345, '01022004243', 'e49374e44eca2e50d7d8591e418224928b0a5437d2997ab454156dad9d46ad04', '[\"student\"]', '2025-01-01 16:20:20', NULL, '2025-01-01 16:15:30', '2025-01-01 16:20:20'),
+(1110, 'App\\Models\\Student', 400, 'API TOKEN', '9dea0891fafafd8350f8aab0beae66b5efc212e9375369dba089563ebb8eb57a', '[\"*\"]', NULL, NULL, '2025-01-01 21:28:18', '2025-01-01 21:28:18'),
+(1111, 'App\\Models\\Student', 398, '01000441854', '182e521ecf4d005f84631d963562e13318f0d5c620ee57c1862cc940b4c4a7ac', '[\"student\"]', '2025-01-06 17:21:22', NULL, '2025-01-01 22:05:20', '2025-01-06 17:21:22'),
+(1112, 'App\\Models\\Student', 379, '01064367688', 'f2f60cbd07af755f2775d96878cf6f176a55248feeac0847854c30528b891b29', '[\"student\"]', '2025-01-04 07:26:04', NULL, '2025-01-01 22:13:46', '2025-01-04 07:26:04'),
+(1113, 'App\\Models\\Student', 396, '01014180005', '19a2ab213f53b4c92553d252c47159a49b75b09128a19f4494656994bb2fc6f1', '[\"student\"]', '2025-01-01 23:51:36', NULL, '2025-01-01 23:50:45', '2025-01-01 23:51:36'),
+(1114, 'App\\Models\\Student', 401, 'API TOKEN', '01b3bab95a13766c5d791c87d69de75a5f0d93430d87c4bddd6392ed14a20f6c', '[\"*\"]', NULL, NULL, '2025-01-02 14:57:08', '2025-01-02 14:57:08'),
+(1115, 'App\\Models\\Student', 402, 'API TOKEN', '4994f0900fdf3440541a169d55f81c800b107eb1ca08b3f1a2960ba29593bae4', '[\"*\"]', NULL, NULL, '2025-01-03 18:15:39', '2025-01-03 18:15:39'),
+(1116, 'App\\Models\\Student', 377, '01277074746', 'c9fd0f4c2eb6c747cc527f042cf64eb9e43a12c1de19f208019c0d2cd00d5737', '[\"student\"]', '2025-01-03 22:56:04', NULL, '2025-01-03 22:54:30', '2025-01-03 22:56:04'),
+(1117, 'App\\Models\\Student', 292, '01158629083', '70593e1de680dfa162d5cf927a473296c95f12d53eff6c6c009a349b87108144', '[\"student\"]', '2025-01-08 10:08:50', NULL, '2025-01-04 10:52:35', '2025-01-08 10:08:50'),
+(1118, 'App\\Models\\Admin', 49, 'Safymoustafa', '735cbadef04e071b591e0a086eb57ee3e0a8b2f05215e61d9a94a0134b93d10f', '[\"admin\"]', '2025-01-04 12:41:58', NULL, '2025-01-04 12:41:47', '2025-01-04 12:41:58'),
+(1119, 'App\\Models\\Student', 280, '01017757002', 'c1617b46abe728fe36478861b371c2fd76e92356e7cb2e6f2a868b40bf37f265', '[\"student\"]', '2025-01-08 16:13:55', NULL, '2025-01-04 20:52:05', '2025-01-08 16:13:55'),
+(1120, 'App\\Models\\Admin', 49, 'safymoustafa', '773ec8c715695c4bcc12b2117c7fd876a3061c96507987c40d51793213d88e4e', '[\"admin\"]', '2025-01-05 13:47:49', NULL, '2025-01-05 13:39:19', '2025-01-05 13:47:49'),
+(1121, 'App\\Models\\Student', 403, 'API TOKEN', 'afc8e7ef3364a9bd495aad6ff236c6a683b509d6d8a2dabb00227eb279dcb7c3', '[\"*\"]', NULL, NULL, '2025-01-05 14:13:54', '2025-01-05 14:13:54'),
+(1122, 'App\\Models\\Student', 403, '01141441494', '7fef56cee3c4e9befff199c7d808b8e2e7d01539d4ce1ff99c1944a5c4641bc9', '[\"student\"]', '2025-01-05 14:17:08', NULL, '2025-01-05 14:15:12', '2025-01-05 14:17:08'),
+(1123, 'App\\Models\\Student', 362, '01018619744', '0ce5d11f11e3a1c3b5c53f1382c745473a71393a36646c95cec573a9fec82ad6', '[\"student\"]', '2025-01-05 19:50:32', NULL, '2025-01-05 19:47:15', '2025-01-05 19:50:32'),
+(1124, 'App\\Models\\Student', 404, 'API TOKEN', 'cdb96645e2527b2379fbf90e4448f1714d0735a105b1a43b7a956fb10da27bd0', '[\"*\"]', NULL, NULL, '2025-01-05 19:55:32', '2025-01-05 19:55:32'),
+(1125, 'App\\Models\\Student', 293, '01001161542', 'b7a35318e8029361003014f6525c2eec090b57febfaf2411a4e37c35289f518e', '[\"student\"]', '2025-01-08 17:55:35', NULL, '2025-01-05 21:04:50', '2025-01-08 17:55:35'),
+(1126, 'App\\Models\\Student', 306, '01080895502', '436910b176e176c5dbd2fe47117080773508d8969e77f52e535df27780da4edd', '[\"student\"]', '2025-01-06 14:10:04', NULL, '2025-01-06 14:09:48', '2025-01-06 14:10:04'),
+(1127, 'App\\Models\\Student', 277, '01068293097', 'd019716ed13838ca66c03b8236d0fe37a0dac998ffcd44114128737dc3ff0e6e', '[\"student\"]', '2025-01-13 17:35:14', NULL, '2025-01-06 22:58:37', '2025-01-13 17:35:14'),
+(1128, 'App\\Models\\Student', 395, '01272076710', 'bb7b666243fcb6a202e6bc791205b339306d305a239b8e4ed52aed03ab96ed8c', '[\"student\"]', '2025-01-07 12:08:01', NULL, '2025-01-07 12:02:49', '2025-01-07 12:08:01'),
+(1129, 'App\\Models\\Student', 285, '01016014670', '37b327468f8ef9d7f70c57ac338878422dc64abb10ad5d7644aaa7eef7d830e1', '[\"student\"]', '2025-01-07 23:07:02', NULL, '2025-01-07 23:04:54', '2025-01-07 23:07:02'),
+(1130, 'App\\Models\\Student', 405, 'API TOKEN', '0bb30dcd6fc03e69c8e53fcf3a1ad31b719b674eff7bbe2f24fc497ade84af81', '[\"*\"]', NULL, NULL, '2025-01-08 01:18:12', '2025-01-08 01:18:12'),
+(1131, 'App\\Models\\Admin', 1, 'Prodigy', '361c982801acdf81383c822e0fb22ef249363c568abcd64d25211893c40805b7', '[\"admin\"]', '2025-01-13 11:21:49', NULL, '2025-01-08 08:09:59', '2025-01-13 11:21:49'),
+(1132, 'App\\Models\\Student', 318, '01220356958', 'a2a56b5f1bec8be3962a820884b16f8b13021634c30c870e58589a0d813b8c24', '[\"student\"]', '2025-01-13 07:59:16', NULL, '2025-01-08 12:18:05', '2025-01-13 07:59:16'),
+(1133, 'App\\Models\\Student', 335, '01122026266', '2511e54cf1ca267d0898802d6ee83252831683e83a1d22e3ebc564257c381670', '[\"student\"]', '2025-01-08 12:58:04', NULL, '2025-01-08 12:56:08', '2025-01-08 12:58:04'),
+(1134, 'App\\Models\\Student', 406, 'API TOKEN', '1290a7de447e2aab0630425b4cbe0355113fbc46b6008ab5b067d3266b008e23', '[\"*\"]', NULL, NULL, '2025-01-08 14:29:58', '2025-01-08 14:29:58'),
+(1135, 'App\\Models\\Student', 354, '01150322386', 'dc598a87f56d021d25ef327b96f2eb36d94e63850b91903a9aee1b3e18acaaf2', '[\"student\"]', '2025-01-08 14:38:34', NULL, '2025-01-08 14:36:42', '2025-01-08 14:38:34'),
+(1136, 'App\\Models\\Student', 356, '01061150541', 'd9078324f3ebcb58b966ede5df57047c3b182e5a8cec5dfe26a6818d03913af7', '[\"student\"]', '2025-01-10 15:31:23', NULL, '2025-01-10 15:29:35', '2025-01-10 15:31:23'),
+(1137, 'App\\Models\\Student', 398, '01000441854', '7265d201451d277ba4abfea64adb9fc301e3a8c68ab12fb4249cd0ddeaa8054b', '[\"student\"]', '2025-01-11 21:11:53', NULL, '2025-01-11 21:11:22', '2025-01-11 21:11:53'),
+(1138, 'App\\Models\\Student', 345, '01022004243', '722b870016085834a4432921a55a4e963fdf015291a78812a3b2f7f2a9776562', '[\"student\"]', '2025-01-12 10:34:35', NULL, '2025-01-12 10:34:07', '2025-01-12 10:34:35'),
+(1139, 'App\\Models\\Student', 292, '01158629083', 'af941c2503efac2a711a724fbb8835e7da830c8efca32dcfc7952510df99e31e', '[\"student\"]', '2025-01-12 18:40:07', NULL, '2025-01-12 18:37:52', '2025-01-12 18:40:07'),
+(1140, 'App\\Models\\Student', 292, '01158629083', '9d2117179ea10b5a8439aa9410de7c76bbdc0ef7920674112d4613c4f572a7f6', '[\"student\"]', '2025-01-15 17:50:40', NULL, '2025-01-12 18:42:48', '2025-01-15 17:50:40'),
+(1141, 'App\\Models\\Student', 306, '01080895502', '1017681baf8eb438ae0eafeac576e1aec6af2a703ce90630fa81f0b32ca2c558', '[\"student\"]', '2025-01-13 16:19:36', NULL, '2025-01-13 16:19:12', '2025-01-13 16:19:36'),
+(1142, 'App\\Models\\Student', 285, '01016014670', '641edcc67ed6221a3bfebf8553dda918c4e0fd0b7d05984314a445bd186f5406', '[\"student\"]', '2025-01-13 22:54:41', NULL, '2025-01-13 22:32:05', '2025-01-13 22:54:41'),
+(1143, 'App\\Models\\Student', 288, '01061722499', '09cd4ad58eca8b84f7089e905887a9fe1e2be9159464f15bd2131d64ee63a864', '[\"student\"]', '2025-01-17 04:45:37', NULL, '2025-01-14 13:21:20', '2025-01-17 04:45:37'),
+(1144, 'App\\Models\\Student', 364, '01124646085', 'a3025e8e0399fdca06d01e20980266ec78955116dfbd4255160498d18c1cadcb', '[\"student\"]', '2025-01-14 20:20:09', NULL, '2025-01-14 19:18:45', '2025-01-14 20:20:09'),
+(1145, 'App\\Models\\Student', 288, '01061722499', 'c983ecc81f74961dd2dad3fa25416260c157bf86ab82484dd688b21fc1b0ce20', '[\"student\"]', '2025-01-15 07:33:28', NULL, '2025-01-14 21:48:08', '2025-01-15 07:33:28'),
+(1146, 'App\\Models\\Student', 276, '01118898879', 'c46f7031755d966a45808974edc983e1c8c44cdab40d8cac6fb29c35096d095c', '[\"student\"]', '2025-01-15 16:03:17', NULL, '2025-01-15 16:03:07', '2025-01-15 16:03:17'),
+(1147, 'App\\Models\\Student', 346, '01553661592', '1a39839bd44a0f7f983cdb64a8ee8e5a848d591e19837bd78dfc4d6d95f9732f', '[\"student\"]', '2025-01-19 12:13:22', NULL, '2025-01-19 12:12:16', '2025-01-19 12:13:22'),
+(1148, 'App\\Models\\Student', 396, '01014180005', 'df2a5b0b8040469c560b714da31995b890eae59cdddf0a5a9a46d7a888a9a9b7', '[\"student\"]', '2025-01-19 15:52:46', NULL, '2025-01-19 15:46:33', '2025-01-19 15:52:46'),
+(1149, 'App\\Models\\Student', 295, '01142288101', 'e7c082a9f11de7878eaebd20d33ce6778081a20e009d72bfe69f96eeba0c8468', '[\"student\"]', '2025-01-25 20:33:34', NULL, '2025-01-25 20:30:00', '2025-01-25 20:33:34'),
+(1150, 'App\\Models\\Admin', 44, 'omar', 'eaff8dec9f3caf25b7a51890d7e00076b7cb5ce16d9993396a68ed3abfab57c4', '[\"admin\"]', '2025-01-28 09:44:15', NULL, '2025-01-28 09:20:05', '2025-01-28 09:44:15'),
+(1151, 'App\\Models\\Admin', 44, 'omar', 'b2cfa5a7c96ba09d8840d1788010d138f53a4effcaa194e77155501789e83678', '[\"admin\"]', '2025-01-29 10:45:56', NULL, '2025-01-28 15:52:20', '2025-01-29 10:45:56'),
+(1152, 'App\\Models\\Admin', 44, 'omar', '3ea161bcaf1e96bd53bb66c0915ca8632c423dd911983d0f5e08abc91809e19f', '[\"admin\"]', '2025-01-28 16:32:12', NULL, '2025-01-28 16:32:09', '2025-01-28 16:32:12'),
+(1153, 'App\\Models\\Admin', 1, 'Prodigy', '2839c9fddd5bfed639ab95bfb335fc62d0366d36c7f9be182c1ab16778e79e76', '[\"admin\"]', '2025-03-03 10:14:00', NULL, '2025-02-26 13:13:07', '2025-03-03 10:14:00'),
+(1154, 'App\\Models\\Admin', 44, 'omar', '0d4766ac66120d5197e1f98628e86907f0971c5a385d8378352692f98b014c1a', '[\"admin\"]', '2025-03-02 10:42:16', NULL, '2025-03-02 10:42:13', '2025-03-02 10:42:16'),
+(1155, 'App\\Models\\Admin', 44, 'omar', 'f48bf420adcab9be20476a43626b27a624e022a6d199319cb20e7ee624f7de78', '[\"admin\"]', '2025-03-02 10:47:24', NULL, '2025-03-02 10:47:11', '2025-03-02 10:47:24'),
+(1156, 'App\\Models\\Admin', 1, 'Prodigy', '057e387a2ac0c31eb5105aab1b764fc47717eebc204f8769a973fd7b8b30b8d4', '[\"admin\"]', '2025-03-09 21:31:36', NULL, '2025-03-05 22:25:44', '2025-03-09 21:31:36'),
+(1157, 'App\\Models\\Admin', 1, 'Prodigy', 'a9037873b2c48bf3a3dd650174da17775a4fa8cc0b083cf97a259bb0c77a2a17', '[\"admin\"]', '2025-03-08 20:35:07', NULL, '2025-03-05 23:07:32', '2025-03-08 20:35:07'),
+(1158, 'App\\Models\\Student', 407, 'API TOKEN', '88240b65f30447652a8c238d238d034ad988c9ed90d40f74bb0cc6f3db076b3f', '[\"*\"]', NULL, NULL, '2025-03-06 21:25:08', '2025-03-06 21:25:08'),
+(1159, 'App\\Models\\Student', 407, '01152393524', '1dc0a223a8e94a0f3689d30cd844e3a43ee92cf22487ad8d509e8dee81b44cec', '[\"student\"]', '2025-03-07 20:42:28', NULL, '2025-03-06 21:36:25', '2025-03-07 20:42:28'),
+(1160, 'App\\Models\\Student', 407, '01152393524', '5caead6a208457f6b067c80df5761ddf3a463581171475a0769e404aef9640e4', '[\"student\"]', '2025-03-12 07:08:23', NULL, '2025-03-07 20:42:47', '2025-03-12 07:08:23'),
+(1161, 'App\\Models\\Student', 408, 'API TOKEN', 'a6c86b890fc607c111835bf4ceac0b0898e056599630211973f2d1a1e62290a5', '[\"*\"]', NULL, NULL, '2025-03-09 11:33:54', '2025-03-09 11:33:54'),
+(1162, 'App\\Models\\Student', 408, '01017495881', '8d8b2d44521a16f540c2d67e78516f8e7e9e3454afd851a87df7bef6f5a45432', '[\"student\"]', '2025-03-10 22:42:47', NULL, '2025-03-10 00:24:16', '2025-03-10 22:42:47'),
+(1163, 'App\\Models\\Student', 408, '01017495881', 'db541f76ca4ece9c52b7d2d20bbf33bffe7c0a41a4dda34ae300a2451ef74a86', '[\"student\"]', '2025-03-11 19:47:50', NULL, '2025-03-10 16:50:17', '2025-03-11 19:47:50'),
+(1164, 'App\\Models\\Student', 409, 'API TOKEN', '61526a38817060771bb09779c7f9f3c518863404cd80544f9553773006ec8c1e', '[\"*\"]', NULL, NULL, '2025-03-12 11:05:05', '2025-03-12 11:05:05'),
+(1165, 'App\\Models\\Admin', 1, 'prodigy', '91ba05446a163bb817b656fc4e03e1d5d92d1e19075103d3eaca8b92937dd3bd', '[\"admin\"]', '2025-03-19 14:12:47', NULL, '2025-03-16 09:02:14', '2025-03-19 14:12:47'),
+(1166, 'App\\Models\\Student', 409, '01068658007', 'a922cf645201eb6b7ff0901b5a4e6e759030fd92ed05bb2d72b3ed2abf5f5daf', '[\"student\"]', '2025-03-16 12:14:31', NULL, '2025-03-16 10:57:59', '2025-03-16 12:14:31'),
+(1167, 'App\\Models\\Admin', 1, 'Prodigy', '3b5ebdb81ea58014b80dd941ab235f05f2f859e0015546f1b81d4447bf244787', '[\"admin\"]', '2025-03-16 14:34:08', NULL, '2025-03-16 12:55:35', '2025-03-16 14:34:08'),
+(1168, 'App\\Models\\Admin', 1, 'Prodigy', '161f30cf74638da27c0a276afbb25262a19108706eabc1fee633af18a2a91c5a', '[\"admin\"]', '2025-03-16 13:15:32', NULL, '2025-03-16 13:13:53', '2025-03-16 13:15:32'),
+(1169, 'App\\Models\\Student', 409, '01068658007', 'a64fe3ab02e0d09189967bb637d261040de393389eb1ec902f7248e6633d99b3', '[\"student\"]', '2025-03-16 16:43:11', NULL, '2025-03-16 13:21:41', '2025-03-16 16:43:11'),
+(1170, 'App\\Models\\Student', 410, 'API TOKEN', '6be51cc81fe2faada821cab7a82e21a761a403e7b20e7deb4774834379eea097', '[\"*\"]', NULL, NULL, '2025-03-16 13:37:22', '2025-03-16 13:37:22'),
+(1171, 'App\\Models\\Student', 409, '01068658007', 'bcf3b296c5381da26007b5fae910a6d119c922af93ebc8589a5c4eb8c83524de', '[\"student\"]', '2025-03-20 21:53:12', NULL, '2025-03-16 16:32:24', '2025-03-20 21:53:12'),
+(1172, 'App\\Models\\Student', 407, '01152393524', '2a45b2035ef16ad0a6bf17b30107a30e3136cd155b5d2a1d6d372f5e23b25e74', '[\"student\"]', '2025-03-24 07:30:45', NULL, '2025-03-19 14:13:55', '2025-03-24 07:30:45'),
+(1173, 'App\\Models\\Student', 411, 'API TOKEN', 'a94615903fc852147bea44f3864b73b6f9b0e47ad1c387e539f02eb3c9d94032', '[\"*\"]', NULL, NULL, '2025-03-25 21:43:45', '2025-03-25 21:43:45'),
+(1174, 'App\\Models\\Student', 412, 'API TOKEN', 'ec472d4d83a5cdc96e8a849f501b9792ff0b204083be160e48845e35b08d1ba7', '[\"*\"]', NULL, NULL, '2025-03-25 21:52:56', '2025-03-25 21:52:56'),
+(1175, 'App\\Models\\Admin', 1, 'prodigy', '4a1c4107d095dcfa163673c0eda7c3b1d66329a9a11654ef86160b4faf897ad5', '[\"admin\"]', '2025-03-27 19:03:09', NULL, '2025-03-26 08:33:35', '2025-03-27 19:03:09'),
+(1176, 'App\\Models\\Student', 411, '01008331515', '9421cc9a92af37c7f019b10570d55f2261cbd160f7f437421e6b8adb27d613d6', '[\"student\"]', '2025-03-28 19:28:14', NULL, '2025-03-26 08:46:13', '2025-03-28 19:28:14'),
+(1177, 'App\\Models\\Student', 411, '01008331515', 'abf398d8ba4195bde4fdc176f5381ac9c93d56cd7d3daa4a4eea68b9028b5eff', '[\"student\"]', '2025-03-27 03:23:39', NULL, '2025-03-26 09:01:35', '2025-03-27 03:23:39'),
+(1178, 'App\\Models\\Admin', 1, 'prodigy', 'd94231a500a23846be9aeaefa1366a47cc04246fd37050b4a8d6095ebbfbb9f6', '[\"admin\"]', '2025-03-26 10:52:17', NULL, '2025-03-26 10:39:15', '2025-03-26 10:52:17'),
+(1179, 'App\\Models\\Student', 411, '01008331515', '0b8dadc7c0d61dba611d256b2d6aeaee7954ea58ba21c159114b3dfbe1084585', '[\"student\"]', '2025-03-27 09:03:53', NULL, '2025-03-27 09:00:12', '2025-03-27 09:03:53'),
+(1180, 'App\\Models\\Student', 411, '01008331515', 'c43fd4dc64e1541d2cbfc6e28982d2ae988c97227f9d4ef270eb179bb0290e98', '[\"student\"]', '2025-03-28 14:25:19', NULL, '2025-03-28 14:18:37', '2025-03-28 14:25:19'),
+(1181, 'App\\Models\\Student', 407, '01152393524', '87016b3d916042971de699ba2b02c27f17a205d3c31e036091d29832ff79094a', '[\"student\"]', '2025-04-06 21:25:35', NULL, '2025-04-03 11:01:27', '2025-04-06 21:25:35'),
+(1182, 'App\\Models\\Student', 411, '01008331515', 'a9e784438ec5968e8f67aa1b424c575cac60523d3a695523429aacf3b651fd8e', '[\"student\"]', '2025-04-15 00:23:25', NULL, '2025-04-10 03:24:17', '2025-04-15 00:23:25'),
+(1183, 'App\\Models\\Student', 413, 'API TOKEN', '1296620e2e0a14bfc91d66a8b2b6a84a47faba28b713b3e7be45cdb03ff591d2', '[\"*\"]', NULL, NULL, '2025-04-12 22:24:19', '2025-04-12 22:24:19'),
+(1184, 'App\\Models\\Student', 407, '01152393524', 'c052bd8211ca497f6832e0fd199c8034fe3231f66fa44e728fac763881efec23', '[\"student\"]', '2025-04-21 21:19:53', NULL, '2025-04-14 23:09:52', '2025-04-21 21:19:53'),
+(1185, 'App\\Models\\Admin', 1, 'Prodigy', '836031f612aa50ae7d1d9d2a99b25718aa75c2d4a59654631d99136597157b81', '[\"admin\"]', '2025-04-23 14:03:24', NULL, '2025-04-17 10:48:46', '2025-04-23 14:03:24'),
+(1186, 'App\\Models\\Admin', 1, 'prodigy', 'a22d0cfed7201b977b169a63c66dd923cd85df8209a970b0dab392bc297bb543', '[\"admin\"]', '2025-04-22 13:20:46', NULL, '2025-04-17 11:18:07', '2025-04-22 13:20:46'),
+(1187, 'App\\Models\\Admin', 48, 'hodasaeed', 'd2a913f418d60db383efaf97a26907d9f831762cfd37e866078519ea3cad38ec', '[\"admin\"]', '2025-04-17 12:23:48', NULL, '2025-04-17 12:22:02', '2025-04-17 12:23:48'),
+(1188, 'App\\Models\\Student', 414, 'API TOKEN', 'ea691401fb09982c68f6de48d875331ac3ebead26ec9c17ee8217602be79a912', '[\"*\"]', NULL, NULL, '2025-04-17 12:29:00', '2025-04-17 12:29:00'),
+(1189, 'App\\Models\\Student', 414, '01070283066', '8b8d6795f1182229fa5df5a8b391073883d434986eb45b16d210317c5a4f80f6', '[\"student\"]', '2025-04-17 13:35:25', NULL, '2025-04-17 12:29:26', '2025-04-17 13:35:25'),
+(1190, 'App\\Models\\Student', 408, '01017495881', '4502508f803f7a48d693a8e3b54a0484f78a9f68102308d1e83a20dbcf25c6fc', '[\"student\"]', '2025-04-26 09:32:20', NULL, '2025-04-19 14:50:15', '2025-04-26 09:32:20'),
+(1191, 'App\\Models\\Admin', 1, 'Prodigy', '2e55ee1375d0e44697ae5edb1310383a53ebddc59ddc5c1a3fdd3cb6b8d980ec', '[\"admin\"]', '2025-04-21 20:20:47', NULL, '2025-04-21 12:09:29', '2025-04-21 20:20:47'),
+(1192, 'App\\Models\\Student', 407, '01152393524', 'bc5f803b16e9aca1aff02c1131d43ba0c578672db0a7c3dc8aaf7d9846942be2', '[\"student\"]', '2025-04-25 15:03:30', NULL, '2025-04-22 14:08:42', '2025-04-25 15:03:30'),
+(1193, 'App\\Models\\Admin', 1, 'Prodigy', '94ba917dc36a636521caa2770b3538b426f49aaf7d99f9c3f48aeb2f78be72eb', '[\"admin\"]', '2025-04-28 14:07:49', NULL, '2025-04-28 11:25:28', '2025-04-28 14:07:49'),
+(1194, 'App\\Models\\Student', 407, '01152393524', '9728a4358966687f28b2c17c843bfe7d3f503de07bc87dd15e61ec32a71cf9aa', '[\"student\"]', '2025-05-02 16:24:49', NULL, '2025-05-02 16:11:07', '2025-05-02 16:24:49'),
+(1195, 'App\\Models\\Student', 415, 'API TOKEN', '76199e1d4c2d5d4cb9fd48d21ec49fabb7d40936bf9c83132a9420fd6f301755', '[\"*\"]', NULL, NULL, '2025-05-03 19:56:23', '2025-05-03 19:56:23'),
+(1196, 'App\\Models\\Student', 408, '01017495881', 'ce8cc6a568e3bc36930bc5684dae3449d1cf8bb26ea0e2ac142f0db267480d20', '[\"student\"]', '2025-05-14 18:40:41', NULL, '2025-05-11 20:49:30', '2025-05-14 18:40:41'),
+(1197, 'App\\Models\\Admin', 1, 'Prodigy', 'c459b4944d4c09bb437c9897c108ec2dd2c9b08b8214bacaac5df2f429fbf51a', '[\"admin\"]', '2025-05-15 13:21:10', NULL, '2025-05-14 13:18:40', '2025-05-15 13:21:10'),
+(1198, 'App\\Models\\Student', 407, '01152393524', 'c1a6df348cd5c8d36cffdf02202249a9c4e786934cb05493df918ed6cac5ee79', '[\"student\"]', '2025-05-16 11:06:49', NULL, '2025-05-16 11:04:26', '2025-05-16 11:06:49'),
+(1199, 'App\\Models\\Student', 407, '01152393524', 'e87efa7ab5dd11c9a36ee9a41e3ccac53a16538582b0e8f44779d9156a6e4bed', '[\"student\"]', '2025-05-16 15:36:32', NULL, '2025-05-16 15:36:08', '2025-05-16 15:36:32'),
+(1200, 'App\\Models\\Student', 409, '01068658007', '4725436c061c9f9e498550518e022831bc3ee39aaf7f95ffc04f57b76cb00d94', '[\"student\"]', '2025-05-22 13:46:45', NULL, '2025-05-18 09:04:12', '2025-05-22 13:46:45'),
+(1201, 'App\\Models\\Student', 409, '01068658007', '549363d010f22dd89d1130969151499792509587cc80bd5e19203c4248385237', '[\"student\"]', '2025-05-22 23:20:14', NULL, '2025-05-18 09:06:10', '2025-05-22 23:20:14'),
+(1202, 'App\\Models\\Student', 408, '01017495881', '8343c6a00e87f5ff0f95cec8dfe8113a3d1a4cf38c9ebdbe354f0be09612dfad', '[\"student\"]', '2025-05-23 11:27:44', NULL, '2025-05-20 15:15:30', '2025-05-23 11:27:44'),
+(1203, 'App\\Models\\Admin', 44, 'Omar', '2cba6d8e48b473991b9d28395eaf8867896448b728c9c62420f8de1b1a0daa0a', '[\"admin\"]', '2025-07-30 13:11:14', NULL, '2025-07-30 13:10:39', '2025-07-30 13:11:14'),
+(1204, 'App\\Models\\Admin', 44, 'omar', 'c361e2ccb7b5c2b3c16c58946c886345c7f494e5dd008225d2aaa4922e9a074d', '[\"admin\"]', '2025-07-30 13:25:17', NULL, '2025-07-30 13:11:57', '2025-07-30 13:25:17'),
+(1205, 'App\\Models\\Admin', 44, 'omar', '3382962ea1352386f132161efbffe8ed656aaaf341eabe4ce7ddcaf5e089a3b6', '[\"admin\"]', '2025-07-30 13:14:03', NULL, '2025-07-30 13:14:02', '2025-07-30 13:14:03'),
+(1206, 'App\\Models\\Admin', 44, 'omar', '95fc58ba68265762258caf303cef1679268ed60c49dcf3837d3cf4da7f23aed5', '[\"admin\"]', '2025-08-02 12:51:30', NULL, '2025-07-30 13:14:16', '2025-08-02 12:51:30'),
+(1207, 'App\\Models\\Admin', 44, 'omar', '3ef1b96bede085223158394d691a70472f762438079d36d6fa8f147aa6309edc', '[\"admin\"]', NULL, NULL, '2025-07-30 13:15:31', '2025-07-30 13:15:31'),
+(1208, 'App\\Models\\Admin', 44, 'omar', '193799f54e097b202dded2beebc44065f4ba1ee9bc5ffb897fb7a133ec28b688', '[\"admin\"]', NULL, NULL, '2025-07-30 13:16:45', '2025-07-30 13:16:45'),
+(1209, 'App\\Models\\Admin', 44, 'omar', '7266c7a5a592f84fcf38b26315582d5c105bb8f0c467cbd39ad4ea8dd57a1c89', '[\"admin\"]', NULL, NULL, '2025-07-30 13:16:56', '2025-07-30 13:16:56'),
+(1210, 'App\\Models\\Admin', 44, 'omar', 'c587fa150d13b80b4182ac640de440179bae16427851c53a614be52370fcbd30', '[\"admin\"]', NULL, NULL, '2025-07-30 13:16:59', '2025-07-30 13:16:59'),
+(1211, 'App\\Models\\Admin', 44, 'omar', '1a69b2269b63e80228b5d3c7a7e330a4885fd3c72a34ab44538a41062c8fdef4', '[\"admin\"]', NULL, NULL, '2025-07-30 13:17:03', '2025-07-30 13:17:03'),
+(1212, 'App\\Models\\Admin', 44, 'omar', '47cf25b888587023ea9d8f6cc5588a3ee9df550ba00786d53b3ce7bb66d8868c', '[\"admin\"]', NULL, NULL, '2025-07-30 13:17:09', '2025-07-30 13:17:09'),
+(1213, 'App\\Models\\Admin', 44, 'omar', '911a42691f52278914a1adaa9d40ff25e8254410a4aba68c92f7c7059dd45f4d', '[\"admin\"]', NULL, NULL, '2025-07-30 13:17:21', '2025-07-30 13:17:21'),
+(1214, 'App\\Models\\Admin', 44, 'omar', 'f79b9f9b2a5ef989ac035106b8dee47e5b8b0798ff33681d86a8c6a0faddb654', '[\"admin\"]', '2025-07-30 14:01:27', NULL, '2025-07-30 13:18:05', '2025-07-30 14:01:27'),
+(1215, 'App\\Models\\Admin', 44, 'omar', 'eca3c66801d78749c438fb62bfd559a808575d83347a8024bfb0fe2eac1c07b8', '[\"admin\"]', NULL, NULL, '2025-08-02 11:41:58', '2025-08-02 11:41:58'),
+(1216, 'App\\Models\\Admin', 44, 'omar', '3db707b7a129e4062a6d71233416ea2db3a28ccef524c7ad8203b2bd81fe1049', '[\"admin\"]', '2025-08-02 12:49:46', NULL, '2025-08-02 11:43:56', '2025-08-02 12:49:46'),
+(1217, 'App\\Models\\Teacher', 26, 'test22', 'd92b639eb98393b75c6e31caef8221f671323c45a80765199fda1da41174ade3', '[\"teacher\"]', '2025-08-02 12:55:08', NULL, '2025-08-02 12:51:59', '2025-08-02 12:55:08'),
+(1218, 'App\\Models\\Teacher', 26, 'test22', 'ecdabfa7246a7393d5ea1415c4ec60cbad53a4510ba42b224c890d3993210f46', '[\"teacher\"]', NULL, NULL, '2025-08-02 13:29:19', '2025-08-02 13:29:19'),
+(1219, 'App\\Models\\Teacher', 26, 'test22', '583f30529ea0d75319cb7666f7210cf7aeef35193b57dfdea86af010e4d88d13', '[\"teacher\"]', NULL, NULL, '2025-08-02 13:35:08', '2025-08-02 13:35:08'),
+(1220, 'App\\Models\\Teacher', 26, 'test22', '1f50395ce336cd82fa36db1bc0a6fd13e3732a843597dfea2698cd88d7cd5e2a', '[\"teacher\"]', NULL, NULL, '2025-08-02 13:38:12', '2025-08-02 13:38:12'),
+(1221, 'App\\Models\\Teacher', 26, 'test22', '35c156274e0f45d14c6c8189de437b0cb95695a4a03edea0797752922438bbc7', '[\"teacher\"]', '2025-08-02 14:16:43', NULL, '2025-08-02 13:39:28', '2025-08-02 14:16:43'),
+(1222, 'App\\Models\\Admin', 44, 'omar', '06cfd6a0c81a98b569452808f9ce33562957fe14e1b5ef956a73b2ddb70719d8', '[\"admin\"]', '2025-08-03 09:27:44', NULL, '2025-08-03 09:26:38', '2025-08-03 09:27:44'),
+(1223, 'App\\Models\\Teacher', 26, 'test22', '2d0ffd43fcdb1a0b1bff2ced44393f96bfff15a0599228b0f4d62435f5cf988c', '[\"teacher\"]', '2025-08-03 09:28:38', NULL, '2025-08-03 09:28:33', '2025-08-03 09:28:38'),
+(1224, 'App\\Models\\Admin', 44, 'omar', '0189d3279f33c915d92cd53f03f8a01fca1f735b2c5d036e6b7dd3b05ec33818', '[\"admin\"]', NULL, NULL, '2025-08-03 09:29:58', '2025-08-03 09:29:58'),
+(1225, 'App\\Models\\Admin', 44, 'omar', 'b7a27b54629750495815afb42c67d159c3af2d21aa965f734785a10b3f21f599', '[\"admin\"]', NULL, NULL, '2025-08-03 09:30:06', '2025-08-03 09:30:06'),
+(1226, 'App\\Models\\Admin', 44, 'omar', '8a25e567ad9dda5d34101f470ea66bdaba12b180cb5e316d9a8ebbf50b97d292', '[\"admin\"]', '2025-08-03 12:00:24', NULL, '2025-08-03 09:30:15', '2025-08-03 12:00:24'),
+(1227, 'App\\Models\\Admin', 44, 'omar', '74f28d2c37bc15bca5fc946c481978ed7f3972246d32cbd0784f77dcd9947971', '[\"admin\"]', '2025-08-03 11:33:58', NULL, '2025-08-03 09:31:33', '2025-08-03 11:33:58'),
+(1228, 'App\\Models\\Admin', 44, 'omar', 'a459c8cad8ffb25059cfcc132e7fe96b6bd2fe58d20335d4d40da68b259074ce', '[\"admin\"]', '2025-08-03 15:13:47', NULL, '2025-08-03 12:02:12', '2025-08-03 15:13:47'),
+(1229, 'App\\Models\\Admin', 44, 'omar', 'bb1730d439704defc5d00741952e2fbbc9699ebef6b7c06cf04df427a1f4fecf', '[\"admin\"]', '2025-08-03 12:22:36', NULL, '2025-08-03 12:04:44', '2025-08-03 12:22:36'),
+(1230, 'App\\Models\\Student', 416, 'API TOKEN', '9b6286648c7d7283a53ca184dd99fa755f0555432b26be47e32c1fc381ad985e', '[\"*\"]', NULL, NULL, '2025-08-03 12:23:41', '2025-08-03 12:23:41'),
+(1231, 'App\\Models\\Admin', 44, 'omar', 'f56a261a0f469110651080eb2462753c3676c89bc65c46d59ec1d39ed83f6f98', '[\"admin\"]', '2025-08-03 12:24:00', NULL, '2025-08-03 12:23:54', '2025-08-03 12:24:00'),
+(1232, 'App\\Models\\Student', 416, '01205465494', '4b86b3571db7f29cad7ad9d2b759010517a817336ccb0518658b39291a641f1b', '[\"student\"]', '2025-08-03 12:28:09', NULL, '2025-08-03 12:24:07', '2025-08-03 12:28:09'),
+(1233, 'App\\Models\\Admin', 44, 'omar', '525246e2fb3066503dad8f29771729818bb8fc265f14c6b94daa288c36f3b8b7', '[\"admin\"]', NULL, NULL, '2025-08-03 15:32:25', '2025-08-03 15:32:25'),
+(1234, 'App\\Models\\Admin', 44, 'omar', '69b29d1e7483d03b26b136171ffac4401c5a62c39555d7317433aaf183bda2fe', '[\"admin\"]', '2025-08-03 15:49:06', NULL, '2025-08-03 15:32:27', '2025-08-03 15:49:06'),
+(1235, 'App\\Models\\Admin', 44, 'omar', 'f8019fec0915e9802e54daddd27945849608a2536d07323fdb5996be02c84b3d', '[\"admin\"]', NULL, NULL, '2025-08-03 16:02:56', '2025-08-03 16:02:56'),
+(1236, 'App\\Models\\Admin', 44, 'omar', 'dbdd3d2a3942f888c2c0f36f99b06d9dd7f737083f35279c1657cc84dda7b05f', '[\"admin\"]', NULL, NULL, '2025-08-03 16:03:11', '2025-08-03 16:03:11'),
+(1237, 'App\\Models\\Admin', 44, 'omar', '1589d5bfa60781673211d6f36555fd776e00d843329b8deeda9aa10cd5cea54a', '[\"admin\"]', NULL, NULL, '2025-08-03 16:03:12', '2025-08-03 16:03:12'),
+(1238, 'App\\Models\\Admin', 44, 'omar', '9eda6e41d67dd1b2f61fcc299492e06a37e0f4b0b03f799808795321ce6385ad', '[\"admin\"]', NULL, NULL, '2025-08-03 16:03:13', '2025-08-03 16:03:13'),
+(1239, 'App\\Models\\Admin', 44, 'omar', 'cc4b982737a57fd6485593147297e50bb99426ebcf1ceaffe1b8c462d4ef506c', '[\"admin\"]', NULL, NULL, '2025-08-03 16:03:13', '2025-08-03 16:03:13'),
+(1240, 'App\\Models\\Admin', 44, 'omar', '3e0aece4df523e7e0b3d88a4c09c2f0b02ab6fb19c78e3f79d6231bcbb6276b0', '[\"admin\"]', NULL, NULL, '2025-08-03 16:03:40', '2025-08-03 16:03:40'),
+(1241, 'App\\Models\\Admin', 44, 'omar', 'db2c5a2536501014f506dadd1b07823e93a7a42e969907350c111dcd5b289862', '[\"admin\"]', NULL, NULL, '2025-08-03 16:03:47', '2025-08-03 16:03:47'),
+(1242, 'App\\Models\\Admin', 44, 'omar', '26856f67f5447dbf06839aa87d1d87f72dd1cc357274e559d1170794319733cf', '[\"admin\"]', '2025-08-03 16:50:24', NULL, '2025-08-03 16:04:02', '2025-08-03 16:50:24'),
+(1243, 'App\\Models\\Admin', 44, 'omar', 'd88c978d734a67bf03f986a73c65932bf52b188acc6f81b79999b73be9de0e11', '[\"admin\"]', NULL, NULL, '2025-08-04 09:09:51', '2025-08-04 09:09:51'),
+(1244, 'App\\Models\\Admin', 44, 'omar', '39ea3ed4afda15b9f2092b066d8b0176913f692b9300745507d88bd22c627e3a', '[\"admin\"]', NULL, NULL, '2025-08-04 09:10:21', '2025-08-04 09:10:21'),
+(1245, 'App\\Models\\Admin', 44, 'omar', 'aa4f76834a17ad110bec7bedd8552c276e2bfe4ac3ceb806c0e80745816927c3', '[\"admin\"]', NULL, NULL, '2025-08-04 09:10:32', '2025-08-04 09:10:32'),
+(1246, 'App\\Models\\Admin', 44, 'omar', '3654259b31c20133ea7a871f6407d0b39fda4cc9c0e3f0160e459590cd7dc2ab', '[\"admin\"]', NULL, NULL, '2025-08-04 09:11:42', '2025-08-04 09:11:42'),
+(1247, 'App\\Models\\Admin', 44, 'omar', 'acc9b1f0d69bd2a041638257a6709e4e4b3403195242f7e87e54234b4765e703', '[\"admin\"]', '2025-08-04 09:35:05', NULL, '2025-08-04 09:11:47', '2025-08-04 09:35:05'),
+(1248, 'App\\Models\\Admin', 44, 'omar', '46124aad877dac9f066c7e64bbba4d8dc0abf7827461daf0fb28debde49bd058', '[\"admin\"]', NULL, NULL, '2025-08-04 10:02:06', '2025-08-04 10:02:06'),
+(1249, 'App\\Models\\Admin', 44, 'omar', 'ded9acf42ac2a1ae2d17547e55d29b6e8233abd87ad5a102db68380a244b5795', '[\"admin\"]', NULL, NULL, '2025-08-04 10:02:13', '2025-08-04 10:02:13'),
+(1250, 'App\\Models\\Admin', 44, 'omar', '178ae1b3c4e6a0cd4f9e57e5bec087a27f04635d71abf485b1cbbbbbb776d23c', '[\"admin\"]', NULL, NULL, '2025-08-04 10:02:13', '2025-08-04 10:02:13'),
+(1251, 'App\\Models\\Admin', 44, 'omar', 'aaaae1a66c3982fb4ce7c10bedaba13992b13b016c1191273e3ff9fb4a8ca698', '[\"admin\"]', NULL, NULL, '2025-08-04 10:02:15', '2025-08-04 10:02:15'),
+(1252, 'App\\Models\\Admin', 44, 'omar', 'de87a93eae1d0a08c37028f35a9294bf3e3d5c4bdf1a83a6fbc25f1e91323470', '[\"admin\"]', NULL, NULL, '2025-08-04 10:02:32', '2025-08-04 10:02:32'),
+(1253, 'App\\Models\\Admin', 44, 'omar', '59921fdf6bd60612f093ab98484fabd6d7bb74dbbd08751d2f4e0c03fdffc18d', '[\"admin\"]', NULL, NULL, '2025-08-04 10:02:54', '2025-08-04 10:02:54'),
+(1254, 'App\\Models\\Admin', 44, 'omar', '49a9b7ed2ca621e725360780cea27a11029c65c3b82e636462b48dfdd50a0140', '[\"admin\"]', NULL, NULL, '2025-08-04 10:03:08', '2025-08-04 10:03:08'),
+(1255, 'App\\Models\\Admin', 44, 'omar', '98524bfbcd17c86085d03c398065016a52a68783ace004f46ee59f7fb67c80e6', '[\"admin\"]', NULL, NULL, '2025-08-04 10:04:34', '2025-08-04 10:04:34'),
+(1256, 'App\\Models\\Admin', 44, 'omar', '293b9f234d74b162c97bd3e213b81d0c2efe3b8b8b888726262e4be37d51a8b0', '[\"admin\"]', NULL, NULL, '2025-08-04 10:05:44', '2025-08-04 10:05:44');
+INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `expires_at`, `created_at`, `updated_at`) VALUES
+(1257, 'App\\Models\\Admin', 44, 'OMAR', 'd30919bf377e503033034a8ca171fae2e1aa5ea3de2ac13d47f9f32e95d6ec39', '[\"admin\"]', NULL, NULL, '2025-08-04 10:07:27', '2025-08-04 10:07:27'),
+(1258, 'App\\Models\\Admin', 44, 'omar', 'b821f8f4ef073a5471baffee298db960eabed556832b359cc2c37f21cff6d5d6', '[\"admin\"]', '2025-08-04 12:00:05', NULL, '2025-08-04 10:08:03', '2025-08-04 12:00:05'),
+(1259, 'App\\Models\\Admin', 44, 'omar', '060cc19bbfbcaba68fe2d92174df28f886d744516a620e68ecd210b228ef01d6', '[\"admin\"]', '2025-08-04 12:49:09', NULL, '2025-08-04 12:04:30', '2025-08-04 12:49:09'),
+(1260, 'App\\Models\\Admin', 44, 'omar', '76fcad789b3edb1582034595a6b61f97f526d58c5a1e7ed59ec50cdd45601cf2', '[\"admin\"]', '2025-08-04 12:52:30', NULL, '2025-08-04 12:51:47', '2025-08-04 12:52:30'),
+(1261, 'App\\Models\\Teacher', 27, 'test23', 'f62d2209004e86ab96e2c5e89f66c2a4d21af345611d23ee66e4bce5e19dd1ea', '[\"teacher\"]', '2025-08-04 13:05:47', NULL, '2025-08-04 12:52:35', '2025-08-04 13:05:47'),
+(1262, 'App\\Models\\Teacher', 27, 'test23', 'b05cceb95144e351ab0b105a658f9ac7c3ccfe0f69be04075c1615af9ed19157', '[\"teacher\"]', '2025-08-04 13:05:36', NULL, '2025-08-04 13:05:20', '2025-08-04 13:05:36'),
+(1263, 'App\\Models\\Admin', 44, 'omar', '2262cd78c14fc3abbdb5b3bc309e742169a0b0fe1182fee6203e49c112e22bda', '[\"admin\"]', '2025-08-04 13:09:27', NULL, '2025-08-04 13:09:16', '2025-08-04 13:09:27'),
+(1264, 'App\\Models\\Student', 416, '01205465494', '6ec8965ddf66983769c9bb69d5594da1635594be7563691aa56a3c1897a83677', '[\"student\"]', '2025-08-04 14:34:36', NULL, '2025-08-04 13:09:45', '2025-08-04 14:34:36'),
+(1265, 'App\\Models\\Student', 416, '01205465494', '62787d8f9723048848cd4f9d886baf030fa47e6dc7d3408111f055a719aef084', '[\"student\"]', '2025-08-04 14:26:52', NULL, '2025-08-04 13:10:02', '2025-08-04 14:26:52'),
+(1266, 'App\\Models\\Admin', 44, 'omar', 'add9de71362dcf45c7f6a08bed3cfd00e178a8f221a6a26766258f5c97aaf240', '[\"admin\"]', '2025-08-04 14:23:47', NULL, '2025-08-04 13:17:49', '2025-08-04 14:23:47');
 
 -- --------------------------------------------------------
 
@@ -2101,6 +2891,13 @@ CREATE TABLE `posts` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `content`, `stage`, `created_at`, `updated_at`) VALUES
+(12, '<h1>&nbsp;</h1><p>qqqqq</p>', 1, '2025-08-04 13:18:02', '2025-08-04 13:18:02');
 
 -- --------------------------------------------------------
 
@@ -2154,6 +2951,21 @@ CREATE TABLE `questionbank_question` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `questionbank_question`
+--
+
+INSERT INTO `questionbank_question` (`id`, `question`, `answer1`, `answer2`, `answer3`, `answer4`, `hint`, `correct_answer`, `difficulty`, `is_essay`, `degree`, `category_id`, `quiz_id`, `homework_id`, `exam_id`, `platform`, `vdo_id`, `created_at`, `updated_at`) VALUES
+(92, '<h1>&nbsp;</h1><p>ttt</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', NULL, 'answer2', NULL, 0, 44, NULL, 8, NULL, NULL, NULL, NULL, '2024-11-08 16:56:47', '2024-11-08 16:56:47'),
+(95, '<h1>&nbsp;</h1><p>ff</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', NULL, 'answer4', NULL, 0, 44, NULL, 8, NULL, NULL, NULL, NULL, '2024-11-08 17:13:03', '2024-11-08 17:13:03'),
+(96, '<h1>&nbsp;</h1><p>ttt</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', NULL, 'answer2', NULL, 0, 4, NULL, 8, NULL, NULL, NULL, NULL, '2024-11-08 17:21:31', '2024-11-08 17:21:31'),
+(97, '<h1>&nbsp;</h1><p>ff</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', NULL, 'answer3', NULL, 0, 6, NULL, 8, NULL, NULL, NULL, NULL, '2024-11-08 17:24:06', '2024-11-08 17:24:06'),
+(98, '<h1>&nbsp;</h1><p>dd</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', '<h1>&nbsp;</h1><h2>D</h2>', 'answer1', NULL, 0, 2, NULL, 8, NULL, NULL, 'vdocipher', 'a687056b-e0ba-4f59-a349-f16a193ca654', '2024-11-08 17:26:13', '2024-11-08 17:26:13'),
+(102, '<h1>aaaaaaaa</h1><p>&nbsp;</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', '<h1>&nbsp;</h1><h2>D</h2>', 'answer1', 'easy', 0, 22222, 10, NULL, NULL, NULL, 'vimeo', '22222', '2025-08-02 12:54:32', '2025-08-02 12:54:32'),
+(103, '<h1>&nbsp;</h1><p>wwwww</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', NULL, 'answer1', NULL, 0, 1, NULL, NULL, 14, NULL, NULL, NULL, '2025-08-02 14:15:19', '2025-08-02 14:15:19'),
+(106, '<h1>22</h1><p>&nbsp;</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', '<h1>&nbsp;</h1><h2>D</h2>', 'answer2', NULL, 0, 22, NULL, NULL, 16, NULL, NULL, NULL, '2025-08-04 14:21:48', '2025-08-04 14:21:48'),
+(107, '<h1>qqqq</h1><p>&nbsp;</p>', '<h1>&nbsp;</h1><h2>A</h2>', '<h1>&nbsp;</h1><h2>B</h2>', '<h1>&nbsp;</h1><h2>C</h2>', '<h1>&nbsp;</h1><h2>D</h2>', '<h1>&nbsp;</h1><h2>D</h2>', 'answer1', NULL, 0, 22, NULL, 11, NULL, NULL, NULL, NULL, '2025-08-04 14:22:12', '2025-08-04 14:22:12');
+
 -- --------------------------------------------------------
 
 --
@@ -2175,7 +2987,8 @@ CREATE TABLE `quizzes` (
 --
 
 INSERT INTO `quizzes` (`id`, `duration`, `lecture_id`, `success_rate`, `visibility`, `created_at`, `updated_at`) VALUES
-(7, 10, 34, 100, 0, '2024-10-11 02:29:47', '2024-10-11 02:29:47');
+(8, 2, 50, 20, 0, '2024-11-08 16:34:56', '2024-11-08 16:36:32'),
+(11, 12, 151, 22, 0, '2025-08-04 14:22:04', '2025-08-04 14:22:04');
 
 -- --------------------------------------------------------
 
@@ -2247,7 +3060,7 @@ CREATE TABLE `students` (
   `name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `stage` tinyint(4) NOT NULL,
+  `stage` int(11) NOT NULL,
   `mobile` varchar(11) NOT NULL,
   `parent_mobile` varchar(11) NOT NULL,
   `parent_mobile2` varchar(11) DEFAULT NULL,
@@ -2271,7 +3084,15 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name`, `username`, `password`, `stage`, `mobile`, `parent_mobile`, `parent_mobile2`, `area`, `profile_pic`, `lastseen`, `parent_id`, `school`, `active`, `api_token`, `section`, `approved_by`, `amount`, `remember_token`, `created_at`, `updated_at`) VALUES
-(265, 'Cathleen', 'omarahmed', '$2y$10$1PtrRIhH0DZ5Erl9FepUTuCNF7lJoJciybChdfFUOIsyLGUKTgA6m', 3, '01016046298', '85766666666', '78576666666', '1', '1727402997-247.jpg', NULL, 551603, 'Quod dolore id sed', 1, NULL, 'scientific', 1, 0, NULL, '2024-09-27 05:09:58', '2024-10-11 16:33:30');
+(265, 'Cathleen', 'omarahmed', '$2y$10$1PtrRIhH0DZ5Erl9FepUTuCNF7lJoJciybChdfFUOIsyLGUKTgA6m', 3, '01016046298', '85766666666', '78576666666', '1', '1727402997-247.jpg', NULL, 551603, 'Quod dolore id sed', 1, NULL, 'scientific', 1, 0, NULL, '2024-09-27 05:09:58', '2024-10-11 16:33:30'),
+(407, 'Mohamed Ahmed', 'mohamed3a', '$2y$10$TUABx2iow8vqpS2EwPGubOZ2cDpiLLPW91R06ZA9lTSG7yFfSbR0O', 333, '01152393524', '01225658732', NULL, '1', '1741289108-945.jpg', NULL, 829195, 'MHLS', 1, NULL, NULL, 1, 0, NULL, '2025-03-06 21:25:08', '2025-04-22 14:08:13'),
+(408, 'Mazen moataz', 'mazen', '$2y$10$ROdS2n.lziMfNOyj2R65gefsYMfprXVDk4RSzqj0S6HE8zSit50KO', 333, '01017495881', '01003414810', '01005005816', '39', '1741512834-705.jpg', NULL, 863830, 'Manaret Heliopolis', 1, NULL, NULL, 1, 0, NULL, '2025-03-09 11:33:54', '2025-03-09 21:31:35'),
+(409, 'Monzer', 'Hatem', '$2y$10$qrgz63gT5CtDv/WtWqCBQ.kRRHn.Qf6lZJnIyXm7yAW/zHl/8/5Hq', 333, '01068658007', '01017222480', '01001793338', '17', '1741770305-593.jpg', NULL, 407414, 'Manaret Heliopolis', 1, NULL, NULL, 1, 0, NULL, '2025-03-12 11:05:05', '2025-03-16 09:02:53'),
+(411, 'Mohamed', 'Mohamef', '$2y$10$g2pmMwnsDKNZUGmACkhcNuDw4hkes8SaPRPDNkMAqZPnTc2PIyTZ6', 333, '01008331515', '01092920155', '01008331515', '39', '1742931825-709.jpg', NULL, 163320, 'Manaret Heliopolis schools', 1, NULL, NULL, 1, 0, NULL, '2025-03-25 21:43:45', '2025-03-26 08:34:18'),
+(412, 'Mohamed Khaled', 'Mohamed', '$2y$10$DHolzBr9DSEUrvHQlSHTdepz6yEKPgyahB3UUYCxj5sW9zJp4rJMK', 333, '01111370037', '01008331515', '01092920155', '39', '1742932376-510.jpg', NULL, 584081, 'Manaret Heliopolis schools', 0, NULL, NULL, NULL, 0, NULL, '2025-03-25 21:52:56', '2025-03-25 21:52:56'),
+(413, 'Eyad Ahmed', 'Eyad16', '$2y$10$0Qej2yW.QwHBEThZutKRsO6IGHHAQe1DyOf1fYKGwzqJq6o5vcC62', 33, '01000378737', '01000572085', '01114448757', '39', '1744489459-597.png', NULL, 321511, 'Manaret heliopolis', 0, NULL, NULL, NULL, 0, NULL, '2025-04-12 22:24:19', '2025-04-12 22:24:19'),
+(415, 'Gamal', 'Gamal', '$2y$10$EYn3RBJvaWEozcKkbR411.zaoTHW47lQ/qNVYvz.I25TMP0rNc7qK', 2, '01080895502', '01015454759', '01080895502', '8', '1746291383-522.jpg', NULL, 594052, 'Alaola', 0, NULL, 'scientific', NULL, 0, NULL, '2025-05-03 19:56:23', '2025-05-03 19:56:23'),
+(416, 'test', 'test', '$2y$10$7qsu0sDi24USncg1d6YqbeU3DewB3UpSQEr9eb8I31GASOlb.mFMG', 1, '01205465494', '01205465494', NULL, '1', '1754213021-647.png', NULL, 216130, 'wwwww', 1, NULL, NULL, 44, 1, NULL, '2025-08-03 12:23:41', '2025-08-03 12:28:02');
 
 -- --------------------------------------------------------
 
@@ -2340,8 +3161,32 @@ CREATE TABLE `teachers` (
 
 INSERT INTO `teachers` (`id`, `name`, `username`, `password`, `subject`, `mobile`, `profile_pic`, `description`, `remember_token`, `api_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Lillian omar', 'sazidamyje', '$2y$10$kgfWryc6yd1KSCQNWDVDOOjPWbI/FWf/lgcZZqK0sG.y3GEKqCpnm', 'تاريخ', '01111111111', '1727790068-419.jpg', 'Sapiente fugit iust', NULL, NULL, '2024-10-01 16:41:08', '2024-10-10 11:47:00', '2024-10-10 11:47:00'),
-(2, 'omar teacher', 'omar123', '$2y$10$UNIvY.g3hItwSQ9mYxgpkODIwOow6rM0/PCnCOR.lO/3PNl0HhVB2', 'الفيزياء', '01016046298', '1728543670-908.jpg', '01016046298', NULL, NULL, '2024-10-10 10:01:10', '2024-10-10 11:47:39', '2024-10-10 11:47:39'),
-(3, 'Omar Ahmed', 'omarahmed', '$2y$10$s8K2KzURo3uVSwSR.I064um1JVgoJr7dyIYdbTFwj9fgG2bUcBTIO', 'فلسفة و علم', '01016046298', '1728550533-996.png', 'Itaque esse accusant', NULL, NULL, '2024-10-10 11:49:38', '2024-10-10 12:08:06', NULL);
+(2, 'omar teacher', 'omar123', '$2y$10$nAA7vI1huJEGFUfm9Up5OueULJ4jYuymWKPzd2NxitJZ0yDJGBjLS', 'الفيزياء', '01016046298', '1728543670-908.jpg', '01016046298', NULL, NULL, '2024-10-10 10:01:10', '2024-11-26 11:45:21', '2024-11-26 11:45:21'),
+(3, 'Mr. Araby Hamed', 'arabyhamed', '$2y$10$OVXhmqS3bxYxi0CggafFEuV1N/q7AEx2UPl4JEoFSxpuuvy3qvpoa', 'اللغة العربية', '01115729781', '1730491965-355.jpg', 'فارق بخبرة 28 سنة ، ارتقاء ، شرح مبسط تدريبات واختبارات للصف الثالث الإعدادي والأول الثانوي.', NULL, NULL, '2024-10-10 11:49:38', '2024-11-09 18:43:38', NULL),
+(4, 'Kelly Blanchard', 'piqunexu', '$2y$10$Ykg92hDDkkl1nhVY1iw9XOc1Zn0njvNG.LELVu.I0LY5oOFRfRQU2', 'math', '01016046292', '1729584543-166.jpg', 'Commodo adipisci nes', NULL, NULL, '2024-10-22 11:09:03', '2024-10-29 09:54:49', '2024-10-29 09:54:49'),
+(5, 'Ronan Blair', 'tidimepo', '$2y$10$CYI1VhCZPYsplsyQR1zF1eD7KU/ZIo88e5IpyPXALtVVIX6FRzqjy', 'spanish', '01016046292', '1729584761-430.jpg', 'Illum qui dolor rat', NULL, NULL, '2024-10-22 11:12:41', '2024-10-29 09:54:54', '2024-10-29 09:54:54'),
+(6, 'omar fahmy', 'zugofijupo', '$2y$10$lYnhud/1Pf844B8LP7JNQe8z5FTtrBZAdrs5wWRxLaglgo14cfOq6', 'اللغة العربية', '01016046292', '1729584874-388.png', 'Elit mollit volupta', NULL, NULL, '2024-10-22 11:14:34', '2024-10-29 09:54:52', '2024-10-29 09:54:52'),
+(7, 'Mr.Mohamed Bakry', 'MohamedBakry', '$2y$10$9yRdiNhN1WbDBGca.mbRg.ZAdryj.uoVDHqyNPF8Tes.9j/CjwYzi', 'اللغة العربية', '01060268152', '1730492259-903.jpg', 'خبرة 15 سنة في المرحلتين الإعدادية والثانوية شرح مبسط ، تدريبات متنوعة ، أختبارات دورية.', NULL, NULL, '2024-11-01 22:17:40', '2024-11-01 22:17:40', NULL),
+(8, 'Mr.Gamal Abuzead', 'GamalAbuzead', '$2y$10$.HMGOHnicGEKGYJRBsWhJOwzqvzltKL9h/tLE5KriysIo2f/Z.x7C', 'english', '01006558027', '1730493010-829.jpg', 'خريج تربية إنجليزي ، خبرة 27سنة ، منصة Prodigy فلسفتها قائمة على مساعدة الطالب من  Zero  للــ Hero\r\nالمنصة هدفها الإرتقاء بالطالب ومستواه العلمي', NULL, NULL, '2024-11-01 22:30:10', '2024-11-01 22:30:10', NULL),
+(9, 'MR.Omar Raslan', 'OmarRaslan', '$2y$10$ZtubFC8X0gV/EtAA1h4ZgOw/EczzoCtbsS8rqPtRtMc06ATmKOd5G', 'تاريخ', '01024273333', '1730493341-775.jpg', 'مدرس أول تاريخ\r\nخبرة أكثر من 25 سنه في مجال التربية والتعليم ،معانا مش هتتعلم بس تاريخ ..هنعيش التاريخ مع بعض.', NULL, NULL, '2024-11-01 22:35:41', '2024-11-01 22:35:41', NULL),
+(10, 'Mr. Ahmed Abd El-Wahed', 'mrahmedabdelwahed', '$2y$10$eKn6Ctn0KGstJfrWJ8HUKOxpxL5dF.IISCCqiOvd.2KuytivHt6au', 'math', '01000735518', '1731170075-849.jpg', 'Mr. Ahmed Abd El-Wahed\r\nMaths Teacher', NULL, NULL, '2024-11-09 18:34:35', '2024-11-09 19:08:08', NULL),
+(11, 'Mr.Mahmoud El-Saeed', 'mahmoudsaeed', '$2y$10$QZhLFEd2uVTJ/cDK1.LMse4Yb2dO4hBGyarelqz9mWAftYwz1Kppe', 'physics', '01007964906', '1731170533-494.jpg', 'بكالوريوس العلوم(physics _chemistry) خبرة ١٢ سنة تدريس physics أسلوب شرح سهل للمفاهيم العلمية تبسيط بدون تسطيح', NULL, NULL, '2024-11-09 18:42:13', '2024-11-09 19:08:37', NULL),
+(12, 'Mr.Sherief El-Houseiny', 'sheriefelhouseiny', '$2y$10$9DdN1wJhnqhq7tIiypLDzOmQwzPJx3MsG1rb4obcRAxarZHbtFGMm', 'فلسفة و منطق', '01145310113', '1731171064-140.jpg', 'خبرة 20سنة في طرق تدريس المواد الفلسفية، مؤلف كتاب امتحانك للثانوية العامة، عضو في وضع الاسئلة في المركز القومي للامتحانات', NULL, NULL, '2024-11-09 18:51:04', '2024-11-27 14:30:43', NULL),
+(13, 'Ms. Fatma Salah', 'fatmasalah', '$2y$10$jyyfaq22c18mL18TyPzhDOVAaP4wAdOxfbr.x5gq2BHvIkmMoxSyK', 'اللغة العربية', '01091009720', '1731171787-895.jpg', 'Ms. Fatma Salah\r\nArabic Teacher', NULL, NULL, '2024-11-09 19:03:07', '2024-11-09 19:03:07', NULL),
+(14, 'Mr. Amr Fahmy', 'amrfahmy', '$2y$10$2PZm1daec4rikDtFz.HDluFx1ZksG65q3angWlw1zD1Jt3yT78Rqi', 'english', '01273408721', '1731172072-398.jpg', 'Mr. Amr Fahmy\r\nEnglish Teacher', NULL, NULL, '2024-11-09 19:07:52', '2024-11-09 19:07:52', NULL),
+(15, 'Mrs. Noha Mohamed', 'nohamohamed', '$2y$10$PpcpNd8dixjpK0azsMiYqO9WgvyJ0lMzfLEtZOYhtpzNJ8DCa8KhK', 'math', '01013154457', '1731172939-348.jpg', 'مع ميس نها ال (Maths) مفيهوش مشكلة', NULL, NULL, '2024-11-09 19:22:19', '2024-11-09 19:28:51', NULL),
+(16, 'Mr. Ahmed Abd El-fattah', 'ahmedabdelfattah', '$2y$10$91Zmpeth4GA259N532KrDOq3ecvlddtd/wbWSV848cXVmTDEjDx3.', 'science', '01066940721', '1731174058-993.jpg', 'Mr. Ahmed Abd El-fattah\r\nScience Teacher', NULL, NULL, '2024-11-09 19:40:58', '2024-11-27 13:00:02', NULL),
+(17, 'Mr. Ahmed El-Mahdy', 'ahmedelmahdy', '$2y$10$vqf8URaOmVkBCDtIhM6w7ehsS50BtXX3ffbAHArTN8AX7G2WGtkEy', 'integrated science', '01005845257', '1731174274-688.jpg', 'Mr. Ahmed El-Mahdy\r\nIntegrated Science Teacher', NULL, NULL, '2024-11-09 19:44:34', '2024-11-25 20:23:45', NULL),
+(18, 'Mrs. Gehan Asem', 'gehanasem', '$2y$10$jz80qP9HCBXrpPuVEzwZEutpuLOn10eFuj.xaVe54T1XdheHNzdTu', 'biology', '01000953120', '1732611225-861.jpg', 'Mrs. Gehan Asem Biology', NULL, NULL, '2024-11-26 10:53:45', '2024-11-28 09:55:56', NULL),
+(19, 'Hadeer Salem', 'hadeersalem', '$2y$10$o7.OSBVJdpVaM2anFcWgVe/79SIKNNZQu917LsLDxXebEL..RB9J6', 'english', '01004320363', '1745316150-480.jpg', 'English Teacher', NULL, NULL, '2025-03-03 05:50:46', '2025-04-22 12:02:30', NULL),
+(20, 'Nada Osama', 'nadaosama', '$2y$10$u44ONXOyB1hRbv/lEdYs2uzP5PucKlHfjGOLcIUEOHgYX2k7U2OTS', 'english', '01003965627', '1745316307-979.jpg', 'English teacher', NULL, NULL, '2025-03-03 05:55:47', '2025-04-22 12:05:07', NULL),
+(21, 'Ms. Yara Mahmoud', 'yaramahmoud', '$2y$10$u/usutaiOrb.LUGoYMUWV.smCpv7bD50TfGTrWOX2gAp5W9OOhqO.', 'math', '01003965627', '1745400831-517.jpg', 'Math Teacher', NULL, NULL, '2025-03-03 06:01:54', '2025-04-23 11:33:51', NULL),
+(22, 'Ms. Naglaa Abd El-Hakeem', 'naglaaabdelhakeem', '$2y$10$3CQFR2DspMdMJ.3hoTyLOuRGvesz3ajZsEuPLOpsOgZ2SixopGlIm', 'اللغة العربية', '01003965627', '1745323776-737.jpg', 'Arabic teacher', NULL, NULL, '2025-03-03 06:07:36', '2025-04-22 14:09:36', NULL),
+(23, 'Ms. Habiba Mohamed', 'habibamohamed', '$2y$10$atGvMV1BZmo5iMgcVxuEQ.QAm8FhxkD3Ntemw.ZXZUautWhPQo/Om', 'اللغة العربية', '01003965627', '1745400767-227.jpg', 'Arabic Teacher', NULL, NULL, '2025-03-03 06:14:45', '2025-04-23 11:32:47', NULL),
+(24, 'Ms.Asmaa Ahmed', 'asmaaahmed', '$2y$10$jesLfZLeSIW07wnm.BZUOOMELUglBrzlJqRaLKGsWYl.XROyOj4qS', 'اللغة العربية', '01003965627', '1745315584-704.jpg', 'Arabic Teacher', NULL, NULL, '2025-03-03 06:20:45', '2025-04-22 12:26:07', NULL),
+(25, 'test', 'test', '$2y$10$Z4HEDy1H2EQhjSeyVS2uFutHFUtrE9awMnEP56u.kMX7bXl.Cxpwm', 'الرياضيات', '01205465494', '1754127935-356.png', 'wwwwwwwwwwww', NULL, NULL, '2025-08-02 12:26:47', '2025-08-02 12:45:42', '2025-08-02 12:45:42'),
+(26, 'test', 'test22', '$2y$10$0ii6bERCVThvwqS8.zK3uuaLsDhQfYyFB3gCdLzsnXu6w8y6/RrTG', 'اللغة العربية', '01205465494', '1754128185-529.png', 'wwwww', NULL, NULL, '2025-08-02 12:49:45', '2025-08-03 12:22:33', '2025-08-03 12:22:33'),
+(27, 'test', 'test23', '$2y$10$Bj/BfGskII7uXN891s449uf6CwVcVW.7JoqAAeBtpBQP236eKTYmi', 'chemistry', '01205465494', '1754301149-910.png', 'teeeeeeee', NULL, NULL, '2025-08-04 12:52:29', '2025-08-04 12:52:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -2400,8 +3245,121 @@ CREATE TABLE `videos` (
   `lecture_id` int(10) UNSIGNED NOT NULL,
   `teacher_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`id`, `name`, `description`, `is_public`, `vdo_id`, `platform`, `lecture_id`, `teacher_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(32, 'fff', 'fddf', 0, '20b3fb5786484f148c770817659fc465', 'vdocipher', 52, 3, '2024-11-24 14:34:37', '2024-11-24 14:52:26', '2024-11-24 14:52:26'),
+(33, 'Mr.Mahmoud El-Saeed', '2nd Secondary-Physics-November Revision-Mr.Mahmoud Elsaeed', 1, 'e3761843f78145d783ffd0ded5589233', 'vdocipher', 54, 11, '2024-11-25 13:13:29', '2024-11-25 13:13:29', NULL),
+(34, 'Mr.Mohamed Bakry', 'الصف الأول الثانوي - اللغة العربية - مراجعة شهر نوفمبر - أ/ محمد بكري', 1, '20b3fb5786484f148c770817659fc465', 'vdocipher', 55, 7, '2024-11-25 19:06:00', '2024-11-25 19:06:00', NULL),
+(35, 'Ms. Fatma Salah', 'الصف الثاني الثانوي-اللغة العربية-مراجعة شهر نوفمبر-أ.فاطمة صلاح', 1, '9d7ea3f899e2463dbcc98158af324f95', 'vdocipher', 56, 13, '2024-11-25 20:13:26', '2024-11-25 20:13:26', NULL),
+(36, 'Mr. Ahmed Abd El-Wahed', '1st Secondary-Math (Algebra) - November revision', 1, '9dca0d60fd2848ac8c08e3730cfc938a', 'vdocipher', 57, 10, '2024-11-25 20:21:31', '2024-11-25 20:21:31', NULL),
+(37, 'Mrs. Noha Mohamed', '3rd Prep-Math-November Revision-Geometry-Mrs.Noha Mohamed', 1, '470d1bbeae554af18286d77c4c9d2b5a', 'vdocipher', 58, 15, '2024-11-25 20:36:36', '2024-11-25 20:36:36', NULL),
+(38, 'Mr. Araby Hamed', 'مراجعة اللغة العربية للصف الثالث الاعدادي (شهر نوفمبر) أ/ عربي حامد', 1, 'f1971beaed36437d807c798b5eaf94ef', 'vdocipher', 59, 3, '2024-11-26 10:58:15', '2024-11-26 10:58:15', NULL),
+(39, 'Mrs. Noha Mohamed', '3rd Prep-Math(Algebra)-November Revision-Mrs.Noha Mohamed.mp4', 1, '89f559106a914f518ad0c3b8623e088d', 'vdocipher', 60, 10, '2024-11-27 09:32:45', '2024-11-27 09:32:45', NULL),
+(40, 'Mr. Ahmed Abd El-Wahed', '1st Sec-Math (Geometry)-November Revision-Mr.Ahmed Abdelwahied', 1, '8b581ae457344714bdf4b2db0314a859', 'vdocipher', 61, 10, '2024-11-27 09:37:00', '2024-11-27 09:37:00', NULL),
+(41, 'Mrs. Gehan Asem', '2nd Sec Biology November Revision Mrs. Gehan Asem', 1, '91a551f4789d4d418d2444dee75dfa3d', 'vdocipher', 62, 18, '2024-11-27 09:56:24', '2024-11-27 09:56:24', NULL),
+(42, 'Mr. Amr Fahmy', '3rd prep english OL Nov Revision Mr. Amr Fahmy', 1, '97a3c39398f048d5b1ffc8577e32ac23', 'vdocipher', 63, 14, '2024-11-27 10:45:57', '2024-11-27 10:45:57', NULL),
+(43, 'Mr. Gamal Abou Zied', '1st sec English-November Revision. Mr. Gamal Abouzied', 1, '9bebf51046f64030a7f23deb8ce047ab', 'vdocipher', 64, 8, '2024-11-27 10:50:23', '2024-11-27 10:50:23', NULL),
+(44, 'MR.Omar Raslan', '1st Sec History November Revision Mr. Omar Raslan', 1, '40421f41405d4e4d87941bf8b432c50c', 'vdocipher', 65, 9, '2024-11-27 12:20:45', '2024-11-27 12:20:45', NULL),
+(45, 'Mr. Ahmed El-Mahdy', '1st Secondary-Integrated Science-November Revision Mr. Ahmed Elmahdy', 1, '4c62f87f62a64684ae1982b35a1c084f', 'vdocipher', 66, 17, '2024-11-27 12:26:08', '2024-11-27 12:26:08', NULL),
+(46, 'Mr. Ahmed Abd El-Fattah', '3rd prep Science Nov Revision Mr. Ahmed Abd El-Fattah', 1, '7980e8c52c61480c9b4f6c1c9c8840dc', 'vdocipher', 67, 16, '2024-11-27 13:05:08', '2024-11-27 13:05:08', NULL),
+(47, 'Mr.Sherief El-Houseiny', '1st Sec Philosophy Nov Revision', 1, '41abf4b30da1468ea18f98f71c5e2f40', 'vdocipher', 68, 12, '2024-11-27 14:37:57', '2024-11-27 14:37:57', NULL),
+(48, 'Mrs. Noha Mohamed', '3rd Prep Math (algebra) Final Revision 1st Term Mrs.Noha Mohamed', 0, '3eda159ee8a54abaa79936cf100fed11', 'vdocipher', 69, 15, '2024-12-31 12:10:02', '2024-12-31 12:10:02', NULL),
+(49, 'Mrs. Noha Mohamed', '3rd Prep Math (Geometry) Final Revision First Term', 0, '57fb60efca6c45b0a11761087977c6fb', 'vdocipher', 70, 15, '2025-01-04 11:38:49', '2025-01-04 11:38:49', NULL),
+(50, 'Mr. Ahmed Abd El-Wahed', '1st Sec Math (Algebra) First Term Final Revision Mr. Ahmed Abd El-Wahed', 0, 'c50784a2d9054fcab4268ee1ac872156', 'vdocipher', 71, 10, '2025-01-04 11:47:38', '2025-01-04 11:47:38', NULL),
+(51, 'Mr. Ahmed Abd El-Wahed', '1st Sec Geometry Final Revision First Term Mr. Ahmed Abe El-Wahed', 0, '04beb7eb0b5242f99061c290b3a3ef2d', 'vdocipher', 72, 10, '2025-01-04 11:52:28', '2025-01-04 11:52:28', NULL),
+(52, 'Mr. Amr Fahmy', '3rd Prep English Final Revision First Term Part (1) Mr. Amr Fahmy', 0, 'c429f2918d874c578dc7b440ff83244b', 'vdocipher', 73, 14, '2025-01-04 12:05:57', '2025-01-04 12:05:57', NULL),
+(53, 'Mrs. Gehan Asem', '2nd Sec Biology Final Revision First  Term Part (1) Mrs. Gehan Asem', 0, '8a520c005d0745f292d9f1a19bb7331e', 'vdocipher', 74, 18, '2025-01-04 12:19:37', '2025-01-04 12:19:37', NULL),
+(54, 'Mr. Ahmed El-Mahdy', '1st Sec Integrated Science Final Revision First Term Part(1) Mr. Ahmed El-Mahdy', 0, '956bb60124a34910ba9b994358f7af15', 'vdocipher', 75, 17, '2025-01-05 08:31:54', '2025-01-05 08:31:54', NULL),
+(55, 'Mr. Araby Hamed', '3rd Prep Arabic Final revision First Term Part 1 Mr. Araby Hamed', 0, 'ad11ac8b489e41d7adde655d8895960c', 'vdocipher', 76, 3, '2025-01-05 08:39:34', '2025-01-05 08:39:34', NULL),
+(56, 'Mr. Ahmed Abd El-Fattah', '3rd Prep Science Final Revision First Term Part (1) Mr. Ahmed Abd El-Fattah', 0, 'cf7354f06efb4d9ab28052340522cbba', 'vdocipher', 77, 16, '2025-01-05 08:46:07', '2025-01-05 08:46:07', NULL),
+(57, 'Mr. Ahmed Abd El-Wahed', '1st Sec Trigonometry Final Revision First Term Mr. Ahmed Abd El-Wahed', 0, 'f601ec7b6b934ccc8d569b529766f03e', 'vdocipher', 78, 10, '2025-01-05 13:05:32', '2025-01-05 13:05:32', NULL),
+(58, 'Mr. Mahmoud El-Saeed', '2nd Sec Physics Final Revision First Term Part (1) Mr. Mahmoud El-Saeed', 0, '72e100bff2e7496a98795004eecc098b', 'vdocipher', 79, 11, '2025-01-05 13:14:25', '2025-01-05 13:14:25', NULL),
+(59, 'Mr. Mahmoud El-Saeed', '2nd Sec Physics Final Revision First Term Part (2) Mr. Mahmoud El-Saeed', 0, '7f9e2b3ff2f744248316364f6f5ab68c', 'vdocipher', 80, 11, '2025-01-05 13:19:29', '2025-01-05 13:19:29', NULL),
+(60, 'Mr. Mahmoud Al-Saeed', '2nd Sec Physics Final Revision First Term Part (3) Mr. Mahmoud Al-Saeed', 0, '237c54cc6a7a45c8895803882018c361', 'vdocipher', 81, 11, '2025-01-06 22:01:37', '2025-01-06 22:01:37', NULL),
+(61, 'Mr. Ahmed El-Mahdy', '1st Sec Integrated Science Final Revision 1st Term Part 2 Mr. Ahmed El-Mahdy', 0, '168a847815f848e0b4b84ad52411b526', 'vdocipher', 82, 17, '2025-01-08 08:17:20', '2025-01-08 08:17:20', NULL),
+(62, 'Mr. Ahmed El-Mahdy', '1st Sec Integrated Science Final Revision 1st Term Part 3 Mr. Ahmed El-Mahdy', 1, 'c60983032ee749ba9c883d085c1f5a1b', 'vdocipher', 83, 17, '2025-01-08 09:58:25', '2025-01-08 09:58:25', NULL),
+(63, 'Mr.Mohamed Bakry', '1st sec Arabic Final Revision 1st Term Mr.Mohamed Bakry', 0, '1f82d37a26fa4a4e91832fe10167f289', 'vdocipher', 84, 7, '2025-01-11 09:52:20', '2025-01-11 09:52:20', NULL),
+(64, 'Ms.Habiba', 'نموذج كتابة قصة', 1, 'bf608243731e48a59a3d335fc133d922', 'vdocipher', 87, 23, '2025-03-06 00:17:53', '2025-04-21 15:16:45', NULL),
+(65, 'Ms. Habiba Mohamed', 'ثقافات الشعوب', 1, 'feab4167f523418d920f7b65726ef586', 'vdocipher', 88, 23, '2025-03-06 20:41:46', '2025-04-21 15:11:36', NULL),
+(66, '3rd Prim Arabic Ms.Habiba(3)', 'مسرح المدرسة', 1, 'd658d87d603f488eb4242fcdeb760068', 'vdocipher', 89, 23, '2025-03-06 20:50:24', '2025-04-21 15:10:28', NULL),
+(67, 'Ms.Habiba Mohamed (4)', 'قصة الصديقتان', 1, '6a6700cc80394570a94420d829c009ea', 'vdocipher', 89, 23, '2025-03-06 21:09:26', '2025-04-21 15:17:43', '2025-04-21 15:17:43'),
+(68, 'Ms. Asmaa Ahmed', 'غة عربية الغابة المتحجرة الصف الثالث الابتدائي', 1, '18e97dc3321245d1a3b5a0ca664f1b92', 'vdocipher', 90, 24, '2025-03-06 21:13:09', '2025-04-21 14:18:31', NULL),
+(69, 'Ms. Asmaa Ahmed', 'Arabic 3rd Prim Ms. Asmaa(2)', 1, 'f28d6607912642b7a636bd6a4b9950b5', 'vdocipher', 90, 24, '2025-03-06 21:14:24', '2025-04-21 14:19:13', '2025-04-21 14:19:13'),
+(70, 'Ms. Asmaa Ahmed', 'Arabic 3rd Prim Ms. Asmaa (2)', 1, 'f28d6607912642b7a636bd6a4b9950b5', 'vdocipher', 90, 24, '2025-03-06 21:20:11', '2025-03-06 21:20:22', '2025-03-06 21:20:22'),
+(71, 'Ms. Naglaa Abd El-Hakeem', 'لعبة الكنز', 1, '9de83e8c9904419ba34455c3d2b7dbc2', 'vdocipher', 91, 22, '2025-03-06 21:28:58', '2025-04-21 15:40:52', NULL),
+(72, 'Ms. Naglaa Abd El-Hakeem', 'Arabic 3rd Prim Ms. Naglaa  (2)', 1, 'f10340ce293a4828b54f07086cd7413b', 'vdocipher', 91, 22, '2025-03-06 21:30:20', '2025-03-08 17:00:16', '2025-03-08 17:00:16'),
+(73, 'Ms. Yara Mahmoud', 'Multiples of 11&12', 1, 'f07f161b7e624568a7b28fae6d5aac2e', 'vdocipher', 92, 21, '2025-03-06 21:50:56', '2025-04-21 16:35:48', '2025-04-21 16:35:48'),
+(74, 'Ms. Yara Mahmoud', 'Associative Property', 1, '7400f47b2eac479ea4670932f676cad5', 'vdocipher', 92, 21, '2025-03-06 21:53:15', '2025-04-21 16:11:12', NULL),
+(75, 'Ms. Yara Mahmoud', 'Relations between X and ÷', 1, '401a7cf9af60482d8495109146c83d6e', 'vdocipher', 92, 21, '2025-03-06 21:54:56', '2025-04-21 16:27:28', '2025-04-21 16:27:28'),
+(76, 'Ms. Yara Mahmoud', 'Perimeter & Area', 1, 'a590b9cb7d3b49f381f54d1abeaa2181', 'vdocipher', 92, 21, '2025-03-06 21:55:35', '2025-04-21 16:29:14', '2025-04-21 16:29:14'),
+(77, 'Ms. Asmaa Ahmed', 'Arabic Ms. Asmaa Ahmed (3)', 1, '3cf71ded916b4f2f875c338b3a0945c1', 'vdocipher', 90, 24, '2025-03-06 22:07:11', '2025-04-21 14:25:22', '2025-04-21 14:25:22'),
+(78, 'Ms. Hadeer Salem', 'English 3rd Prim Ms.Hadeer(2)', 1, 'e02bc1c7b35841149a43ef75cdd28801', 'vdocipher', 93, 19, '2025-03-06 22:12:10', '2025-04-21 18:38:33', '2025-04-21 18:38:33'),
+(79, 'Ms. Hadeer Salem', 'unit 7- Lesson1-where are the family?', 1, '6ce92f0375a54a2592f0423401413b8c', 'vdocipher', 93, 19, '2025-03-06 22:19:39', '2025-04-21 18:40:41', NULL),
+(80, 'Ms. Hadeer Salem', 'English 3rd Prim Ms.Hadeer(3)', 1, 'c3ef2342263c4f7ea2dcdfca8770be7d', 'vdocipher', 93, 19, '2025-03-06 22:22:53', '2025-04-21 18:38:14', '2025-04-21 18:38:14'),
+(81, 'Ms. Nada Osama', 'Unit 8-Lesson1- At the museum', 1, 'd400a3134a614e41a7c2f5288bcb6d64', 'vdocipher', 94, 20, '2025-03-06 22:28:26', '2025-04-21 19:45:11', NULL),
+(82, 'Ms. Nada Osama', 'Unit8-Lesson 4-Phonics', 1, '422bb8376af046e59c336327acee5bf0', 'vdocipher', 94, 20, '2025-03-06 22:30:02', '2025-04-21 19:58:44', '2025-04-21 19:58:44'),
+(83, 'Ms. Nada Osama', 'Unit8-Lesson 5', 1, '2e938eecff0f47038d0c7fe8e6203d07', 'vdocipher', 94, 20, '2025-03-06 22:31:15', '2025-04-21 20:00:19', '2025-04-21 20:00:19'),
+(84, 'Ms. Nada Osama', 'Unit 8-Lesson 6&7', 1, 'af101fa41c524ecf895b43afa7902996', 'vdocipher', 94, 20, '2025-03-06 22:32:01', '2025-04-21 20:01:42', '2025-04-21 20:01:42'),
+(85, 'Ms. Yara Mahmoud', 'Math 3rd Prim (Evaluation) Ms.Yara', 1, '0a1b6f3592474d4f9802c2bcd786e0cb', 'vdocipher', 95, 21, '2025-03-06 22:35:53', '2025-03-06 22:35:53', NULL),
+(86, 'Ms. Yara Mahmoud', '4 + 3 = ?', 1, 'f35bd8448c0a44cd93dcbdc413b998a7', 'vdocipher', 92, 21, '2025-04-17 11:23:41', '2025-04-21 16:22:17', '2025-04-21 16:22:17'),
+(87, 'Arabic 3rd Primary Ms.Habiba', 'قصة الصديقتان للصف الثالث الابتدائي', 1, '6a6700cc80394570a94420d829c009ea', 'vdocipher', 88, 23, '2025-04-17 11:44:45', '2025-04-21 15:29:29', '2025-04-21 15:29:29'),
+(88, 'Ms. Yara Mahmoud', 'Math 3rd Prim Ms. Yara - fractions 2', 1, '82e841dd58514285a02ea9a672b325c1', 'vdocipher', 92, 21, '2025-04-17 15:03:02', '2025-04-21 16:06:14', '2025-04-21 16:06:14'),
+(89, 'Ms. Habiba Mohamed', 'المقايضة', 1, 'c7e5a76622bd4aff8cad40ee9cd5e069', 'vdocipher', 87, 23, '2025-04-21 13:00:08', '2025-04-21 13:21:12', '2025-04-21 13:21:12'),
+(90, 'Ms. Habiba Mohamed', 'المقايضة', 1, 'c7e5a76622bd4aff8cad40ee9cd5e069', 'vdocipher', 88, 23, '2025-04-21 13:03:09', '2025-04-21 13:21:27', '2025-04-21 13:21:27'),
+(91, 'Arabic 3rd Primary Ms.Habiba', 'المقايضة', 1, 'c7e5a76622bd4aff8cad40ee9cd5e069', 'vdocipher', 89, 23, '2025-04-21 13:23:38', '2025-04-21 13:44:03', '2025-04-21 13:44:03'),
+(92, 'Arabic 3rd Primary Ms.Habiba', 'تعاون الحي', 1, '7b24d10c65204cb7bda018a2c3d71119', 'vdocipher', 106, 23, '2025-04-21 13:38:01', '2025-04-21 13:41:16', '2025-04-21 13:41:16'),
+(93, 'Arabic 3rd Primary Ms.Habiba', 'Ms.Habiba-المقايضة', 1, 'c7e5a76622bd4aff8cad40ee9cd5e069', 'vdocipher', 106, 23, '2025-04-21 13:40:51', '2025-04-21 13:40:51', NULL),
+(94, 'Arabic 3rd Primary Ms.Habiba', 'تعاون الحي', 1, '7b24d10c65204cb7bda018a2c3d71119', 'vdocipher', 106, 23, '2025-04-21 13:46:14', '2025-04-21 13:49:44', '2025-04-21 13:49:44'),
+(95, 'Arabic 3rd Primary Ms.Habiba', 'تعاون الحي', 1, '7b24d10c65204cb7bda018a2c3d71119', 'vdocipher', 107, 23, '2025-04-21 13:49:22', '2025-04-21 13:49:27', NULL),
+(96, 'Arabic 3rd Primary Ms.Habiba', 'رحلة الموز', 1, 'bdd195545f6e4b1d888cf97d89a5e15a', 'vdocipher', 108, 23, '2025-04-21 13:54:40', '2025-04-21 13:54:40', NULL),
+(97, 'Arabic 3rd Prim Ms. Asmaa', 'لغة عربية نشيد الارض الصف الثالث الابتدائي', 1, 'f28d6607912642b7a636bd6a4b9950b5', 'vdocipher', 103, 24, '2025-04-21 14:05:30', '2025-04-21 14:05:30', NULL),
+(98, 'Arabic 3rd Prim Ms. Asmaa', 'كتابة فقرة معلوماتية', 1, '3cf71ded916b4f2f875c338b3a0945c1', 'vdocipher', 109, 24, '2025-04-21 14:24:59', '2025-04-21 14:24:59', NULL),
+(99, 'Arabic 3rd Prim Ms. Asmaa', 'اختراع عجيب & نموذج كتابة اعلان', 1, '54f0549fd9a648478c7f00512fada948', 'vdocipher', 110, 24, '2025-04-21 14:46:14', '2025-04-21 14:46:14', NULL),
+(100, 'Arabic 3rd Prim Ms. Asmaa', 'اختي وقصة كفاح', 1, 'd2d91b57fd53481791af6da62ea1b2ff', 'vdocipher', 111, 24, '2025-04-21 14:52:43', '2025-04-21 14:52:43', NULL),
+(101, 'Arabic 3rd Prim Ms. Asmaa', 'العصور الذهبية', 1, 'a47c83e286884abb8d63611ef3fd57a2', 'vdocipher', 112, 24, '2025-04-21 14:57:41', '2025-04-21 14:57:41', NULL),
+(102, 'Ms. Asmaa Ahmed', 'طالب مميز', 1, '757df5b1c75e4192b73841665415ebb1', 'vdocipher', 113, 24, '2025-04-21 15:27:43', '2025-04-21 15:27:43', NULL),
+(103, 'Arabic 3rd Primary Ms.Habiba', 'قصة الصديقتان', 1, '6a6700cc80394570a94420d829c009ea', 'vdocipher', 114, 23, '2025-04-21 15:36:43', '2025-04-21 15:36:43', NULL),
+(104, 'Ms. Yara Mahmoud', 'Complex Story Problems 4 + 3 = ?...', 1, 'f35bd8448c0a44cd93dcbdc413b998a7', 'vdocipher', 96, 21, '2025-04-21 16:21:16', '2025-04-21 16:24:49', NULL),
+(105, 'Ms. Yara Mahmoud', 'Relations between X and ÷', 1, '401a7cf9af60482d8495109146c83d6e', 'vdocipher', 97, 21, '2025-04-21 16:26:02', '2025-04-21 16:26:02', NULL),
+(106, 'Ms. Yara Mahmoud', 'Perimeter & Area', 1, 'a590b9cb7d3b49f381f54d1abeaa2181', 'vdocipher', 98, 21, '2025-04-21 16:28:22', '2025-04-21 16:28:22', NULL),
+(107, 'Ms. Yara Mahmoud', 'Multiples of 11&12', 1, 'f07f161b7e624568a7b28fae6d5aac2e', 'vdocipher', 102, 21, '2025-04-21 16:33:09', '2025-04-21 16:33:16', NULL),
+(108, 'Ms. Yara Mahmoud', 'fractions 2', 1, '82e841dd58514285a02ea9a672b325c1', 'vdocipher', 115, 21, '2025-04-21 16:55:17', '2025-04-21 16:55:17', NULL),
+(109, 'Ms. Yara Mahmoud', 'fractions 3', 1, '585487a71589483bbd40b1b2207710ff', 'vdocipher', 116, 21, '2025-04-21 17:00:23', '2025-04-21 17:00:23', NULL),
+(110, 'Ms. Naglaa Abd El-Hakeem', 'قصة أستماع أناوأنت', 1, '170ac8feba804e078bc7de31ce8e451b', 'vdocipher', 119, 22, '2025-04-21 17:18:15', '2025-04-21 17:22:04', NULL),
+(111, 'Ms. Naglaa Abd El-Hakeem', 'اللغة وسيلة تواصل', 1, 'b5cfc458c0174090a257dadf5d0fd631', 'vdocipher', 120, 22, '2025-04-21 17:20:12', '2025-04-21 17:20:12', NULL),
+(112, 'Ms. Naglaa Abd El-Hakeem', 'قصة صندوق الذكريات و انواع الاسم', 1, '4c2a29c112764680b0209003ef6a376d', 'vdocipher', 121, 22, '2025-04-21 17:27:21', '2025-04-21 17:27:21', NULL),
+(113, 'Ms. Naglaa Abd El-Hakeem', 'كتابة فقرة اقناعية', 1, 'b0e4f5b1f2c249548ac22735d6b18066', 'vdocipher', 122, 22, '2025-04-21 17:31:48', '2025-04-21 17:31:48', NULL),
+(114, 'Ms. Naglaa Abd El-Hakeem', 'نريد ان نلعب', 1, '600f6d02ec6d4d6ba576f5666ed1b97b', 'vdocipher', 123, 22, '2025-04-21 17:50:40', '2025-04-21 17:50:40', NULL),
+(115, 'Ms. Naglaa Abd El-Hakeem', 'نموذج كتابة الرأي', 1, 'ae34234fdbb64944a3de1b3c4eb052af', 'vdocipher', 125, 22, '2025-04-21 18:33:28', '2025-04-21 18:33:28', NULL),
+(116, 'Ms. Naglaa Abd El-Hakeem', 'نشيد اصحاب المهن', 1, 'd164824438ca43888ba18b23cb5821bb', 'vdocipher', 124, 22, '2025-04-21 18:34:29', '2025-04-21 18:34:29', NULL),
+(117, 'English 3rd Prim Ms.Hadeer', 'unite 7- lesson 6', 1, 'e02bc1c7b35841149a43ef75cdd28801', 'vdocipher', 126, 19, '2025-04-21 18:57:37', '2025-04-21 18:57:37', NULL),
+(118, 'English 3rd Prim Ms.Hadeer', 'unit 7-lesson 7.', 1, 'c3ef2342263c4f7ea2dcdfca8770be7d', 'vdocipher', 127, 19, '2025-04-21 19:25:02', '2025-04-21 19:25:02', NULL),
+(119, 'Ms. Yara Mahmoud', 'fractions', 1, 'e0c59ce6459148fc80f48ea5fbbd0f38', 'vdocipher', 117, 21, '2025-04-21 19:34:25', '2025-04-21 19:34:25', NULL),
+(120, 'Ms. Yara Mahmoud', 'Telling the time...', 1, '1f58b5e36f194355a40a7797e8f0efbe', 'vdocipher', 118, 21, '2025-04-21 19:35:45', '2025-04-21 19:35:45', NULL),
+(121, 'Ms. Nada Osama', 'Unit8-Lesson 4-Phonics', 1, '422bb8376af046e59c336327acee5bf0', 'vdocipher', 101, 20, '2025-04-21 19:57:32', '2025-04-21 19:57:32', NULL),
+(122, 'Ms. Nada Osama', 'Unit8-Lesson 5', 1, '2e938eecff0f47038d0c7fe8e6203d07', 'vdocipher', 100, 20, '2025-04-21 19:59:33', '2025-04-21 19:59:33', NULL),
+(123, 'Ms. Nada Osama', 'Unit 8-Lesson 6&7', 1, 'af101fa41c524ecf895b43afa7902996', 'vdocipher', 99, 20, '2025-04-21 20:01:00', '2025-04-21 20:01:00', NULL),
+(125, 'Ms. Hadeer Salem', 'unit 9 lesson 1', 1, '2cc77df33b2f485988f6eb1e43b656cd', 'vdocipher', 129, 19, '2025-04-23 13:25:38', '2025-04-23 13:25:38', NULL),
+(126, 'Ms. Hadeer Salem', 'unit 9 - lesson2 & 3...', 1, '3dcd727eeff44cd6b23f46bb784713e4', 'vdocipher', 130, 19, '2025-04-23 13:52:24', '2025-04-23 13:52:24', NULL),
+(127, 'Ms. Hadeer Salem', 'unit 9- lesson 4 ,5 ,6', 1, '0f9b3088b01345a8a20f7e0a84a06d80', 'vdocipher', 131, 19, '2025-04-23 13:56:09', '2025-04-23 13:56:09', NULL),
+(128, 'Ms. Hadeer Salem', 'unit 9-lesson 7', 1, '9ac70ee98ef54149822c0d6426ea6b5b', 'vdocipher', 132, 19, '2025-04-23 13:58:38', '2025-04-23 13:58:38', NULL),
+(129, 'Ms. Nada Osama', 'unit 10 lesson 1-2', 1, '6b672d1930604430ba7818c926c45e5b', 'vdocipher', 133, 20, '2025-04-23 14:02:58', '2025-04-23 14:02:58', NULL),
+(130, 'Ms. Nada Osama', 'English unit 10 lesson 3-6', 1, '72b659af04044778aeac6757cff2f022', 'vdocipher', 134, 20, '2025-04-28 11:32:28', '2025-04-28 11:32:28', NULL),
+(131, 'Ms. Nada Osama', 'English unit 10 lesson 4-5', 1, '0928c729c3aa495a9524f713c5b8a9bf', 'vdocipher', 135, 20, '2025-04-28 11:35:52', '2025-04-28 11:35:52', NULL),
+(132, 'Ms. Nada Osama', 'english unit 10 lesson 7', 1, 'daeee9b9fe3b4624878a54c51cda5da6', 'vdocipher', 136, 20, '2025-04-28 11:38:50', '2025-04-28 11:38:50', NULL),
+(133, 'Ms. Hadeer Salem', 'unit 11 - Lesson1', 1, '0fc9e24d089048c289cbd9b60303792d', 'vdocipher', 137, 19, '2025-05-14 13:34:08', '2025-05-14 13:34:08', NULL),
+(134, 'Ms. Hadeer Salem', 'unit 11 lesson 2 ,3', 1, '47305599108f418fa8ee0654dda93c18', 'vdocipher', 138, 19, '2025-05-14 13:39:10', '2025-05-14 13:40:07', NULL),
+(135, 'Ms. Hadeer Salem', 'unit 11 lesson 4...', 1, '29e85e03f5b84fbc8b41eaa821b58f50', 'vdocipher', 139, 19, '2025-05-14 13:43:32', '2025-05-14 13:43:32', NULL),
+(136, 'Ms. Hadeer Salem', 'unit 11 lesson 6', 1, 'b4840dfab42f4b6bad36a1c2cb8a49f0', 'vdocipher', 140, 19, '2025-05-14 13:45:56', '2025-05-14 13:45:56', NULL),
+(137, 'Ms. Nada Osama', 'Unit 12 Lesson 1-2-3-4', 1, '9fbdfc8b728341a89b4504ebd59fe6db', 'vdocipher', 141, 20, '2025-05-15 13:20:09', '2025-05-15 13:20:09', NULL),
+(138, 'Ms. Nada Osama', 'unit 12 lesson 5-6', 1, '59869f05ee2246bf8a7a979c32ee8cda', 'vdocipher', 142, 20, '2025-05-15 13:21:03', '2025-05-15 13:21:03', NULL);
 
 --
 -- Indexes for dumped tables
@@ -2716,13 +3674,13 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `attachments`
 --
 ALTER TABLE `attachments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `attendance`
@@ -2746,19 +3704,19 @@ ALTER TABLE `attendance_session`
 -- AUTO_INCREMENT for table `bank_questions_sets`
 --
 ALTER TABLE `bank_questions_sets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `buying_history`
 --
 ALTER TABLE `buying_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `chapters`
 --
 ALTER TABLE `chapters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -2770,7 +3728,7 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `codes`
 --
 ALTER TABLE `codes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1392;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1502;
 
 --
 -- AUTO_INCREMENT for table `Countries`
@@ -2806,13 +3764,13 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `homeworks`
 --
 ALTER TABLE `homeworks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `lectures`
 --
 ALTER TABLE `lectures`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -2842,13 +3800,13 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=777;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1267;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `questionbank_categories`
@@ -2860,13 +3818,13 @@ ALTER TABLE `questionbank_categories`
 -- AUTO_INCREMENT for table `questionbank_question`
 --
 ALTER TABLE `questionbank_question`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `quizzes`
 --
 ALTER TABLE `quizzes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `reviews`
@@ -2890,7 +3848,7 @@ ALTER TABLE `sessions_lectures`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=266;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=417;
 
 --
 -- AUTO_INCREMENT for table `student_answers`
@@ -2908,7 +3866,7 @@ ALTER TABLE `student_results`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `trialexam`
@@ -2926,7 +3884,7 @@ ALTER TABLE `trialexam_history`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- Constraints for dumped tables
