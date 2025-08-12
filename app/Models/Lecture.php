@@ -22,16 +22,15 @@ class Lecture extends Model
         'expired_at',
         'teacher_id',
         'section'
+    ];
 
-     ];
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class, 'teacher_id');
+    }
 
-     public function teacher()
-        {
-         return $this->belongsTo('App\Models\Teacher','teacher_id');
-      }
-
-      public function histories()
-        {
-            return $this->hasMany('App\Models\History', 'lecture_id');
-        }
+    public function histories()
+    {
+        return $this->hasMany(History::class, 'lecture_id');
+    }
 }

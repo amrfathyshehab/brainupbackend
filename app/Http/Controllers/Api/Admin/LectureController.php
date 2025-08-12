@@ -2707,7 +2707,7 @@ class LectureController extends Controller
           'key' => $teacher->id,
           'name' => $teacher->name,
           'mobile' => $teacher->mobile,
-          'profile_pic' => "https://api.prodigy-online.com/uploads/profile_picture/" . $teacher->profile_pic,
+          'profile_pic' => asset('uploads/profile_picture/' . $teacher->profile_pic),
           'subject' => $teacher->subject,
 
           'description' => $teacher->description,

@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sabry`
+-- Database: `brainup`
 --
 
 -- --------------------------------------------------------
@@ -3065,7 +3065,7 @@ CREATE TABLE `students` (
   `parent_mobile` varchar(11) NOT NULL,
   `parent_mobile2` varchar(11) DEFAULT NULL,
   `area` varchar(255) NOT NULL,
-  `profile_pic` text NOT NULL DEFAULT '\'student.png\'',
+  `profile_pic` varchar(255) DEFAULT NULL,
   `lastseen` datetime DEFAULT NULL,
   `parent_id` int(11) NOT NULL,
   `school` varchar(255) DEFAULT NULL,

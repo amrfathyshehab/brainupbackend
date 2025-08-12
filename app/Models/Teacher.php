@@ -9,45 +9,46 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
 class Teacher extends Authenticatable
 {
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
+
     protected $guard_name = 'teachers';
-
-
-    use HasApiTokens, HasFactory, Notifiable , HasRoles;
-    use SoftDeletes;
-
-
-    /**
-     * Guard for the model
-     *
-     * @var string
-     */
 
     protected $table = 'teachers';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'name', 'username', 'password','api_token','mobile','profile_pic','subject','description'
+        'name',
+        'username',
+        'password',
+        'api_token',
+        'mobile',
+        'profile_pic',
+        'subject',
+        'description'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     public function lectures()
     {
-        return $this->hasMany('App\Models\Lecture','teacher_id');
+        return $this->hasMany(Lecture::class, 'teacher_id');
     }
 
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'student_teacher_requests')
+            ->withPivot('status', 'requested_at', 'approved_at', 'rejected_at');
+    }
+
+    public function scopeApprovedForStudent($query, $studentId)
+    {
+        return $query->whereHas('students', function ($q) use ($studentId) {
+            $q->where('students.id', $studentId)
+                ->wherePivot('status', 'approved');
+        });
+    }
 }
