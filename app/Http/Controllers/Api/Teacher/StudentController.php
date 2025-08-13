@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Teacher;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Teacher\StudentResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +25,7 @@ class StudentController extends Controller
         $stage  = $request->query('stage');
 
         $students = $teacher->students()
+            ->with(['city:id,city_name_ar', 'admin:id,name'])
             ->wherePivot('status', $status)
             ->when($stage, fn($q) => $q->where('stage', $stage))
             ->get();
@@ -31,7 +33,7 @@ class StudentController extends Controller
         return response()->json([
             'status'  => true,
             'message' => 'Requests fetched successfully',
-            'data'    => $students,
+            'data'    => StudentResource::collection($students),
         ]);
     }
 

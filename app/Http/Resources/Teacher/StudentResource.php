@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Student;
+namespace App\Http\Resources\Teacher;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TeacherResource extends JsonResource
+class StudentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,12 +15,15 @@ class TeacherResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id'          => $this->id,
-            'name'        => $this->name,
-            'profile_pic' => asset('uploads/profile_picture/' . $this->profile_pic),
-            'subject'     => $this->subject,
-            'description' => $this->description,
-            'status'      => $this->translateStatus($this->request_status),
+            'id'            => $this->id,
+            'name'          => $this->name,
+            'mobile'        => $this->mobile,
+            'parent_mobile' => $this->parent_mobile,
+            'school'        => $this->school,
+            'city'          => $this->city?->city_name_ar,
+            'approved_by'   => $this->admin?->name,
+            'status'        => $this->translateStatus($this->pivot->status),
+            'requested_at'  => $this->pivot->requested_at,
         ];
     }
 

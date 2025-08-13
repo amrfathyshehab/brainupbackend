@@ -33,4 +33,13 @@ class Lecture extends Model
     {
         return $this->hasMany(History::class, 'lecture_id');
     }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
+    public function attachments()
+    {
+        return $this->hasMany(Attachment::class);
+    }
 }

@@ -31,20 +31,19 @@ class StudentController extends Controller
     } elseif ($student['active'] == 0) {
       return response([
         'error' => 'The account is not activated'
-
       ], 500);
     }
+
+    $student->tokens()->delete();
 
     $token = $student->createToken($student->mobile, ['student'])->plainTextToken;
     $student->update(['lastseen' => now()]);
 
-    $response = [
+    return response()->json([
       'message' => "You have been logged in successfully",
       'student' => $student,
       'student_token' => $token
-    ];
-
-    return response($response, 201);
+    ], 200);
   }
 
   public function register(Request $request)
@@ -480,26 +479,56 @@ class StudentController extends Controller
     }
   }
 
-  public function availableTeachers()
+  public function availableTeachers(Request $request)
   {
-    $student = Auth::user();
+    $studentId = Auth::id();
 
-    $subscribedTeacherIds = $student->teachers()->pluck('teachers.id');
+    $status = $request->query('status', 'all');
+    $allowedStatuses = ['pending', 'approved', 'rejected', 'not_requested', 'all'];
 
-    $teachers = Teacher::whereNotIn('id', $subscribedTeacherIds)->get();
-
-    if ($teachers->isEmpty()) {
+    if (!in_array($status, $allowedStatuses)) {
       return response()->json([
-        'status' => false,
-        'message' => 'No available teachers',
-        'data' => []
-      ]);
+        'status'  => false,
+        'message' => 'Invalid status value',
+      ], 422);
     }
+
+    $query = Teacher::query()
+      ->leftJoin('student_teacher_requests', function ($join) use ($studentId) {
+        $join->on('teachers.id', '=', 'student_teacher_requests.teacher_id')
+          ->where('student_teacher_requests.student_id', '=', $studentId);
+      })
+      ->select(
+        'teachers.*',
+        'student_teacher_requests.status as request_status'
+      );
+
+    switch ($status) {
+      case 'not_requested':
+        $query->whereNull('student_teacher_requests.teacher_id');
+        break;
+
+      case 'all':
+        $query->orderByRaw("
+                CASE
+                    WHEN request_status = 'approved' THEN 1
+                    WHEN request_status = 'pending' THEN 2
+                    ELSE 3
+                END
+            ");
+        break;
+
+      default:
+        $query->where('student_teacher_requests.status', $status);
+        break;
+    }
+
+    $teachers = $query->get();
 
     return response()->json([
       'status'  => true,
       'message' => 'success',
-      'data'    => TeacherResource::collection($teachers)
+      'data'    => TeacherResource::collection($teachers),
     ]);
   }
 

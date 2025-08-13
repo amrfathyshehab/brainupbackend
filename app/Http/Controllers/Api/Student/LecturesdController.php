@@ -17,6 +17,8 @@ use App\Models\Studentanswer;
 use App\Models\Studentresult;
 use App\Models\SetsbankQuestion;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Student\ChapterResource;
+use App\Http\Resources\Student\LectureResource;
 use App\Models\QuestionbankQuestion;
 use Illuminate\Support\Facades\DB;
 
@@ -24,410 +26,327 @@ class LecturesdController extends Controller
 {
    public function alllecture($id)
    {
-      $alllectures = [];
-      $all_Lectures = Lecture::where('teacher_id', $id)->where('section', auth()->user()->section)->where('visibility', 1)->where('chapter_id', NULL)->where('stage', auth()->user()->stage)->get();
-      $all_Chapter = Chapter::where('teacher_id', $id)->where('section', auth()->user()->section)->where('visibility', 1)->where('stage', auth()->user()->stage)->get();
+      $student = auth()->user();
 
-      $n_Lectures = Lecture::where('teacher_id', $id)->where('section', auth()->user()->section)->where('visibility', 1)->where('chapter_id', NULL)->where('stage', auth()->user()->stage)->count();
-      $n_Chapter = Chapter::where('teacher_id', $id)->where('section', auth()->user()->section)->where('visibility', 1)->where('stage', auth()->user()->stage)->count();
+      $status = $student->teachers()
+         ->where('teachers.id', $id)
+         ->pluck('student_teacher_requests.status')
+         ->first();
 
-      if ($n_Chapter == 0 && $n_Lectures == 0) {
-         $response = [
-            'message' => "We do not have lectures or chapters",
-            'status' => false,
+      if ($status !== 'approved') {
+         $message = match ($status) {
+            'pending'  => 'طلب انضمامك للمدرس لم يتم الموافقة عليه بعد',
+            'rejected' => 'طلب انضمامك للمدرس تم رفضه',
+            default    => 'لم تقم بطلب الانضمام لهذا المدرس'
+         };
 
-         ];
-         return response($response, 200);
-      } else {
-         $i = 1;
-         foreach ($all_Chapter as $chapter) {
-
-
-            $alllectures[] = [
-               'n' => $i++,
-               'key' => $chapter->id,
-               'name' => $chapter->name,
-               'description' => $chapter->description,
-               'stage' => $chapter->stage,
-               'visibility' => $chapter->visibility,
-               'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $chapter->img,
-               'created_by' => $chapter->teacher->name,
-               'is_chapter' => 1,
-               'created_at' => date("F j, Y, g:i a", strtotime($chapter->created_at)),
-            ];
-         }
-
-         foreach ($all_Lectures as $lecture) {
-
-
-            $alllectures[] = [
-               'n' => $i++,
-               'key' => $lecture->id,
-               'title' => $lecture->title,
-               'description' => $lecture->description,
-               'is_chapter' => 0,
-               'stage' => $lecture->stage,
-               'visibility' => $lecture->visibility,
-               'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
-               'created_by' => $lecture->teacher->name,
-               'chapter_id' => $lecture->chapter_id,
-               'price' => $lecture->price,
-               'v_hw' => $lecture->v_hw,
-               'v_quiz' => $lecture->v_quiz,
-               'expired_at' => $lecture->expired_at,
-               'created_at' => date("F j, Y, g:i a", strtotime($lecture->created_at)),
-
-
-            ];
-         }
-         $response = [
-            'data' => $alllectures,
-            'message' => "success",
-            'status' => true,
-
-         ];
-         return response($response, 201);
+         return response()->json([
+            'status'  => false,
+            'message' => $message
+         ], 403);
       }
+
+      $chapters = Chapter::with('teacher')
+         ->where('teacher_id', $id)
+         ->where('section', $student->section)
+         ->where('visibility', 1)
+         ->where('stage', $student->stage)
+         ->get()
+         ->map(fn($chapter) => new ChapterResource($chapter));
+
+      $lectures = Lecture::with('teacher')
+         ->where('teacher_id', $id)
+         ->where('section', $student->section)
+         ->where('visibility', 1)
+         ->whereNull('chapter_id')
+         ->where('stage', $student->stage)
+         ->get()
+         ->map(fn($lecture) => new LectureResource($lecture));
+
+      if ($chapters->isEmpty() && $lectures->isEmpty()) {
+         return response()->json([
+            'status'  => false,
+            'message' => "We do not have lectures or chapters",
+         ], 200);
+      }
+
+      $allItems = $chapters->concat($lectures)->values();
+
+      return response()->json([
+         'status'  => true,
+         'message' => "success",
+         'data'    => $allItems,
+      ], 201);
    }
-
-
 
    public function session($id)
    {
-      $session = [];
-      $n_lecture = Lecture::where('section', auth()->user()->section)->where('visibility', 1)->where('stage', auth()->user()->stage)->where('id', $id)->count();
+      $student = auth()->user();
 
-      if ($n_lecture == 0) {
-         $response = [
-            'message' => "The lecture does not exist",
+      $lecture = Lecture::with(['teacher', 'videos', 'attachments'])
+         ->where('id', $id)
+         ->where('section', $student->section)
+         ->where('stage', $student->stage)
+         ->where('visibility', 1)
+         ->first();
+
+      if (!$lecture) {
+         return response()->json([
+            'message' => "لم يتم العثور على المحاضرة",
             'status' => false,
+         ], 200);
+      }
 
+      $status = $student->teachers()
+         ->where('teachers.id', $lecture->teacher_id)
+         ->pluck('student_teacher_requests.status')
+         ->first();
+
+      if ($status !== 'approved') {
+         $message = match ($status) {
+            'pending'  => 'طلب انضمامك للمدرس لم يتم الموافقة عليه بعد',
+            'rejected' => 'طلب انضمامك للمدرس تم رفضه',
+            default    => 'لم تقم بطلب الانضمام لهذا المدرس'
+         };
+
+         return response()->json([
+            'status'  => false,
+            'message' => $message
+         ], 403);
+      }
+
+      $buyingHistory = History::with('assistant')
+         ->where('lecture_id', $id)
+         ->where('student_id', $student->id)
+         ->where('expire_at', '>=', now())
+         ->first();
+
+      $hasActivePurchase = $buyingHistory !== null;
+
+      $lectureDetails = [
+         'key'         => $lecture->id,
+         'title'       => $lecture->title,
+         'description' => $lecture->description,
+         'stage'       => $lecture->stage,
+         'visibility'  => $lecture->visibility,
+         'img'         => asset('uploads/lectures/images/' . $lecture->img),
+         'created_by'  => $lecture->teacher->name,
+         'chapter_id'  => $lecture->chapter_id,
+         'price'       => $lecture->price,
+         'v_hw'        => $lecture->v_hw,
+         'v_quiz'      => $lecture->v_quiz,
+         'expired_at'  => $lecture->expired_at,
+         'created_at'  => date("F j, Y, g:i a", strtotime($lecture->created_at)),
+         'is_buy'      => (int) $hasActivePurchase
+      ];
+
+      $historyData = [];
+      if ($hasActivePurchase) {
+         $teacher = null;
+         if ($buyingHistory->add_to_session_assistant != null) {
+            $teacher = $buyingHistory->assistant->name;
+         }
+
+         $is_quiz = 0;
+         $is_quiz_result = 0;
+         $quiz = Quiz::where('lecture_id', $id)->where('visibility', 1)->first();
+         if ($quiz) {
+            $is_quiz = 1;
+            $quizResult = Studentresult::where('quiz_id', $quiz->id)
+               ->where('student_id', $student->id)
+               ->exists();
+            if ($quizResult) {
+               $is_quiz_result = 1;
+            }
+         }
+
+         $is_hw = 0;
+         $is_hw_result = 0;
+         $homework = Homework::where('lecture_id', $id)->first();
+         if ($homework && $lecture->v_hw == 1) {
+            $is_hw = 1;
+            $hwResult = Studentresult::where('homework_id', $homework->id)
+               ->where('student_id', $student->id)
+               ->exists();
+            if ($hwResult) {
+               $is_hw_result = 1;
+            }
+         }
+
+         $historyData = [
+            'key'            => $buyingHistory->id,
+            'lecture_id'     => $buyingHistory->lecture_id,
+            'price'          => $buyingHistory->description,
+            'buy_at'         => date("F j, Y, g:i a", strtotime($buyingHistory->buy_at)),
+            'code'           => $buyingHistory->visibility,
+            'quiz_done'      => $buyingHistory->quiz_done,
+            'homework_done'  => $buyingHistory->homework_done,
+            'views'          => $buyingHistory->views,
+            'v_quiz'         => $lecture->v_quiz,
+            'v_hw'           => $lecture->v_hw,
+            'expire_at'      => date("F j, Y, g:i a", strtotime($buyingHistory->expire_at)),
+            'is_quiz'        => $is_quiz,
+            'is_hw'          => $is_hw,
+            'is_quiz_result' => $is_quiz_result,
+            'is_hw_result'   => $is_hw_result,
+            'add_to_session_assistant' => $teacher,
          ];
-         return response($response, 200);
+      }
+
+      $videos = [];
+      $attachments = [];
+
+      if (!$hasActivePurchase) {
+         $videos = $this->getPublicVideos($lecture->videos, $student);
+         $attachments = $this->getPublicAttachments($lecture->attachments);
       } else {
-         $lecture = Lecture::where('section', auth()->user()->section)->where('visibility', 1)->where('stage', auth()->user()->stage)->where('id', $id)->first();
+         $videos = $this->getAllVideos($lecture->videos, $student, $buyingHistory);
+         $attachments = $this->getAllAttachments($lecture->attachments);
+      }
 
-         $lecture_details = [];
-         $history = [];
-         $lecture_details = [
-            'key' => $lecture->id,
-            'title' => $lecture->title,
-            'description' => $lecture->description,
-            'stage' => $lecture->stage,
-            'visibility' => $lecture->visibility,
-            'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
-            'created_by' => $lecture->teacher->name,
-            'chapter_id' => $lecture->chapter_id,
-            'price' => $lecture->price,
-            'v_hw' => $lecture->v_hw,
-            'v_quiz' => $lecture->v_quiz,
-            'expired_at' => $lecture->expired_at,
-            'created_at' => date("F j, Y, g:i a", strtotime($lecture->created_at)),
+      $session = [
+         'session_info'    => $lectureDetails,
+         'session_history' => $historyData,
+         'videos'          => $videos,
+         'attachments'     => $attachments,
+      ];
 
+      return response()->json([
+         'status'  => true,
+         'message' => "success",
+         'data'    => $session
+      ]);
+   }
 
-         ];
-         $n_History = History::where('lecture_id', $id)->where('student_id', auth()->user()->id)
-            ->where('expire_at', '>=', date('Y-m-d H:i:s'))->count();
-         $buyingHistory = History::where('lecture_id', $id)->where('student_id', auth()->user()->id)
-            ->where('expire_at', '>=', date('Y-m-d H:i:s'))->first();
-
-         $lecture_details = [
-            'key' => $lecture->id,
-            'title' => $lecture->title,
-            'description' => $lecture->description,
-            'stage' => $lecture->stage,
-            'visibility' => $lecture->visibility,
-            'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
-            'created_by' => $lecture->teacher->name,
-            'chapter_id' => $lecture->chapter_id,
-            'price' => $lecture->price,
-            'v_hw' => $lecture->v_hw,
-            'v_quiz' => $lecture->v_quiz,
-            'expired_at' => $lecture->expired_at,
-            'created_at' => date("F j, Y, g:i a", strtotime($lecture->created_at)),
-            'is_buy' => $n_History,
-            'amount' => auth()->user()->amount,
-
-
-         ];
-         if ($n_History == 1) {
-
-            $teacher = NULL;
-            if ($buyingHistory->add_to_session_assistant = !NULL) {
-               $teacher = $buyingHistory->assistant->name;
+   private function getPublicVideos($videos, $student)
+   {
+      $publicVideos = [];
+      foreach ($videos as $video) {
+         if ($video->is_public == 1) {
+            $videoData = $this->processVideoData($video, $student);
+            if ($videoData['status'] == 1) {
+               unset($videoData['status']);
+               $publicVideos[] = $videoData;
             }
-            $is_quiz = 0;
-            $is_quiz_result = 0;
+         }
+      }
+      return $publicVideos;
+   }
 
-            $n_getquiz = Quiz::where('lecture_id', $id)->where('visibility', 1)->count();
-            if ($n_getquiz > 0) {
-               $is_quiz = 1;
-               $getquiz = Quiz::where('lecture_id', $id)->first();
-               $n_getreust = Studentresult::where('quiz_id', $getquiz->id)->where('student_id', auth()->user()->id)->count();
-               if ($n_getreust > 0) {
-                  $is_quiz_result = 1;
-               }
+   private function getAllVideos($videos, $student, $buyingHistory)
+   {
+      $allVideos = [];
+      foreach ($videos as $video) {
+         $videoData = $this->processVideoData($video, $student);
+         if ($videoData['status'] == 1) {
+            // إخفاء الفيديو إذا كانت المشاهدات = 0
+            if ($buyingHistory && $buyingHistory->views == 0) {
+               $videoData['vdo_id'] = null;
             }
+            unset($videoData['status']);
+            $allVideos[] = $videoData;
+         }
+      }
+      return $allVideos;
+   }
 
+   private function processVideoData($video, $student)
+   {
+      $OTP = null;
+      $playbackInfo = null;
+      $vdo_id = null;
+      $status = 0;
 
-            $is_hw = 0;
-            $is_hw_result = 0;
+      if ($video->platform == "vdocipher") {
+         $curl = curl_init();
 
-            $n_gethw = Homework::where('lecture_id', $id)->count();
-            if ($n_gethw > 0 && $lecture->v_hw == 1) {
-               $is_hw = 1;
-               $gethw = Homework::where('lecture_id', $id)->first();
-               $n_getreust = Studentresult::where('homework_id', $gethw->id)->where('student_id', auth()->user()->id)->count();
-               if ($n_getreust > 0) {
-                  $is_hw_result = 1;
-               }
+         curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://dev.vdocipher.com/api/videos/" . $video->vdo_id . "/otp",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => json_encode([
+               'annotate' => json_encode([[
+                  'type' => 'rtext',
+                  'text' => $student->name,
+                  'alpha' => '0.15',
+                  'color' => '0xFF0000',
+                  'size' => '35',
+                  'interval' => '155000'
+               ]]),
+            ]),
+            CURLOPT_HTTPHEADER => array(
+               "Accept: application/json",
+               "Authorization: Apisecret kmVzH7Ixh7mY7Y1KXDp8cdV8zTmkJV15jukk1olrN7o2aq0Z17ijZ2m2LfEUhAlS",
+               "Content-Type: application/json"
+            ),
+         ));
+
+         $response = curl_exec($curl);
+         $err = curl_error($curl);
+         curl_close($curl);
+
+         if ($err) {
+            echo "cURL Error #:" . $err;
+         } else {
+            $response_data = json_decode($response, true);
+            if (isset($response_data['message']) && $response_data['message'] === 'video not found') {
+               $status = 0;
+            } else {
+               $OTP = $response_data['otp'];
+               $playbackInfo = $response_data['playbackInfo'];
+               $status = 1;
             }
+         }
+      } else {
+         $vdo_id = $video->vdo_id;
+         $status = 1;
+      }
 
+      return [
+         'key' => $video->id,
+         'name' => $video->name,
+         'description' => $video->description,
+         'is_public' => $video->is_public,
+         'vdo_id' => $video->platform == "vdocipher" ? $video->vdo_id : $vdo_id,
+         'platform' => $video->platform,
+         'OTP' => $OTP,
+         'playbackInfo' => $playbackInfo,
+         'status' => $status
+      ];
+   }
 
-            $history = [
-               'key' => $buyingHistory->id,
-               'lecture_id' => $buyingHistory->lecture_id,
-               'price' => $buyingHistory->description,
-               'buy_at' => date("F j, Y, g:i a", strtotime($buyingHistory->buy_at)),
-               'code' => $buyingHistory->visibility,
-               'quiz_done' => $buyingHistory->quiz_done,
-               'homework_done' => $buyingHistory->homework_done,
-               'views' => $buyingHistory->views,
-               'v_quiz' => $lecture->v_quiz,
-               'v_hw' => $lecture->v_hw,
-               'add_to_session_assistant' => $teacher,
-               'expire_at' => date("F j, Y, g:i a", strtotime($buyingHistory->expire_at)),
-               'is_quiz' => $is_quiz,
-               'is_hw' => $is_hw,
-               'is_quiz_result' => $is_quiz_result,
-               'is_hw_result' => $is_hw_result
-
+   private function getPublicAttachments($attachments)
+   {
+      $publicAttachments = [];
+      foreach ($attachments as $attachment) {
+         if ($attachment->is_public == 1) {
+            $publicAttachments[] = [
+               'key' => $attachment->id,
+               'name' => $attachment->address,
+               'is_public' => $attachment->is_public,
+               'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $attachment->address,
             ];
          }
-         $videos = [];
-         $attachments = [];
-
-         if ($n_History == 0) {
-            $n_veds = Video::where('lecture_id', $id)->where('is_public', 1)->count();
-            $n_attachs = Attachment::where('lecture_id', $id)->where('is_public', 1)->count();
-
-            if ($n_veds > 0) {
-               $veds = Video::where('lecture_id', $id)->get();
-               foreach ($veds as $vod) {
-
-                  $OTP = NULL;
-                  $playbackInfo = NULL;
-                  $vdo_id = NULL;
-                  $status = 0;
-
-                  if ($vod->platform == "vdocipher") {
-                     $curl = curl_init();
-
-                     curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://dev.vdocipher.com/api/videos/" . $vod->vdo_id . "/otp",
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_ENCODING => "",
-                        CURLOPT_MAXREDIRS => 10,
-                        CURLOPT_TIMEOUT => 30,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => "POST",
-                        CURLOPT_POSTFIELDS => json_encode([
-                           'annotate' => json_encode([[
-                              'type' => 'rtext',
-                              'text' => auth()->user()->name,
-                              'alpha' => '0.15',
-                              'color' => '0xFF0000',
-                              'size' => '35',
-                              'interval' => '155000'
-                           ]]),
-                        ]),
-                        CURLOPT_HTTPHEADER => array(
-                           "Accept: application/json",
-                           "Authorization: Apisecret kmVzH7Ixh7mY7Y1KXDp8cdV8zTmkJV15jukk1olrN7o2aq0Z17ijZ2m2LfEUhAlS",
-                           "Content-Type: application/json"
-
-                        ),
-                     ));
-
-                     $response = curl_exec($curl);
-                     $err = curl_error($curl);
-
-                     curl_close($curl);
-
-                     if ($err) {
-                        echo "cURL Error #:" . $err;
-                     } else {
-
-                        $response_data = json_decode($response, true); // Decode JSON response
-
-                        if (isset($response_data['message']) && $response_data['message'] === 'video not found') {
-                           $status = 0;
-                        } else {
-                           // Video found, proceed with playback info extraction
-                           $OTP = $response_data['otp'];
-                           $playbackInfo = $response_data['playbackInfo'];
-                           $status = 1;
-
-                           // Continue with your code for playback info handling
-                        }
-                     }
-                  } else {
-                     $vdo_id = $vod->vdo_id;
-                     $status = 1;
-                  }
-                  if ($status == 1) {
-
-
-                     $videos[] = [
-                        'key' => $vod->id,
-                        'name' => $vod->name,
-                        'description' => $vod->description,
-                        'is_public' => $vod->is_public,
-                        'vdo_id' => $vod->vdo_id,
-                        'platform' => $vod->platform,
-                        'OTP' => $OTP,
-                        'playbackInfo' => $playbackInfo,
-
-                     ];
-                  }
-               }
-            }
-            if ($n_attachs > 0) {
-               $Attachmentslc = Attachment::where('lecture_id', $id)->get();
-               foreach ($Attachmentslc as $Attachment) {
-                  $attachments[] = [
-                     'key' => $Attachment->id,
-                     'name' => $Attachment->address,
-
-                     'is_public' => $Attachment->is_public,
-                     'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $Attachment->address,
-
-                  ];
-               }
-            }
-         } else {
-            $veds = Video::where('lecture_id', $id)->get();
-            $n_veds = Video::where('lecture_id', $id)->count();
-            $n_attachs = Attachment::where('lecture_id', $id)->count();
-
-            if ($n_veds > 0) {
-               $veds = Video::where('lecture_id', $id)->get();
-               $videos = [];
-
-               foreach ($veds as $vod) {
-                  $OTP = NULL;
-                  $playbackInfo = NULL;
-                  $vdo_id = NULL;
-                  $status = 0;
-
-                  if ($vod->platform == "vdocipher") {
-                     $curl = curl_init();
-
-                     curl_setopt_array($curl, array(
-                        CURLOPT_URL => "https://dev.vdocipher.com/api/videos/" . $vod->vdo_id . "/otp",
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_ENCODING => "",
-                        CURLOPT_MAXREDIRS => 10,
-                        CURLOPT_TIMEOUT => 30,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => "POST",
-                        CURLOPT_POSTFIELDS => json_encode([
-                           'annotate' => json_encode([[
-                              'type' => 'rtext',
-                              'text' => auth()->user()->name,
-                              'alpha' => '0.15',
-                              'color' => '0xFF0000',
-                              'size' => '35',
-                              'interval' => '155000'
-                           ]]),
-                        ]),
-                        CURLOPT_HTTPHEADER => array(
-                           "Accept: application/json",
-                           "Authorization: Apisecret kmVzH7Ixh7mY7Y1KXDp8cdV8zTmkJV15jukk1olrN7o2aq0Z17ijZ2m2LfEUhAlS",
-                           "Content-Type: application/json"
-
-                        ),
-                     ));
-
-                     $response = curl_exec($curl);
-                     $err = curl_error($curl);
-
-                     curl_close($curl);
-
-                     if ($err) {
-                        echo "cURL Error #:" . $err;
-                     } else {
-
-
-                        $response_data = json_decode($response, true); // Decode JSON response
-
-                        if (isset($response_data['message']) && $response_data['message'] === 'video not found') {
-                           $status = 0;
-                        } else {
-                           // Video found, proceed with playback info extraction
-                           $OTP = $response_data['otp'];
-                           $playbackInfo = $response_data['playbackInfo'];
-                           $status = 1;
-
-                           // Continue with your code for playback info handling
-                        }
-                     }
-                  } else {
-                     $vdo_id = $vod->vdo_id;
-                     $status = 1;
-                  }
-                  if ($status == 1) {
-                     $vdo_id = $vod->vdo_id;
-                     if ($buyingHistory->views == 0) {
-                        $vdo_id = NULL;
-                     }
-                     $videos[] = [
-                        'key' => $vod->id,
-                        'name' => $vod->name,
-                        'description' => $vod->description,
-                        'is_public' => $vod->is_public,
-                        'vdo_id' => $vdo_id,
-                        'platform' => $vod->platform,
-                        'OTP' => $OTP,
-                        'playbackInfo' => $playbackInfo,
-                     ];
-                  }
-               }
-            }
-            if ($n_attachs > 0) {
-               $Attachmentslc = Attachment::where('lecture_id', $id)->get();
-               foreach ($Attachmentslc as $Attachment) {
-                  $attachments[] = [
-                     'key' => $Attachment->id,
-                     'is_public' => $Attachment->is_public,
-                     'name' => $Attachment->address,
-
-                     'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $Attachment->address,
-
-                  ];
-               }
-            }
-         }
-
-
-         $session = [
-            'session_info' => $lecture_details,
-            'session_history' => $history,
-            'videos' => $videos,
-            'attachments' => $attachments,
-
-         ];
-
-
-         $response = [
-            'data' => $session,
-
-            'message' => "success",
-            'status' => true,
-
-         ];
-         return response($response, 201);
       }
+      return $publicAttachments;
+   }
+
+   private function getAllAttachments($attachments)
+   {
+      $allAttachments = [];
+      foreach ($attachments as $attachment) {
+         $allAttachments[] = [
+            'key' => $attachment->id,
+            'name' => $attachment->address,
+            'is_public' => $attachment->is_public,
+            'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $attachment->address,
+         ];
+      }
+      return $allAttachments;
    }
 
    public function buy(Request $request)
@@ -524,67 +443,80 @@ class LecturesdController extends Controller
       }
    }
 
-
    public function getlecturebychapter($id)
    {
-      $alllectures = [];
-      $n_Chapter = Chapter::where('id', $id)->count();
+      $student = auth()->user();
 
-      if ($n_Chapter == 0) {
-         $response = [
-            'message' => "The chapter does not exist",
-            'status' => false,
+      $chapter = Chapter::with('teacher')->find($id);
 
-         ];
-         return response($response, 200);
-      } else {
-         $n_Lectures = Lecture::where('section', auth()->user()->section)->where('visibility', 1)->where('stage', auth()->user()->stage)->where('chapter_id', $id)->count();
-         if ($n_Lectures == 0) {
-            $response = [
-               'message' => "There are no lectures",
-               'status' => false,
-
-            ];
-            return response($response, 200);
-         } else {
-            $i = 1;
-
-            $all_Lectures = Lecture::where('section', auth()->user()->section)->where('visibility', 1)->where('stage', auth()->user()->stage)->where('chapter_id', $id)->get();
-
-            foreach ($all_Lectures as $lecture) {
-
-
-               $alllectures[] = [
-                  'n' => $i++,
-                  'key' => $lecture->id,
-                  'title' => $lecture->title,
-                  'description' => $lecture->description,
-                  'is_chapter' => 0,
-                  'stage' => $lecture->stage,
-                  'visibility' => $lecture->visibility,
-                  'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
-                  'created_by' => $lecture->teacher->name,
-                  'chapter_id' => $lecture->chapter_id,
-                  'price' => $lecture->price,
-                  'v_hw' => $lecture->v_hw,
-                  'v_quiz' => $lecture->v_quiz,
-                  'expired_at' => $lecture->expired_at,
-                  'created_at' => date("F j, Y, g:i a", strtotime($lecture->created_at)),
-
-
-               ];
-            }
-            $response = [
-               'data' => $alllectures,
-               'message' => "success",
-               'status' => true,
-
-            ];
-            return response($response, 201);
-         }
+      if (!$chapter) {
+         return response()->json([
+            'status'  => false,
+            'message' => "لم يتم العثور علي الفصل",
+         ], 404);
       }
-   }
 
+      $status = $student->teachers()
+         ->where('teachers.id', $chapter->teacher_id)
+         ->pluck('student_teacher_requests.status')
+         ->first();
+
+      if ($status !== 'approved') {
+         $message = match ($status) {
+            'pending'  => 'طلب انضمامك للمدرس لم يتم الموافقة عليه بعد',
+            'rejected' => 'طلب انضمامك للمدرس تم رفضه',
+            default    => 'لم تقم بطلب الانضمام لهذا المدرس'
+         };
+
+         return response()->json([
+            'status'  => false,
+            'message' => $message
+         ], 403);
+      }
+
+      $lectures = Lecture::with('teacher')
+         ->where('section', $student->section)
+         ->where('visibility', 1)
+         ->where('stage', $student->stage)
+         ->where('chapter_id', $id)
+         ->get();
+
+      if ($lectures->isEmpty()) {
+         return response()->json([
+            'status'  => false,
+            'message' => "لم يتم اضافة محاضرات في هذا الفصل",
+         ], 404);
+      }
+
+      $alllectures = [];
+      $i = 1;
+
+      foreach ($lectures as $lecture) {
+         $alllectures[] = [
+            'n'           => $i++,
+            'key'         => $lecture->id,
+            'title'       => $lecture->title,
+            'description' => $lecture->description,
+            'is_chapter'  => 0,
+            'stage'       => $lecture->stage,
+            'visibility'  => $lecture->visibility,
+            'img'         => asset("uploads/lectures/images/" . $lecture->img),
+            'created_by'  => $lecture->teacher->name,
+            'chapter_id'  => $lecture->chapter_id,
+            'price'       => $lecture->price,
+            'v_hw'        => $lecture->v_hw,
+            'v_quiz'      => $lecture->v_quiz,
+            'expired_at'  => $lecture->expired_at,
+            'created_at'  => date("F j, Y, g:i a", strtotime($lecture->created_at)),
+         ];
+      }
+
+      return response()->json([
+         'status'  => true,
+         'message' => "success",
+         'data'    => $alllectures,
+      ], 200);
+   }
 
    public function getquizquestion($id)
    {
@@ -956,7 +888,6 @@ class LecturesdController extends Controller
       }
    }
 
-
    public function gethomeworkquestion($id)
    {
       $n_lecture = Lecture::where('visibility', 1)->where('stage', auth()->user()->stage)->where('id', $id)->count();
@@ -1300,6 +1231,7 @@ class LecturesdController extends Controller
          }
       }
    }
+
    public function submitquiz(Request $request)
    {
       if ($request->lecture_id == NULL) {
@@ -1636,13 +1568,6 @@ class LecturesdController extends Controller
       }
    }
 
-
-
-
-
-
-
-
    public function submithomework(Request $request)
    {
       if ($request->lecture_id == NULL) {
@@ -1976,215 +1901,6 @@ class LecturesdController extends Controller
       }
    }
 
-   public function submithomework2(Request $request)
-   {
-      if ($request->lecture_id == NULL) {
-         $response = [
-            'message' => "lecture id required",
-            'status' => false,
-         ];
-         return response($response, 403);
-      }
-      $n_lecture = Lecture::where('visibility', 1)->where('stage', auth()->user()->stage)->where('id', $request->lecture_id)->count();
-
-      if ($n_lecture == 0) {
-         $response = [
-            'message' => "The lecture does not exist",
-            'status' => false,
-         ];
-         return response($response, 200);
-      } else {
-
-         $n_buying = History::where('lecture_id', $request->lecture_id)->where('student_id', auth()->user()->id)->where('expire_at', '>=', date('Y-m-d H:i:s'))->count();
-         if ($n_buying == 0) {
-            $response = [
-               'message' => "You must purchase the lecture first",
-               'status' => false,
-            ];
-            return response($response, 200);
-         }
-         $n_homework = Homework::where('lecture_id', $request->lecture_id)->count();
-         if ($n_homework == 0) {
-            $response = [
-               'message' => "There is no homework for this lecture",
-               'status' => false,
-            ];
-            return response($response, 200);
-         } else {
-            $homework = Homework::where('lecture_id', $request->lecture_id)->first();
-            $n_Studentresult = Studentresult::where('homework_id', $homework->id)->where('student_id', auth()->user()->id)->count();
-
-            if ($n_Studentresult == 0) {
-               $correct_dgree = 0;
-               $totalDegree = 0;
-
-
-               foreach ($request->answers as $answer) {
-                  $question = QuestionbankQuestion::where('id', $answer['id'])->first();
-                  $totalDegree = $totalDegree + $question->degree;
-                  $ans = null;
-                  if ($answer['order'] == "A") {
-                     $ans = "answer1";
-                  } elseif ($answer['order'] == "B") {
-                     $ans = "answer2";
-                  } elseif ($answer['order'] == "C") {
-                     $ans = "answer3";
-                  } elseif ($answer['order'] == "D") {
-                     $ans = "answer4";
-                  }
-                  if ($ans == $question->correct_answer) {
-                     $correct_dgree = $correct_dgree + $question->degree;
-                  }
-
-                  $n_stdanswer = Studentanswer::where('homework_id', $homework->id)->where('q_id', $answer['id'])->where('student_id', auth()->user()->id)->count();
-                  if ($n_stdanswer == 1) {
-                     $currstdanswer = Studentanswer::where('homework_id', $homework->id)->where('q_id', $answer['id'])->where('student_id', auth()->user()->id)->first();
-                     $ans = null;
-                     if ($answer['order'] == "A") {
-                        $ans = "answer1";
-                     } elseif ($answer['order'] == "B") {
-                        $ans = "answer2";
-                     } elseif ($answer['order'] == "C") {
-                        $ans = "answer3";
-                     } elseif ($answer['order'] == "D") {
-                        $ans = "answer4";
-                     }
-                     $stdanswer = Studentanswer::find($currstdanswer->id);
-
-                     $stdanswer->update([
-                        'student_answer' => $ans,
-
-                     ]);
-                  } else {
-                     $ans = null;
-                     if ($answer['order'] == "A") {
-                        $ans = "answer1";
-                     } elseif ($answer['order'] == "B") {
-                        $ans = "answer2";
-                     } elseif ($answer['order'] == "C") {
-                        $ans = "answer3";
-                     } elseif ($answer['order'] == "D") {
-                        $ans = "answer4";
-                     }
-                     $Studentanswer = Studentanswer::create(
-                        [
-                           'q_id' => $answer['id'],
-                           'student_answer' => $ans,
-                           'student_id' => auth()->user()->id,
-                           'homework_id' => $homework->id,
-                           'n' => $answer['n'],
-                        ]
-                     );
-                  }
-               }
-
-               Studentresult::create(
-                  [
-                     'assignment_degree' => $totalDegree,
-                     'student_degree' => $correct_dgree,
-                     'student_id' => auth()->user()->id,
-                     'homework_id' => $homework->id,
-
-                  ]
-
-               );
-
-               $answers = Studentanswer::where('homework_id', $homework->id)->where('student_id', auth()->user()->id)->get();
-
-               $questionsans = [];
-               $n = 0;
-               $count_correct = 0;
-
-               foreach ($answers as $answer) {
-                  $ans1 = null;
-
-                  $currentquestion = QuestionbankQuestion::where('id', $answer->q_id)->first();
-
-                  $std_ans = null;
-                  if ($answer->student_answer == "answer1") {
-                     $std_ans = "A";
-                  } elseif ($answer->student_answer == "answer2") {
-                     $std_ans = "B";
-                  } elseif ($answer->student_answer == "answer3") {
-                     $std_ans = "C";
-                  } elseif ($answer->student_answer == "answer4") {
-                     $std_ans = "D";
-                  }
-
-                  $correct_ans = null;
-                  if ($currentquestion->correct_answer == "answer1") {
-                     $correct_ans = "A";
-                  } elseif ($currentquestion->correct_answer == "answer2") {
-                     $correct_ans = "B";
-                  } elseif ($currentquestion->correct_answer == "answer3") {
-                     $correct_ans = "C";
-                  } elseif ($currentquestion->correct_answer == "answer4") {
-                     $correct_ans = "D";
-                  }
-                  $is_correct = 0;
-                  if ($correct_ans == $std_ans) {
-                     $is_correct = 1;
-                     $count_correct = $count_correct + 1;
-                  }
-
-                  $questionsans[] = [
-                     'id' => $answer->q_id,
-                     'n' => $answer->n,
-                     'question' => $answer->question->question,
-                     'answers' => [
-                        [
-                           'answer' => $answer->question->answer1,
-                           'order' => "A"
-                        ],
-                        [
-                           'answer' => $answer->question->answer2,
-                           'order' => "B"
-                        ],
-                        [
-                           'answer' => $answer->question->answer3,
-                           'order' => "C"
-                        ],
-                        [
-                           'answer' => $answer->question->answer4,
-                           'order' => "D"
-                        ],
-                     ],
-                     'correct_answer' => $correct_ans,
-                     'degree' => $currentquestion->degree,
-                     'student_answer' => $std_ans,
-                     'is_correct' => $is_correct,
-
-                  ];
-                  $n++;
-               }
-               $Studentresult = Studentresult::where('homework_id', $homework->id)->where('student_id', auth()->user()->id)->first();
-               $count_wrong = $n - $count_correct;
-               $data = [
-                  'questions' => $questionsans,
-                  'student_degree' => $Studentresult->student_degree,
-                  'degree' => $Studentresult->assignment_degree,
-                  'percentage' => round($Studentresult->student_degree / $Studentresult->assignment_degree, 2),
-                  'count_wrong' => $count_wrong,
-                  'count_correct' => $count_correct,
-                  'number_questions' => $n,
-
-               ];
-               $response = [
-                  'data' => $data,
-                  'status' => true,
-               ];
-               return response($response, 201);
-            } else {
-               $response = [
-                  'message' => "You have already submitted the homework",
-                  'status' => false,
-               ];
-               return response($response, 403);
-            }
-         }
-      }
-   }
-
    public function buyamount(Request $request)
    {
       $n_lecture = Lecture::where('visibility', 1)->where('stage', auth()->user()->stage)->where('id', $request->id)->count();
@@ -2272,11 +1988,8 @@ class LecturesdController extends Controller
       }
    }
 
-
    public function decreaseview(Request $request)
    {
-
-
       $n_sub = History::where('id', $request->id)->where('views', '>', 0)->count();
       if ($n_sub == 1) {
          $subs = History::where('id', $request->id)->where('views', '>', 0)->first();

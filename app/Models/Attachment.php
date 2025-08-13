@@ -1,9 +1,9 @@
 <?php
-  
+
 namespace App\Models;
-  
+
 use Illuminate\Database\Eloquent\Model;
- 
+
 class Attachment extends Model
 {
     protected $table = 'attachments';
@@ -13,17 +13,15 @@ class Attachment extends Model
         'address',
         'lecture_id',
         'teacher_id'
-     
-      ];
+    ];
 
-      public function lecture()
-      {
-          return $this->belongsTo('App\Models\Lecture','lecture_id');
-  
-       }
-       public function teacher()
-       {
-           return $this->belongsTo('App\Models\Teacher','teacher_id');
-   
-        }
+    public function lecture()
+    {
+        return $this->belongsTo(Lecture::class, 'lecture_id');
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class, 'teacher_id');
+    }
 }

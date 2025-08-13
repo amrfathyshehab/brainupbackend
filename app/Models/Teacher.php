@@ -29,6 +29,8 @@ class Teacher extends Authenticatable
     ];
 
     protected $hidden = [
+        'username',
+        'api_token',
         'password',
         'remember_token',
     ];

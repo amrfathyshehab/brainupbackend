@@ -650,27 +650,25 @@ class AdminController extends Controller
     }
   }
 
-  public function me(Request $request)
+  public function me()
   {
-    $admin = auth()->user();
+    $user = auth()->user();
 
-    if (! $admin) {
+    if (! $user) {
       return response()->json([
-        'status' => false,
+        'status'  => false,
         'message' => 'Unauthenticated'
       ], 401);
     }
 
-    $isSuperAdmin = $admin->hasRole('superadmin');
-    $permissions = $isSuperAdmin ?
-      Permission::all()->pluck('name') :
-      $admin->getAllPermissions()->pluck('name');
+    $isSuperAdmin = $user->hasRole('superadmin') ?? false;
+    $permissions = $isSuperAdmin ? Permission::all()->pluck('name') : $user->getAllPermissions()->pluck('name');
 
     return response()->json([
-      'status'        => true,
-      'message'       => 'Current admin retrieved successfully',
-      'admin'         => $admin,
-      'permissions'   => $permissions,
+      'status'         => true,
+      'message'        => 'Current user retrieved successfully',
+      'user'           => $user,
+      'permissions'    => $permissions,
       'is_super_admin' => $isSuperAdmin,
     ], 200);
   }

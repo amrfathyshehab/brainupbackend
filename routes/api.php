@@ -53,19 +53,17 @@ Route::get('randomlecture', [IndexController::class, 'randomlectures']);
 Route::post('forgetpassword', [StudentController::class, 'sendotp']);
 Route::post('changepassword', [StudentController::class, 'otp']);
 Route::post('change', [StudentController::class, 'changepassword']);
+Route::get('me', [AdminController::class, 'me'])->middleware('auth:sanctum');
 
 // Admin panel
 Route::prefix('admin')->group(function () {
   Route::middleware(['SetSanctumGuard:admins', 'auth:sanctum',])->group(function () {
-    // Me
-    Route::get('me', [AdminController::class, 'me']);
-
     Route::get('home', [AdminController::class, 'home']);
     Route::get('numbering', [AdminController::class, 'numbering'])->middleware(['role_or_permission:superadmin|request_accept']);
     Route::POST('profile/picture', [AdminController::class, 'myeditpicture']);
     Route::POST('profile/changepassword', [AdminController::class, 'myeditpassword']);
 
-    //users
+    // Users
     Route::get('allpermission', [AdminController::class, 'allpermission'])->middleware('role:superadmin');
     Route::post('Adduser', [AdminController::class, 'create'])->middleware('role:superadmin');
     Route::get('allusers', [AdminController::class, 'users'])->middleware(['role_or_permission:superadmin|user_view']);
@@ -82,7 +80,7 @@ Route::prefix('admin')->group(function () {
     Route::get('getallpermission', [AdminController::class, 'getallpermissions'])->middleware('role:superadmin');
 
 
-    //teachers
+    // Teachers
     Route::post('addteacher', [TeacherController::class, 'create'])->middleware('role:superadmin');
     Route::get('allteachers', [TeacherController::class, 'users'])->middleware(['role_or_permission:superadmin|teacher_view']);
     Route::get('teacher/{id}', [TeacherController::class, 'teacherinfo'])->middleware(['role_or_permission:superadmin|teacher_view']);
@@ -91,39 +89,36 @@ Route::prefix('admin')->group(function () {
     Route::POST('teacher/update/password', [TeacherController::class, 'editpassword'])->middleware(['role_or_permission:superadmin']);
     Route::POST('teacher/update/profilepicture', [TeacherController::class, 'editpicture'])->middleware(['role_or_permission:superadmin']);
 
-    //requests
+    // Requests
     Route::GET('requests', [StudentadController::class, 'requests'])->middleware(['role_or_permission:superadmin|request_accept|request_delete']);
     Route::POST('requests/accept', [StudentadController::class, 'acceptrequest'])->middleware(['role_or_permission:superadmin|request_accept']);
     Route::POST('requests/delete', [StudentadController::class, 'delete'])->middleware(['role_or_permission:superadmin|request_delete']);
 
-
+    // Posts
     Route::GET('posts', [PostController::class, 'posts'])->middleware(['role_or_permission:superadmin|post_delete|post_add']);
     Route::POST('posts/add', [PostController::class, 'addpost'])->middleware(['role_or_permission:superadmin|post_add']);
     Route::POST('posts/delete', [PostController::class, 'delete'])->middleware(['role_or_permission:superadmin|post_delete']);
     Route::GET('posts/view/{id}', [PostController::class, 'getpost'])->middleware(['role_or_permission:superadmin|post_edit']);
     Route::POST('posts/edit', [PostController::class, 'edit'])->middleware(['role_or_permission:superadmin|post_edit']);
 
-
-    //codes
+    // Codes
     Route::GET('codes', [CodeController::class, 'codes'])->middleware(['role_or_permission:superadmin|code_views|code_update|code_delete|code_add']);
     Route::POST('codes/edit', [CodeController::class, 'update'])->middleware(['role_or_permission:superadmin|code_update']);
     Route::POST('codes/delete', [CodeController::class, 'delete'])->middleware(['role_or_permission:superadmin|code_delete']);
     Route::POST('codes/generate', [CodeController::class, 'create'])->middleware(['role_or_permission:superadmin|code_add']);
     Route::POST('codetracker', [CodeController::class, 'codetracker'])->middleware(['role_or_permission:superadmin|code_tracker']);
 
-    //students
+    // Students
     Route::GET('students/stage/{stage}', [StudentadController::class, 'studentsbystage'])->middleware(['role_or_permission:superadmin|student_edit|student_delete']);
     Route::POST('students/delete', [StudentadController::class, 'delete'])->middleware(['role_or_permission:superadmin|student_delete']);
     Route::GET('students/{id}', [StudentadController::class, 'studentbyid'])->middleware(['role_or_permission:superadmin|student_edit']);
     Route::POST('students/update', [StudentadController::class, 'edit'])->middleware(['role_or_permission:superadmin|student_delete']);
-
-
     Route::POST('students/edit/profilepicture', [StudentadController::class, 'editpicture'])->middleware(['role_or_permission:superadmin|student_edit']);
     Route::POST('students/edit/password', [StudentadController::class, 'editpassword'])->middleware(['role_or_permission:superadmin|student_edit']);
     Route::POST('students/edit/info', [StudentadController::class, 'editoinfo'])->middleware(['role_or_permission:superadmin|student_edit']);
     Route::GET('students/view/{id}', [StudentadController::class, 'lecturebystudent'])->middleware(['role_or_permission:superadmin|student_view']);
 
-    //group
+    // Group
     Route::GET('groups', [GroupController::class, 'groups'])->middleware(['role_or_permission:superadmin|group_views']);
     Route::POST('groups/edit', [GroupController::class, 'update'])->middleware(['role_or_permission:superadmin|group_update']);
     Route::POST('groups/delete', [GroupController::class, 'delete'])->middleware(['role_or_permission:superadmin|group_delete']);
@@ -131,8 +126,7 @@ Route::prefix('admin')->group(function () {
 
     Route::GET('subjects/{subject}', [LectureController::class, 'getteacher'])->middleware(['role_or_permission:superadmin|lecture_view|lecture_add|lecture_addquiz|lecture_addHw|lecture_addmatrial']);
 
-
-    //lecture
+    //Lecture
     Route::GET('lectures/{id}', [LectureController::class, 'alllecture'])->middleware(['role_or_permission:superadmin|lecture_view|lecture_add|lecture_addquiz|lecture_addHw|lecture_addmatrial']);
     Route::POST('lectures/add', [LectureController::class, 'addlecture'])->middleware(['role_or_permission:superadmin|lecture_add']);
     Route::POST('chapters/add', [LectureController::class, 'addchapter'])->middleware(['role_or_permission:superadmin|lecture_add']);
@@ -249,33 +243,25 @@ Route::prefix('admin')->group(function () {
 // Teacher
 Route::prefix('teacher')->group(function () {
   Route::middleware(['SetSanctumGuard:teachers', 'auth:sanctum',])->group(function () {
-    Route::get('home', [AdminController::class, 'home']);
-    Route::get('numbering', [AdminController::class, 'numbering'])->middleware(['role_or_permission:superadmin|request_accept']);
-    Route::POST('profile/picture', [AdminController::class, 'myeditpicture']);
-    Route::POST('profile/changepassword', [AdminController::class, 'myeditpassword']);
-
-    //question_bank
+    // Question bank
     Route::GET('questionbank', [QuestionbankController::class, 'allcategories']);
+    Route::GET('questionbank/categories', [LecturethController::class, 'allcategory']);
+    Route::GET('questionbank/category/{id}', [QuestionbankController::class, 'questionsbycategory']);
+    Route::GET('questionbank/categoryinfo/{id}', [QuestionbankController::class, 'categoryinfo']);
     Route::POST('questionbank/category/edit', [QuestionbankController::class, 'updatecategory']);
     Route::POST('questionbank/category/delete', [QuestionbankController::class, 'deletecategory']);
     Route::POST('questionbank/category/add', [QuestionbankController::class, 'createcategory']);
-    Route::GET('questionbank/category/{id}', [QuestionbankController::class, 'questionsbycategory']);
-    Route::GET('questionbank/categoryinfo/{id}', [QuestionbankController::class, 'categoryinfo']);
+    Route::POST('questionbank/category/editquestion', [QuestionbankController::class, 'editquestion']);
+    Route::POST('questionbank/category/deletequestion', [QuestionbankController::class, 'deletequestion']);
     Route::POST('questionbank/category/addchoosequestion/{id}', [QuestionbankController::class, 'addchoosequestion']);
     Route::POST('questionbank/category/addessayquestion/{id}', [QuestionbankController::class, 'addessayquestion']);
-    Route::POST('questionbank/category/deletequestion', [QuestionbankController::class, 'deletequestion']);
-    Route::POST('questionbank/category/editquestion', [QuestionbankController::class, 'editquestion']);
     Route::GET('questionbank/category/question/{id}', [QuestionbankController::class, 'getquestion']);
 
-    //lecture
+    // Lectures
     Route::GET('lectures', [LecturethController::class, 'alllecture']);
     Route::POST('lectures/add', [LecturethController::class, 'addlecture']);
-    Route::POST('chapters/add', [LecturethController::class, 'addchapter']);
     Route::POST('lectures/delete', [LecturethController::class, 'deletelecture']);
-    Route::POST('chapters/delete', [LecturethController::class, 'deletechapter']);
-    Route::GET('chapters/view/{id}', [LecturethController::class, 'getchapter']);
     Route::GET('lectures/view/{id}', [LecturethController::class, 'getlecture']);
-    Route::GET('chapters/{id}', [LecturethController::class, 'getlecturebychapter']);
     Route::POST('lecture/update', [LecturethController::class, 'updatelecture']);
     Route::POST('lecture/chapter/update', [LecturethController::class, 'updatechapter']);
     Route::GET('lecture/vidoes/{id}', [LecturethController::class, 'getvideos']);
@@ -304,20 +290,21 @@ Route::prefix('teacher')->group(function () {
     Route::POST('lecture/homework/sets/add', [LecturethController::class, 'addsetshomework']);
     Route::GET('lecture/session/quiz/questions/{id}', [LecturethController::class, 'getquestionsquiz']);
     Route::GET('lecture/session/homework/questions/{id}', [LecturethController::class, 'getquestionshomework']);
-
-
-    Route::GET('lecture/session/question/{id}', [LecturethController::class, 'getquestionbyid']);
-    Route::POST('lecture/session/question/update', [LecturethController::class, 'editquestion']);
-    Route::GET('lecture/session/attachments/{id}', [LecturethController::class, 'getallattachment']);
-    Route::POST('lecture/session/deleteattachemnt', [LecturethController::class, 'deleteattachment']);
-    Route::GET('questionbank/categories', [LecturethController::class, 'allcategory']);
     Route::GET('lecture/session/quiz/allsets/{id}', [LecturethController::class, 'allsetsquiz']);
     Route::GET('lecture/session/homework/allsets/{id}', [LecturethController::class, 'allsetshomework']);
     Route::POST('lecture/session/questions/sets/delete', [LecturethController::class, 'deleteset']);
     Route::POST('lecture/session/questions/sets/update', [LecturethController::class, 'updateset']);
-
-
+    Route::GET('lecture/session/question/{id}', [LecturethController::class, 'getquestionbyid']);
+    Route::POST('lecture/session/question/update', [LecturethController::class, 'editquestion']);
+    Route::GET('lecture/session/attachments/{id}', [LecturethController::class, 'getallattachment']);
+    Route::POST('lecture/session/deleteattachemnt', [LecturethController::class, 'deleteattachment']);
     Route::GET('lecture/view/{id}', [LecturethController::class, 'allstudents']);
+
+    // Chapters
+    Route::POST('chapters/add', [LecturethController::class, 'addchapter']);
+    Route::POST('chapters/delete', [LecturethController::class, 'deletechapter']);
+    Route::GET('chapters/view/{id}', [LecturethController::class, 'getchapter']);
+    Route::GET('chapters/{id}', [LecturethController::class, 'getlecturebychapter']);
 
     // Student requests
     Route::get('requests', [TeacherStudentController::class, 'requests']);
@@ -333,7 +320,16 @@ Route::post('register', [StudentController::class, 'register']);
 Route::post('login', [StudentController::class, 'login']);
 
 Route::middleware(['SetSanctumGuard:students', 'auth:sanctum'])->group(function () {
+  // Student
   Route::get('home', [StudentController::class, 'home']);
+  Route::POST('profile/picture', [StudentController::class, 'editpicture']);
+  Route::POST('profile/changepassword', [StudentController::class, 'editpassword']);
+  Route::GET('getamount', [StudentController::class, 'getpointsandamount']);
+  Route::POST('rechargeamount', [StudentController::class, 'rechargeamount']);
+  Route::POST('sendinvitation', [StudentController::class, 'sendinvitation']);
+  Route::GET('allinvitation', [StudentController::class, 'allinvitation']);
+
+  // Lectures
   Route::GET('lectures/{id}', [LecturesdController::class, 'alllecture']);
   Route::GET('lectures/session/{id}', [LecturesdController::class, 'session']);
   Route::POST('lectures/session/buy', [LecturesdController::class, 'buy']);
@@ -344,20 +340,15 @@ Route::middleware(['SetSanctumGuard:students', 'auth:sanctum'])->group(function 
   Route::GET('lectures/session/homework/{id}', [LecturesdController::class, 'gethomeworkquestion']);
   Route::POST('lectures/homework/updateanswerhomewok', [LecturesdController::class, 'postanswerhomework']);
   Route::POST('lectures/homework/sumithomework', [LecturesdController::class, 'submithomework']);
-  Route::GET('questionbank', [QuestionbanksdController::class, 'allcategories']);
-  Route::GET('questionbank/view/{id}', [QuestionbanksdController::class, 'questionsbycategory']);
-  Route::POST('profile/picture', [StudentController::class, 'editpicture']);
-  Route::POST('profile/changepassword', [StudentController::class, 'editpassword']);
-  Route::GET('getamount', [StudentController::class, 'getpointsandamount']);
-  Route::POST('rechargeamount', [StudentController::class, 'rechargeamount']);
+  Route::POST('lectures/decreaseview', [LecturesdController::class, 'decreaseview']);
   Route::POST('buyamount', [LecturesdController::class, 'buyamount']);
   Route::POST('buypoints', [LecturesdController::class, 'buypoints']);
-  Route::POST('sendinvitation', [StudentController::class, 'sendinvitation']);
-  Route::GET('allinvitation', [StudentController::class, 'allinvitation']);
-  Route::POST('lectures/decreaseview', [LecturesdController::class, 'decreaseview']);
 
+  // Questionbank
+  Route::GET('questionbank', [QuestionbanksdController::class, 'allcategories']);
+  Route::GET('questionbank/view/{id}', [QuestionbanksdController::class, 'questionsbycategory']);
 
-
+  // Trial exam
   Route::GET('trialexam', [TrialexamsdController::class, 'allexams']);
   Route::GET('trialexam/{id}', [TrialexamsdController::class, 'exam']);
   Route::POST('trialexam/buy', [TrialexamsdController::class, 'buy']);
@@ -367,9 +358,8 @@ Route::middleware(['SetSanctumGuard:students', 'auth:sanctum'])->group(function 
   Route::POST('trialexam/submit', [TrialexamsdController::class, 'submitexam']);
   Route::GET('trialexam/modelanswer/{id}', [TrialexamsdController::class, 'getmodelanswer']);
 
-  //subjects controller
+  // Teachers
   Route::GET('teacher/{subject}', [SubjectsController::class, 'getTeachers']);
-
   Route::get('available-teachers', [StudentController::class, 'availableTeachers']);
   Route::post('teachers/{teacherId}/request', [StudentController::class, 'sendRequest']);
 });

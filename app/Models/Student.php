@@ -32,12 +32,14 @@ class Student extends Authenticatable
     ];
 
     protected $hidden = [
+        'username',
         'password',
         'remember_token',
         // Not used in this model at the moment
         'profile_pic',
         'section',
         'amount',
+        'api_token'
     ];
 
     public function groups()
