@@ -217,23 +217,47 @@ class BarcodeController extends Controller
     public function getStoredBarcodes(Request $request)
     {
         try {
-            $perPage = $request->get('per_page', 20);
+            $perPage   = $request->get('per_page', 20);
             $teacherId = $request->get('teacher_id');
+            $stage     = $request->get('stage');
+            $keyword   = $request->get('q');
 
-            $query = Barcode::with(['student']);
-
-            if ($teacherId) {
-                $query->where('teacher_id', $teacherId);
+            // Check stage value
+            $allowedStage = [1, 2, 3, 11, 22, 33];
+            if ($stage && !in_array($stage, $allowedStage)) {
+                return response()->json([
+                    'status'  => false,
+                    'message' => 'Invalid status value',
+                ], 422);
             }
 
-            $barcodes = $query->orderBy('created_at', 'desc')
+            $barcodes = Barcode::with(['student:id,name'])
+                ->when(
+                    $stage,
+                    fn($q) =>
+                    $q->whereRelation('student', 'stage', $stage)
+                )
+                ->when(
+                    $teacherId,
+                    fn($q) =>
+                    $q->where('teacher_id', $teacherId)
+                )
+                ->when(
+                    $keyword,
+                    fn($q) =>
+                    $q->where(function ($query) use ($keyword) {
+                        $query->where('code', 'like', "%{$keyword}%")
+                            ->orWhereRelation('student', 'name', 'like', "%{$keyword}%");
+                    })
+                )
+                ->latest()
                 ->paginate($perPage);
 
-            return response()->json([
-                'status'  => true,
-                'message' => 'تم جلب البيانات بنجاح',
-                'data'    => BarcodeResource::collection($barcodes)
-            ]);
+            return BarcodeResource::collection($barcodes)
+                ->additional([
+                    'status'  => true,
+                    'message' => 'تم جلب البيانات بنجاح'
+                ]);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'حدث خطأ في جلب البيانات: ' . $e->getMessage()
