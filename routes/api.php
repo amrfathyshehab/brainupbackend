@@ -242,7 +242,7 @@ Route::prefix('admin')->group(function () {
     Route::prefix('barcodes')->group(function () {
       Route::get('/', [BarcodeController::class, 'getStoredBarcodes']);
       Route::post('generate', [BarcodeController::class, 'barcodes']);
-      Route::post('generate-from-stored', [BarcodeController::class, 'generateFromStored']);
+      Route::post('export', [BarcodeController::class, 'generateFromStored']);
       Route::get('search', [BarcodeController::class, 'searchBarcodes']);
       Route::post('delete', [BarcodeController::class, 'deleteBarcodes']);
       Route::post('generate-mixed', [BarcodeController::class, 'generateMixedFromStored']);
