@@ -100,6 +100,7 @@ class StudentController extends Controller
         'parent_mobile' => $request->parent_mobile,
         'school'        => $request->school,
         'area'          => $request->city_id, // city_id
+        'active'        => true
       ]);
 
       return response()->json([

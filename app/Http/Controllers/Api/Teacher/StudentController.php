@@ -66,4 +66,21 @@ class StudentController extends Controller
             'message' => 'تم رفض الطلب'
         ]);
     }
+
+    public function numbering()
+    {
+        $teacher = Auth::user();
+
+        $pendingRequests = $teacher->students()
+            ->wherePivot('status', 'pending')
+            ->count();
+
+        return response()->json([
+            'status'  => true,
+            'message' => 'Number of pending requests',
+            'data'    => [
+                'pending_requests' => $pendingRequests
+            ]
+        ]);
+    }
 }

@@ -661,6 +661,10 @@ class AdminController extends Controller
       ], 401);
     }
 
+    $user->profile_pic = asset('uploads/profile_picture/' . $user->profile_pic);
+    if ($user->cover_path) {
+      unset($user->cover_path);
+    }
     $isSuperAdmin = $user->hasRole('superadmin') ?? false;
     $permissions = $isSuperAdmin ? Permission::all()->pluck('name') : $user->getAllPermissions()->pluck('name');
 

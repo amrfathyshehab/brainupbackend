@@ -78,4 +78,9 @@ class Student extends Authenticatable
     {
         return $this->belongsTo(Cities::class, 'area');
     }
+
+    public function barcodes()
+    {
+        return $this->hasMany(Barcode::class, 'student_id');
+    }
 }

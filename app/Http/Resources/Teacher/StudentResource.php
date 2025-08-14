@@ -20,6 +20,7 @@ class StudentResource extends JsonResource
             'mobile'        => $this->mobile,
             'parent_mobile' => $this->parent_mobile,
             'school'        => $this->school,
+            'stage'         => $this->stage,
             'city'          => $this->city?->city_name_ar,
             'approved_by'   => $this->admin?->name,
             'status'        => $this->translateStatus($this->pivot->status),

@@ -56,7 +56,7 @@ class IndexController extends Controller
                     'description' => $Lecture->description,
                     'stage' => $Lecture->stage,
                     'price' => $Lecture->price,
-                    'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $Lecture->img,
+                    'img' => $Lecture->img ? asset('uploads/lectures/images/' . $Lecture->img) : null,
 
                 ];
             }
@@ -78,7 +78,7 @@ class IndexController extends Controller
                     'description' => $Lecture->description,
                     'stage' => $Lecture->stage,
                     'price' => $Lecture->price,
-                    'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $Lecture->img,
+                    'img' => $Lecture->img ? asset('uploads/lectures/images/' . $Lecture->img) : null,
 
                 ];
             }

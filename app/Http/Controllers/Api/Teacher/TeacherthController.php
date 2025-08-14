@@ -20,7 +20,7 @@ class TeacherthController extends Controller
     if (!$teacher || !Hash::check($fields['password'], $teacher['password'])) {
       return response()->json([
         'error' => 'Username or Password wrong'
-      ], 401);
+      ], 403);
     }
 
     $token = $teacher->createToken($request['username'], ['teacher'])->plainTextToken;
