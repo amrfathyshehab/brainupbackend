@@ -25,7 +25,8 @@ class Teacher extends Authenticatable
         'mobile',
         'profile_pic',
         'subject',
-        'description'
+        'description',
+        'cover_path'
     ];
 
     protected $hidden = [
@@ -44,6 +45,11 @@ class Teacher extends Authenticatable
     {
         return $this->belongsToMany(Student::class, 'student_teacher_requests')
             ->withPivot('status', 'requested_at', 'approved_at', 'rejected_at');
+    }
+
+    public function barcodes()
+    {
+        return $this->hasMany(Barcode::class, 'teacher_id');
     }
 
     public function scopeApprovedForStudent($query, $studentId)

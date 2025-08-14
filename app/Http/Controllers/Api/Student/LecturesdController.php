@@ -328,7 +328,7 @@ class LecturesdController extends Controller
                'key' => $attachment->id,
                'name' => $attachment->address,
                'is_public' => $attachment->is_public,
-               'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $attachment->address,
+               'address' => $attachment->address ? asset("/uploads/lectures/attachments/" . $attachment->address) : null,
             ];
          }
       }
@@ -343,7 +343,7 @@ class LecturesdController extends Controller
             'key' => $attachment->id,
             'name' => $attachment->address,
             'is_public' => $attachment->is_public,
-            'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $attachment->address,
+            'address' =>  $attachment->address ? asset("/uploads/lectures/attachments/" . $attachment->address) : null,
          ];
       }
       return $allAttachments;
@@ -713,9 +713,8 @@ class LecturesdController extends Controller
                            if ($n_essayanswer > 0) {
                               $essayanswer = Studentanswer::where('quiz_id', $quiz->id)->where('student_id', auth()->user()->id)->where('q_id', $question['id'])->first();
 
-
                               $stdessayans = $essayanswer->student_answer;
-                              $stdessaydraft = "https://api.prodigy-online.com/uploads/drafts/" . $essayanswer->draft;
+                              $stdessaydraft = $essayanswer->draft ? asset("/uploads/drafts/" . $essayanswer->draft) : null;
                            }
                            $essayquestions[] = [
                               'id' => $question['id'],

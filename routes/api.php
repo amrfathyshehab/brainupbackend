@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\Admin\{
   StudentadController,
   TrialexamController,
   CorrectionController,
+  BarcodeController,
   StatisticsController
 };
 
@@ -235,6 +236,17 @@ Route::prefix('admin')->group(function () {
     Route::POST('questionbank/category/deletequestion', [QuestionbankController::class, 'deletequestion'])->middleware(['role_or_permission:superadmin|questionbank_deletequestion']);
     Route::POST('questionbank/category/editquestion', [QuestionbankController::class, 'editquestion'])->middleware(['role_or_permission:superadmin|questionbank_editquestion']);
     Route::GET('questionbank/category/question/{id}', [QuestionbankController::class, 'getquestion'])->middleware(['role_or_permission:superadmin|questionbank_editquestion']);
+
+
+
+    Route::prefix('barcodes')->group(function () {
+      Route::get('/', [BarcodeController::class, 'getStoredBarcodes']);
+      Route::post('generate', [BarcodeController::class, 'barcodes']);
+      Route::post('generate-from-stored', [BarcodeController::class, 'generateFromStored']);
+      Route::get('search', [BarcodeController::class, 'searchBarcodes']);
+      Route::post('delete', [BarcodeController::class, 'deleteBarcodes']);
+      Route::post('generate-mixed', [BarcodeController::class, 'generateMixedFromStored']);
+    });
   });
 
   Route::post('login', [AdminController::class, 'login']);
@@ -310,6 +322,7 @@ Route::prefix('teacher')->group(function () {
     Route::get('requests', [TeacherStudentController::class, 'requests']);
     Route::post('requests/{studentId}/approve', [TeacherStudentController::class, 'approveRequest']);
     Route::post('requests/{studentId}/reject', [TeacherStudentController::class, 'rejectRequest']);
+    Route::get('numbering', [TeacherStudentController::class, 'numbering']);
   });
 
   Route::post('login', [TeacherthController::class, 'login']);

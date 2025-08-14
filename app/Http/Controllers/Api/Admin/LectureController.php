@@ -59,7 +59,7 @@ class LectureController extends Controller
           'description' => $chapter->description,
           'stage' => $chapter->stage,
           'visibility' => $chapter->visibility,
-          'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $chapter->img,
+          'img' => $chapter->img ? asset("/uploads/lectures/images/" . $chapter->img) : null,
 
 
           'created_by' => $chapter->teacher->name,
@@ -79,8 +79,7 @@ class LectureController extends Controller
           'is_chapter' => 0,
           'stage' => $lecture->stage,
           'visibility' => $lecture->visibility,
-          'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
-
+          'img' => $lecture->img ? asset("/uploads/lectures/images/" . $lecture->img) : null,
           'created_by' => $lecture->teacher->name,
           'chapter_id' => $lecture->chapter_id,
           'price' => $lecture->price,
@@ -342,7 +341,7 @@ class LectureController extends Controller
         'description' => $lecture->description,
         'stage' => $lecture->stage,
         'visibility' => $lecture->visibility,
-        'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
+        'img' => $lecture->img ? asset("/uploads/lectures/images/" . $lecture->img) : null,
         'created_by' => $lecture->teacher->name,
         'chapter_id' => $lecture->chapter_id,
         'price' => $lecture->price,
@@ -382,7 +381,6 @@ class LectureController extends Controller
       $response = [
         'message' => " Lecture not found ",
         'status' => false,
-
       ];
       return response($response, 200);
     } else {
@@ -392,23 +390,17 @@ class LectureController extends Controller
         'description' => $chapter->description,
         'stage' => $chapter->stage,
         'visibility' => $chapter->visibility,
-        'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $chapter->img,
+        'img' =>  $chapter->img ? asset("/uploads/lectures/images/" . $chapter->img) : null,
         'edu_type' => $chapter->edu_type,
         'section' => $chapter->section,
-
-
-
         'created_by' => $chapter->teacher->name,
         'created_at' => date("F j, Y, g:i a", strtotime($chapter->created_at)),
-
       ];
 
-
       $response = [
-        'data' => $chapter,
+        'status'  => true,
         'message' => "success",
-        'status' => true,
-
+        'data'    => $chapter,
       ];
       return response($response, 201);
     }
@@ -439,7 +431,7 @@ class LectureController extends Controller
           'description' => $lecture->description,
           'stage' => $lecture->stage,
           'visibility' => $lecture->visibility,
-          'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
+          'img' => $lecture->img ? asset("/uploads/lectures/images/" . $lecture->img) : null,
           'created_by' => $lecture->teacher->name,
           'chapter_id' => $lecture->chapter_id,
           'price' => $lecture->price,
@@ -2190,10 +2182,8 @@ class LectureController extends Controller
           $Attachments[] = [
             'n' => $i++,
             'key' => $attachment->id,
-            'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $attachment->address,
+            'address' =>  $attachment->address ? asset("/uploads/lectures/attachments/" . $attachment->address) : null,
             'is_public' => $attachment->is_public,
-
-
           ];
         }
         $response = [

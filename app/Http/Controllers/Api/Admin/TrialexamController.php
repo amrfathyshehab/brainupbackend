@@ -47,8 +47,6 @@ class TrialexamController extends Controller
     } else {
       $i = 1;
       foreach ($all_Trialexam as $exam) {
-
-
         $allexams[] = [
           'n' => $i++,
           'key' => $exam->id,
@@ -56,14 +54,10 @@ class TrialexamController extends Controller
           'description' => $exam->description,
           'stage' => $exam->stage,
           'visibility' => $exam->visibility,
-          'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $exam->img,
+          'img' => $exam->img ? asset("/uploads/lectures/images/" . $exam->img) : null,
           'price' => $exam->price,
           'duration' => $exam->duration,
           'edu_type' => $exam->edu_type,
-
-
-
-
         ];
       }
 
@@ -71,7 +65,6 @@ class TrialexamController extends Controller
         'data' => $allexams,
         'message' => "success",
         'status' => true,
-
       ];
       return response($response, 201);
     }
@@ -241,7 +234,7 @@ class TrialexamController extends Controller
         'description' => $exam->description,
         'stage' => $exam->stage,
         'visibility' => $exam->visibility,
-        'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $exam->img,
+        'img' => $exam->img ? asset("/uploads/lectures/images/" . $exam->img) : null,
         'price' => $exam->price,
         'v_model' => $exam->v_model,
         'is_buying' => $exam->is_buying,

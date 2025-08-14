@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api\Teacher;
 
 use App\Models\Quiz;
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 use App\Models\Video;
 use App\Models\Chapter;
 use App\Models\History;
@@ -16,15 +15,9 @@ use Illuminate\Http\Request;
 use App\Models\Studentresult;
 use App\Models\SetsbankQuestion;
 use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Models\Role;
 use App\Models\QuestionbankCategory;
 use App\Models\QuestionbankQuestion;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\File;
-use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Validator;
-
-
 
 class LecturethController extends Controller
 {
@@ -58,9 +51,7 @@ class LecturethController extends Controller
           'description' => $chapter->description,
           'stage' => $chapter->stage,
           'visibility' => $chapter->visibility,
-          'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $chapter->img,
-
-
+          'img' =>  $chapter->img ? asset("/uploads/lectures/images/" . $chapter->img) : null,
           'created_by' => $chapter->teacher->name,
           'is_chapter' => 1,
           'created_at' => date("F j, Y, g:i a", strtotime($chapter->created_at)),
@@ -78,7 +69,7 @@ class LecturethController extends Controller
           'is_chapter' => 0,
           'stage' => $lecture->stage,
           'visibility' => $lecture->visibility,
-          'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
+          'img' => $lecture->img ? asset("/uploads/lectures/images/" . $lecture->img) : null,
 
           'chapter_id' => $lecture->chapter_id,
           'price' => $lecture->price,
@@ -316,7 +307,6 @@ class LecturethController extends Controller
     }
   }
 
-
   public function getlecture($id)
   {
     $lecture = [];
@@ -338,7 +328,7 @@ class LecturethController extends Controller
         'description' => $lecture->description,
         'stage' => $lecture->stage,
         'visibility' => $lecture->visibility,
-        'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
+        'img' => $lecture->img ? asset("/uploads/lectures/images/" . $lecture->img) : null,
         'created_by' => $lecture->teacher->name,
         'chapter_id' => $lecture->chapter_id,
         'price' => $lecture->price,
@@ -365,7 +355,6 @@ class LecturethController extends Controller
     }
   }
 
-
   public function getchapter($id)
   {
     $chapter = [];
@@ -387,7 +376,7 @@ class LecturethController extends Controller
         'description' => $chapter->description,
         'stage' => $chapter->stage,
         'visibility' => $chapter->visibility,
-        'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $chapter->img,
+        'img' => $chapter->img ? asset("/uploads/lectures/images/" . $chapter->img) : null,
         'section' => $chapter->section,
 
 
@@ -412,7 +401,6 @@ class LecturethController extends Controller
   {
     $lectures = [];
 
-    $chapter = Chapter::where('id', $id)->first();
     $n_chapter = Chapter::where('id', $id)->count();
 
     if ($n_chapter == 0) {
@@ -433,7 +421,7 @@ class LecturethController extends Controller
           'description' => $lecture->description,
           'stage' => $lecture->stage,
           'visibility' => $lecture->visibility,
-          'img' => "https://api.prodigy-online.com/uploads/lectures/images/" . $lecture->img,
+          'img' => $lecture->img ? asset("/uploads/lectures/images/" . $lecture->img) : null,
           'created_by' => $lecture->teacher->name,
           'chapter_id' => $lecture->chapter_id,
           'price' => $lecture->price,
@@ -441,26 +429,18 @@ class LecturethController extends Controller
           'v_quiz' => $lecture->v_quiz,
           'expired_at' => $lecture->expired_at,
           'created_at' => date("F j, Y, g:i a", strtotime($lecture->created_at)),
-
           'section' => $lecture->section,
-
-
-
         ];
       }
-
-
 
       $response = [
         'data' => $lectures,
         'message' => "success",
         'status' => true,
-
       ];
       return response($response, 201);
     }
   }
-
 
   public function updatelecture(Request $request)
   {
@@ -470,7 +450,6 @@ class LecturethController extends Controller
       $response = [
         'message' => " Lecture not found ",
         'status' => false,
-
       ];
       return response($response, 404);
     } else {
@@ -487,11 +466,7 @@ class LecturethController extends Controller
             'views' => 'required|string',
             'expired_at' => 'required|string',
             'img' => 'file|mimes:jpg,jpeg,png,gif|max:50120',
-
-
-
           ],
-
           [
             'title.required' => 'Name is required',
             'stage.required' => 'Stage is required',
@@ -501,16 +476,13 @@ class LecturethController extends Controller
             'img.required' => 'Image is required',
             'img.max' => 'Image must not exceed 50 MB',
             'img.mimes' => 'Image must be in jpg, jpeg format',
-
           ],
-
           [
             'title' => 'Name',
             'stage' => 'Stage is required',
             'description' => 'Description',
             'img' => 'Image',
           ]
-
         );
 
         if ($validateUser->fails()) {
@@ -520,17 +492,19 @@ class LecturethController extends Controller
             'errors' => $validateUser->errors()
           ], 403);
         }
+
         $img = $Lecture->img;
         if (!empty($request->img)) {
-          $newimgname = time() . '-' . rand(111, 999) . '.' .
-            $request->img->extension();
+          $newimgname = time() . '-' . rand(111, 999) . '.' . $request->img->extension();
           $request->img->move(public_path('uploads/lectures/images'), $newimgname);
           $img = $newimgname;
         }
+
         $section = NULL;
         if ($request->stage == 2 || $request->stage == 3) {
           $section = $request->section;
         }
+
         $Lecture->update([
           'title' => $request->title,
           'description' => $request->description,
@@ -543,17 +517,11 @@ class LecturethController extends Controller
           'expired_at' => $request->expired_at,
           'views' => $request->views,
           'section' => $section,
-
-
         ]);
-
-
-
 
         $response = [
           'message' => "Lecture updated",
           'status' => true,
-
         ];
         return response($response, 201);
       } catch (\Throwable $th) {
@@ -564,8 +532,6 @@ class LecturethController extends Controller
       }
     }
   }
-
-
 
   public function updatechapter(Request $request)
   {
@@ -587,7 +553,6 @@ class LecturethController extends Controller
           'description' => 'nullable|string|max:255',
           'img' => 'file|mimes:jpg,jpeg,png,gif|max:50120',
           'section' => 'nullable|string|max:255',
-
         ], [
           'name.required' => 'Name is required',
           'stage.required' => 'Stage is required',
@@ -617,7 +582,6 @@ class LecturethController extends Controller
           'visibility' => $request->visibility,
           'img' => $img,
           'section' => $request->section,
-
         ]);
 
         return response()->json([
@@ -633,7 +597,6 @@ class LecturethController extends Controller
     }
   }
 
-
   public function getvideos($id)
   {
     $allvideos = [];
@@ -644,13 +607,11 @@ class LecturethController extends Controller
       $response = [
         'message' => " Lecture not found ",
         'status' => false,
-
       ];
       return response($response, 200);
     } else {
       $videos = Video::where('lecture_id', $id)->get();
       foreach ($videos as $video) {
-
         $OTP = NULL;
         $playbackInfo = NULL;
         $status = 0;
@@ -679,7 +640,6 @@ class LecturethController extends Controller
               "Accept: application/json",
               "Authorization: Apisecret kmVzH7Ixh7mY7Y1KXDp8cdV8zTmkJV15jukk1olrN7o2aq0Z17ijZ2m2LfEUhAlS",
               "Content-Type: application/json"
-
             ),
           ));
 
@@ -721,14 +681,10 @@ class LecturethController extends Controller
             'created_by' => $video->teacher->name,
             'otp' => $OTP,
             'playbackInfo' => $playbackInfo,
-
             'created_at' => date("F j, Y, g:i a", strtotime($video->created_at)),
-
           ];
         }
       }
-
-
 
       $response = [
         'data' => $allvideos,
@@ -739,7 +695,6 @@ class LecturethController extends Controller
       return response($response, 201);
     }
   }
-
 
   public function addvideo(Request $request)
   {
@@ -811,7 +766,6 @@ class LecturethController extends Controller
       ], 200);
     }
   }
-
 
   public function updatevideo(Request $request)
   {
@@ -898,8 +852,6 @@ class LecturethController extends Controller
     }
   }
 
-
-
   public function deletevideo(Request $request)
   {
     $id = $request->id;
@@ -921,8 +873,6 @@ class LecturethController extends Controller
       return response($response, 201);
     }
   }
-
-
 
   public function getvideobyid($id)
   {
@@ -1036,7 +986,6 @@ class LecturethController extends Controller
     }
   }
 
-
   public function getlecturequiz($id)
   {
     $n_lecture = lecture::where('id', $id)->count();
@@ -1146,6 +1095,7 @@ class LecturethController extends Controller
     ];
     return response($response, 201);
   }
+
   public function addquiz(Request $request)
   {
 
@@ -1219,7 +1169,6 @@ class LecturethController extends Controller
     }
   }
 
-
   public function updatequiz(Request $request)
   {
 
@@ -1285,9 +1234,6 @@ class LecturethController extends Controller
       }
     }
   }
-
-
-
 
   public function getlecturehomework($id)
   {
@@ -1398,6 +1344,7 @@ class LecturethController extends Controller
     ];
     return response($response, 201);
   }
+
   public function addhomework(Request $request)
   {
 
@@ -1471,10 +1418,8 @@ class LecturethController extends Controller
     }
   }
 
-
   public function updatehomework(Request $request)
   {
-
     $n_homework = homework::where('id', $request->homework_id)->count();
 
     if ($n_homework == 0) {
@@ -1618,7 +1563,6 @@ class LecturethController extends Controller
     }
   }
 
-
   public function addessayquestionhw(Request $request)
   {
     $n_homework = homework::where('id', $request->homework_id)->count();
@@ -1687,7 +1631,6 @@ class LecturethController extends Controller
       }
     }
   }
-
 
   public function addchoosequestionquiz(Request $request)
   {
@@ -1778,6 +1721,7 @@ class LecturethController extends Controller
       }
     }
   }
+
   public function addchoosequestionhw(Request $request)
   {
     $n_homework = homework::where('id', $request->homework_id)->count();
@@ -1957,6 +1901,7 @@ class LecturethController extends Controller
       return response($response, 201);
     }
   }
+
   public function getquestionbyid($id)
   {
     $question = [];
@@ -2000,6 +1945,7 @@ class LecturethController extends Controller
       return response($response, 201);
     }
   }
+
   public function editquestion(Request $request)
   {
     $id = $request->id;
@@ -2047,7 +1993,6 @@ class LecturethController extends Controller
 
   public function addsetsquiz(Request $request)
   {
-
     foreach ($request->sets as  $item) {
 
       $n_content_item_quiz = Quiz::where('id', $item['quiz_id'])->count();
@@ -2112,6 +2057,7 @@ class LecturethController extends Controller
       ], 200);
     }
   }
+
   public function deleteattachment(Request $request)
   {
     $id = $request->id;
@@ -2143,15 +2089,12 @@ class LecturethController extends Controller
   public function getallattachment($id)
   {
     $Attachments = [];
-
-
     $n_lecture = Lecture::where('id', $id)->count();
 
     if ($n_lecture == 0) {
       $response = [
         'message' => "Lecture not found",
         'status' => false,
-
       ];
       return response($response, 403);
     } else {
@@ -2160,35 +2103,30 @@ class LecturethController extends Controller
         $response = [
           'message' => "No files available",
           'status' => false,
-
         ];
-
         return response($response, 200);
       } else {
         $all_Attachment = Attachment::where('lecture_id', $id)->get();
         $i = 1;
         foreach ($all_Attachment as $attachment) {
-
-
           $Attachments[] = [
-            'n' => $i++,
-            'key' => $attachment->id,
-            'address' => "https://api.prodigy-online.com/uploads/lectures/attachments/" . $attachment->address,
+            'n'         => $i++,
+            'key'       => $attachment->id,
+            'address'   => $attachment->address ? asset("/uploads/lectures/attachments/" . $attachment->address) : null,
             'is_public' => $attachment->is_public,
-
-
           ];
         }
+
         $response = [
           'data' => $Attachments,
           'message' => "success",
           'status' => true,
-
         ];
         return response($response, 201);
       }
     }
   }
+
   public function allcategory()
   {
 
@@ -2227,6 +2165,7 @@ class LecturethController extends Controller
       return response($response, 200);
     }
   }
+
   public function allsetsquiz($id)
   {
     $sets = [];
@@ -2263,7 +2202,6 @@ class LecturethController extends Controller
       return response($response, 200);
     }
   }
-
 
   public function allsetshomework($id)
   {
@@ -2303,8 +2241,6 @@ class LecturethController extends Controller
     }
   }
 
-
-
   public function deleteset(Request $request)
   {
     $id = $request->id;
@@ -2325,6 +2261,7 @@ class LecturethController extends Controller
       return response($response, 201);
     }
   }
+
   public function updateset(Request $request)
   {
 
@@ -2397,13 +2334,11 @@ class LecturethController extends Controller
     }
   }
 
-
   public function allstudents($id)
   {
     $students = [];
     $n_hisories = History::where("lecture_id", $id)->count();
 
-    $n_QuestionbankCategory = SetsbankQuestion::where("homework_id", $id)->count();
     if ($n_hisories == 0) {
       $response = [
         'message' => "No students have purchased this lecture",
@@ -2478,6 +2413,7 @@ class LecturethController extends Controller
       return response($response, 200);
     }
   }
+
   public function deletestdfromlecture(Request $request)
   {
     $id = $request->id;
@@ -2499,6 +2435,7 @@ class LecturethController extends Controller
       return response($response, 201);
     }
   }
+
   public function editfromlecture(Request $request)
   {
     $student = History::where('id', $request->id)->first();
@@ -2566,6 +2503,7 @@ class LecturethController extends Controller
       return response($response, 404);
     }
   }
+
   public function addstudentlecture(Request $request)
   {
 
